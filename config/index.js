@@ -20,7 +20,7 @@ var pkg = require('../package.json');
 var debug = true;
 
 var config = {
-	version: config.version,
+	version: pkg.version,
 
 	/*
 	* server configure
@@ -59,8 +59,6 @@ var config = {
 		db_name: 'app_crm_dev'
 	}
 };
-
-mkdirp.sync(config.logdir);
 
 module.exports = config;
 

@@ -14,3 +14,18 @@
 * Module dependencies
 * */
 
+var path = require('path');
+var middlewares = require('koa-common');
+var config = require('../config');
+
+
+module.exports = function(app){
+	// Serve up the favicon
+	app.use(middlewares.favicon(config.server.distFolder + '/favicon.png'));
+
+	// First looks for a static file: index.html, css, images, etc.
+	app.use(middlewares.mount(config.server.staticUrl, middlewares.compress()));
+	app.use(middlewares.mount(config.server.staticUrl, middlewares.static(config.server.distFolder,{
+		maxAge: config.debug ? 0 : 60 * 60 * 24 * 7
+	})));
+};
