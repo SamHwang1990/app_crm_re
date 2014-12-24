@@ -1,0 +1,34 @@
+{
+  "name": "APP_CRM",
+  "description": "The new CRM System for APP College Preparatin & Consultancy Inc. based on nodejs, koajs, and angularJS.",
+  "version": "0.0.1",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:SamHwang1990/app_crm_re.git",
+    "web": "https://github.com/SamHwang1990/app_crm_re.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SamHwang1990/app_crm_re/issues",
+    "email": "samhwang1990@gmail.com"
+  },
+  "keywords": [
+    "appedu.org",
+    "crm",
+    "nodejs",
+    "koajs",
+    "angularjs"
+  ],
+  "engines": {
+    "node": "0.11.14"
+  },
+  "author": [
+    "samhwang1990 <samhwang1990@gmail.com> (http://blog.ssyog.com)"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "copy-to": "2.0.1",
+    "koa": "0.14.0",
+    "mkdirp": "0.5.0"
+  }
+}
