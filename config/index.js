@@ -22,18 +22,13 @@ var debug = true;
 var config = {
 	version: pkg.version,
 
-	/*
-	* server configure
-	* */
-	webPort: 3000,
-	bindingHost: '127.0.0.1', // only binding on 127.0.0.1 for local access
-
 	// debug mode
 	// if in debug mode, some middleware wont load
 	// logger module will print to stdout
 	debug: debug,
 
 	server:{
+		bindingHost: '127.0.0.1',
 		listenPort: 3000,
 		securePort: 8433,
 		distFolder: path.resolve(__dirname, '../public/src'),

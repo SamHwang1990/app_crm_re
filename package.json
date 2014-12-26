@@ -27,6 +27,7 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "co": "^4.0.2",
     "copy-to": "2.0.1",
     "koa": "0.14.0",
     "koa-bodyparser": "^1.3.0",

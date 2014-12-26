@@ -16,12 +16,18 @@
 
 var fs = require("fs");
 var path = require("path");
+var logger = require('tracer').colorConsole();
 
 function routes(app){
 	app.get('/', function* (next){
-		this.body = yield fs.readFile(path.join(__dirname,'/public/src/index.html'));
-		return yield next;
-	})
+		this.type = 'text/html';
+		this.body = yield new Promise(function(resolve, reject){
+			fs.readFile(path.join(__dirname, 'public/src/index.html'),function(err, data){
+				if(err){ return reject(err);}
+				resolve(data);
+			});
+		});
+	});
 }
 
 module.exports = routes;
