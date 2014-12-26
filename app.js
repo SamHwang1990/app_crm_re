@@ -30,7 +30,7 @@ var app = koa();
 
 app.use(middlewares.responseTime());
 
-// Static Cache Handle
+// favicon, Static Cache Handle
 staticCache(app);
 
 // Session, body-parser middleware

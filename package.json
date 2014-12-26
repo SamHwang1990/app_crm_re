@@ -27,12 +27,19 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "co": "^4.0.2",
+    "co": "4.0.2",
     "copy-to": "2.0.1",
     "koa": "0.14.0",
-    "koa-bodyparser": "^1.3.0",
+    "koa-bodyparser": "1.3.0",
     "koa-common": "1.2.0",
     "koa-router": "^3.8.0",
     "mkdirp": "0.5.0"
+  },
+  "devDependencies": {
+    "gulp": "3.8.10",
+    "gulp-sourcemaps": "^1.2.8",
+    "gulp-stylus": "1.3.4",
+    "nib": "1.0.4",
+    "stylus": "0.49.3"
   }
 }
