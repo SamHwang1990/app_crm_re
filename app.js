@@ -41,7 +41,7 @@ app.use(bodyParser());
 
 // passport and auth
 
-// Init
+// Init Template Render
 render(app, {
 	root: path.join(__dirname, 'public/design'),
 	layout: false,
