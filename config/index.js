@@ -32,6 +32,7 @@ var config = {
 		listenPort: 3000,
 		securePort: 8433,
 		distFolder: path.resolve(__dirname, '../public/src'),
+		designFolder: path.resolve(__dirname, '../public/design'),
 		staticUrl : '/static',
 		sessionSecret: 'app_crm_session_secret'
 	},

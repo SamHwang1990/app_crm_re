@@ -32,7 +32,21 @@ gulp.task('stylus',function(){
 		.pipe(gulp.dest('./public/src/assets/css'));
 });
 
-gulp.task('default',['stylus'],function(){
-	return gulp.watch(['./stylus/*',config.server.distFolder + 'assets/imgs/*'],['stylus']);
+gulp.task("design_stylus", function(){
+	return gulp.src('./stylus/appcrm.styl')
+		.pipe(stylus({
+			use:nib(),
+			compress:true,
+			sourcemap: {
+				inline: true,
+				sourceRoot: '..',
+				basePath: 'css'
+			}
+		}))
+		.pipe(gulp.dest('./public/design/css'));
+});
+
+gulp.task('default',['design_stylus', 'stylus'],function(){
+	return gulp.watch(['./stylus/*',config.server.designFolder + 'imgs/*'],['design_stylus', 'stylus']);
 });
 

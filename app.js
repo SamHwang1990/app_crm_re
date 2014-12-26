@@ -15,14 +15,17 @@
 * */
 
 var http = require('http');
+var path = require('path');
 var middlewares = require('koa-common');
 var bodyParser = require('koa-bodyparser');
 var router = require('koa-router');
 var koa = require('koa');
+var render = require('koa-ejs');
 
 var staticCache = require('./middleware/static');
 var logger = require('./middleware/logger');
 var routes = require('./route');
+var design_routes = require('./route/design');
 var config = require('./config');
 
 
@@ -38,15 +41,25 @@ app.use(bodyParser());
 
 // passport and auth
 
+// Init
+render(app, {
+	root: path.join(__dirname, 'public/design'),
+	layout: false,
+	viewExt: 'html',
+	cache: false,
+	debug: true
+});
 
 // route
 app.use(router(app));
-routes(app);
+design_routes(app);
+//routes(app);
 
 // error handler
 app.on('error',function(err, ctx){
 	err.url = err.url || ctx.request.url;
 	logger.error(err);
+	logger.info(err.stack);
 });
 
 // server listen
