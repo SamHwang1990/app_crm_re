@@ -1,0 +1,96 @@
+
+/*!
+* Login Module
+*/
+
+// login.html
+body.body-login
+  height 100%
+  @media (min-width: $screen-sm-min)
+    // 下面的min-height: 636px 不是完全计算出来的，而是调了好几次数值，觉得这个数值的效果比较好
+    // 之所以要分开
+    @media screen and (min-height: 636px)
+      display flex
+      align-items center
+
+    @media screen and (max-height: 635px)
+      padding-top 15px
+
+
+.login-main
+  width 100%
+  position relative
+
+.login-main-header
+  width 100%
+  margin-bottom 8px
+  background-color #ffffff
+  border 0
+
+  .navbar-header
+    .navbar-brand
+      padding 0
+
+  @media (max-width : $screen-xs-max)
+    display none
+
+.login-main-footer
+  margin-top 20px
+  p
+    font-size 14px
+    font-size .7rem
+    color $gray-light
+    text-align center
+    line-height .8
+
+    a.beian_link
+      color $gray-light
+      text-decoration none;
+
+
+.login-main-body
+  min-height 500px
+  width 100%
+  background url("/static/imgs/login_bg.jpg") repeat
+
+  .login-crm-logo
+    margin-top 60px
+    height 219px
+    background-image url("/static/imgs/login_crm_logo.jpg")
+    background-repeat no-repeat
+    background-position center center
+    background-size auto @height
+
+    @media (max-width: $screen-xs-max)
+      margin-top 40px
+      height 124px
+      background-size auto @height
+
+  .login-crm-statement
+    h1,
+    p
+      color #ffffff
+      text-align center
+
+    h1
+      font-size 32px
+      font-size 1.6rem
+      font-weight 500
+      line-height 1.5
+      @media (max-width: $screen-xs-max)
+        font-size 24px
+        font-size 1.2rem
+
+    p
+      font-size 16px
+      font-size .8rem
+      @media (max-width: $screen-xs-max)
+        font-size 14px
+        font-size .7rem
+
+  .login-form
+    box-sizing border-box
+    margin 30px auto 20px
+    height 200px
+    border-radius: 20px;
+    background-color rgba(255, 255, 255, .5)

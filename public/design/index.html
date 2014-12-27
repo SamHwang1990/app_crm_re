@@ -1,12 +1,70 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="zh-CN">
     <meta charset="UTF-8">
-    <link rel="icon" href="/static/assets/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/static/assets/css/appcrm.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/appcrm.css">
     <title>Index</title>
 </head>
-<body>
-    <p>Hello, KoaJS!</p>
+<body class="body-login">
+    <div class="login-main">
+        <header class="login-main-header navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#login-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <img src="/static/imgs/login_brand.jpg" alt="app crm brand" />
+                    </a>
+                </div>
+
+                <nav class="collapse navbar-collapse" role="navigation" id="login-navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/">申博首页</a></li>
+                        <li><a href="/">申博案例</a></li>
+                        <li><a href="/">帮助</a></li>
+                        <li><a href="/">提供建议</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="login-main-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="col-sm-12 login-crm-logo" alt="app-crm-logo"></div>
+                        <div class="col-sm-12 login-crm-statement">
+                            <h1>申博教育客户关系管理系统</h1>
+                            <p>专业的评估+全面的规划=名校录取</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <form class="login-form"></form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="login-main-footer">
+            <div class="container">
+                <p>Designed and built with all the lovely <a href="http://www.appedu.org" target="_blank">appers</a>.</p>
+                <p>Copyright @ 2014-2015</p>
+                <p><a class="beian_link" href="http://www.miibeian.gov.cn/" target="_blank">粤ICP备14010098号</a></p>
+            </div>
+        </footer>
+    </div>
+<script type="text/javascript" src="/static/bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

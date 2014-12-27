@@ -19,29 +19,19 @@ var path = require('path');
 var config = require('./config');
 
 gulp.task('stylus',function(){
-	return gulp.src('./stylus/appcrm.styl')
+	return gulp.src('./stylus/*.styl')
 		.pipe(stylus({
 			use:nib(),
-			compress:true,
-			sourcemap: {
-				inline: true,
-				sourceRoot: '..',
-				basePath: 'css'
-			}
+			compress:true
 		}))
 		.pipe(gulp.dest('./public/src/assets/css'));
 });
 
 gulp.task("design_stylus", function(){
-	return gulp.src('./stylus/appcrm.styl')
+	return gulp.src('./stylus/*.styl')
 		.pipe(stylus({
 			use:nib(),
-			compress:true,
-			sourcemap: {
-				inline: true,
-				sourceRoot: '..',
-				basePath: 'css'
-			}
+			compress:true
 		}))
 		.pipe(gulp.dest('./public/design/css'));
 });

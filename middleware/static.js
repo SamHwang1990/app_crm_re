@@ -25,7 +25,7 @@ module.exports = function(app){
 
 	// First looks for a static file: index.html, css, images, etc.
 	app.use(middlewares.mount(config.server.staticUrl, middlewares.compress()));
-	app.use(middlewares.mount(config.server.staticUrl, middlewares.static(config.server.distFolder,{
+	app.use(middlewares.mount(config.server.staticUrl, middlewares.static(config.server.designFolder,{
 		maxAge: config.debug ? 0 : 60 * 60 * 24 * 7
 	})));
 };
