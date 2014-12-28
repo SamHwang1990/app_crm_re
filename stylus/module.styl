@@ -90,16 +90,16 @@ body.body-login
 
   .login-form
     box-sizing border-box
-    margin 30px auto 40px
 
+    margin 30px auto 40px
     @media (min-width: $screen-sm-min)
       margin-top 60px
       margin-top 3rem
 
     padding 30px 25px
     min-height 200px
-    width 300px
-    width 15rem
+    max-width 300px
+    max-width 15rem
     border-radius: 20px;
     background-color rgba(255, 255, 255, .5)
 
@@ -125,7 +125,11 @@ body.body-login
           right 0
           height 60%
           width 1px
-          
+
+      /*
+      * custom bootstrap.css
+      * set the height of inputs which are inside the login form
+      */
       .form-control
         height 50px
         height 2.5rem
@@ -159,19 +163,19 @@ body.body-login
         font-size 24px
         color #fff
         cursor auto
-        overflow hidden
+        overflow hidden // important to button transition behavior
 
         span
           display inline
           transition top 500ms ease-out
 
+        // set the basic styles of :after mock
         &:after
           font-size 20px
           position absolute
           top 65px
           left 16px
           transition top 500ms ease-out
-
 
         &.login-submit-reset
           &:after
@@ -189,6 +193,7 @@ body.body-login
           &.login-submit-btn-active
             background-color #1aa495
 
+          // get out of the button field
           span
             top -45px
 
