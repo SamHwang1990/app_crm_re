@@ -1,0 +1,12 @@
+{
+  "name": "app_crm_design",
+  "version": "0.0.0",
+  "homepage": "https://github.com/SamHwang1990/app_crm_re",
+  "authors": [
+    "SamHwang1990 <samhwang1990@gmail.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "~3.3.1"
+  }
+}
