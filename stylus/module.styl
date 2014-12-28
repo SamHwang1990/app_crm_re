@@ -187,13 +187,15 @@ body.body-login
 
         &.login-submit-btn-active
           cursor pointer
-          background-color #1aa495
+          transition background-color 500ms linear
 
         &:hover
+          &.login-submit-btn-active
+            background-color #1aa495
+
           // get out of the button field
           span
             top -45px
 
           &:after
             top 21px
-
