@@ -1,14 +1,185 @@
-//== Paragraph component for use across site
+//== Paragraphs component for use across site
 //
 //## h1, h2, h3, h4
 .ac-body
-
-  .ac-info-subTitle
-    color $font-blue
-
-
   h1
-    margin-bottom 30px
-    margin-bottom 1.5rem
+    margin-bottom 26px
+    margin-bottom 1.3rem
     color $font-blue
-    font-size(1)
+    ac-head-font-size(1)
+
+    p
+      color $font-gray-light
+      font-size 26px
+      font-size 1.3rem
+
+  h2
+    margin-top 0
+    margin-bottom 16px
+    margin-bottom .8rem
+    color $font-blue
+    ac-head-font-size(2)
+
+    p
+      color $font-gray-light
+      font-size 20px
+      font-size 1rem
+
+
+//== Buttons component for use across site
+//
+//##
+.ac-btn
+  display inline-block
+  padding 12px 26px
+  padding 0.6rem 1.3rem
+  text-decoration none
+  color $font-blue
+  font-size 14px
+  font-size .7rem
+
+  &:hover
+  &:active
+  &:visited
+  &:link
+    color $font-blue
+    text-decoration none
+
+.ac-btn-info
+  color $font-white
+  background-color $bg-green
+
+  &:link
+  &:active
+  &:visited
+  &:hover
+    color $font-white
+
+  &:hover
+    background-color $bg-green-light
+
+.ac-btn-disable
+  &,
+  &:link,
+  &:active,
+  &:visited,
+  &:hover
+    color $font-white
+    background-color $bg-gray-darken
+    cursor default
+
+
+//== Block components for use across .ac-main content block
+//
+//##
+.ac-main-block
+  width 100%
+  height auto
+  padding-top 40px
+  padding-top 2rem
+  padding-bottom 20px
+  padding-bottom 2rem
+
+.ac-main-block-odd
+  background-color $bg-gray-darker
+
+.ac-main-block-even
+  background-color $bg-gray
+
+//== Panel components for use across site
+//
+//##
+.ac-panel-groups
+  margin-left auto
+  margin-right @margin-left
+  max-width 960px
+  max-width 48rem
+  overflow hidden
+  border-radius 0px
+
+.ac-panel
+  position relative
+  padding-left 16px
+  padding-left .8rem
+  padding-right 16px
+  padding-right .8rem
+  margin 0
+  margin-bottom 1px   /*animate border-bottom*/
+  width 100%
+  background-color $bg-white
+  cursor pointer
+  /*  this duration time is recommended to be equal to
+      the color transition duration time of child div element */
+  transition background-color 200ms ease-out
+
+  @media (max-width:$screen-sm-max)
+    padding-left 10px
+    padding-left .5rem
+
+  div
+    padding-top .8rem
+    padding-bottom @padding-top
+    /*  the following props is orderly,
+        and a set prop to stop breaking the line and replace the over text to ellipsis */
+    text-overflow ellipsis
+    white-space nowrap
+    overflow hidden
+
+    transition color 200ms ease-out
+
+  .ac-panel-title
+    font-size 16px
+    font-size .8rem
+    color $font-blue
+    letter-spacing 0.05em
+
+    @media (max-width:$screen-sm-max)
+      padding-top 0.5rem
+      padding-bottom 0
+
+  .ac-panel-meta
+    font-size 14px
+    font-size .7rem
+    color $font-gray-light
+    letter-spacing .1rem
+
+    @media (max-width:$screen-sm-max)
+      padding-top 0.3rem
+      padding-bottom @padding-top
+      letter-spacing .03rem
+
+  .ac-panel-arrow
+    position absolute
+    padding 0
+    font-size 14px
+    font-size .7rem
+    right 20px
+    top 50%
+    margin-top -10px
+    margin-top -.5rem
+    color $font-blue
+
+    @media (max-width:$screen-sm-max)
+      display none
+
+  .ac-panel-href
+    display block
+    position absolute
+    top 0
+    left 0
+    right 0
+    bottom 0
+
+  &:hover
+    background-color $bg-green
+
+    div
+      color $font-white
+
+
+
+
+.ac-panel-nav
+  margin-top 20px
+  margin-top 1rem
+  text-align center
