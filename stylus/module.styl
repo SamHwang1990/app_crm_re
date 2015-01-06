@@ -3,6 +3,7 @@
 */
 
 header.ac-header
+  margin-bottom 0
   background-color #fff
   border-bottom-width 2px
   border-radius 0
@@ -84,23 +85,19 @@ footer.ac-footer
   a
     color $font-green-dark
 
+.ac-info-jumbotron
+  padding-top 30px
+  padding-top 1.5rem
+  padding-bottom @padding-top
+
+  text-align center
+
+
 /*!
 * Login Module
 */
 
 // login.html
-body.body-login
-  height 100%
-  @media (min-width: $screen-sm-min)
-    // 下面的min-height: 636px 不是完全计算出来的，而是调了好几次数值，觉得这个数值的效果比较好
-    // 之所以要分开
-    @media screen and (min-height: 636px)
-      display flex
-      align-items center
-
-    @media screen and (max-height: 635px)
-      padding-top 15px
-
 
 .login-main
   width 100%
