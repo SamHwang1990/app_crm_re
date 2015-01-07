@@ -26,6 +26,7 @@
       font-size 1rem
 
 
+
 //== Buttons component for use across site
 //
 //##
@@ -37,6 +38,7 @@
   color $font-blue
   font-size 14px
   font-size .7rem
+  border none
 
   &:hover
   &:active
@@ -80,6 +82,11 @@
   padding-bottom 20px
   padding-bottom 2rem
 
+.ac-main-block-inside
+  margin-bottom 40px
+  &:last-child
+    margin-bottom 0
+
 .ac-main-block-odd
   background-color $bg-gray-darker
 
@@ -92,10 +99,10 @@
 .ac-panel-groups
   margin-left auto
   margin-right @margin-left
-  max-width 960px
-  max-width 48rem
   overflow hidden
   border-radius 0px
+  @media (min-width : $screen-md-min)
+    margin 0 100px
 
 .ac-panel
   position relative
@@ -183,3 +190,19 @@
   margin-top 20px
   margin-top 1rem
   text-align center
+
+//== Badge components for use across site
+//
+//##
+.ac-badge-default
+  background-color $co-default
+.ac-badge-primary
+  background-color $co-primary
+.ac-badge-success
+  background-color $co-success
+.ac-badge-info
+  background-color $co-info
+.ac-badge-warning
+  background-color $co-warning
+.ac-badge-danger
+  background-color $co-danger
