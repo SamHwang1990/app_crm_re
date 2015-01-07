@@ -32,8 +32,8 @@
 //##
 .ac-btn
   display inline-block
-  padding 12px 26px
-  padding 0.6rem 1.3rem
+  padding 10px 20px
+  padding 0.5rem 1rem
   text-decoration none
   color $font-blue
   font-size 14px
@@ -262,7 +262,7 @@
 .ac-badge-danger
   background-color $co-danger
 
-//== custom bootstrap for use across site
+//== custom bootstrap element for use across site
 //
 //## row custom
 .ac-col-center
@@ -271,10 +271,29 @@
   float none
 
 //## form custom
-fieldset
+form
   margin-bottom 30px
   margin-bottom 1.5rem
+  legend
+    color $font-blue
+    transition color 300ms ease-in
+  fieldset
+    transition display 300ms ease-in
 
   &:last-child
     margin-bottom 0
+
+  &.ac-form-off
+    legend
+      color $font-gray-light
+    fieldset
+      display none
+      transition display 300ms ease-in
+
+  &.ac-form-on
+    legend
+      color $font-blue
+    fieldset
+      display block
+      transition display 300ms ease-in
 
