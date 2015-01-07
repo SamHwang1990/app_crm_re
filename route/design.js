@@ -21,6 +21,10 @@ function routes(app){
 	app.get('/home',function* (){
 		yield this.render('page/home');
 	});
+
+	app.get('/new-student',function* (){
+		yield this.render('page/new_student');
+	});
 }
 
 module.exports = routes;

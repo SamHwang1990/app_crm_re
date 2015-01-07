@@ -49,7 +49,7 @@
 
 .ac-btn-info
   color $font-white
-  background-color $bg-green
+  background-color $co-info
 
   &:link
   &:active
@@ -58,7 +58,59 @@
     color $font-white
 
   &:hover
-    background-color $bg-green-light
+    background-color $co-info-light
+
+.ac-btn-success
+  color $font-white
+  background-color $co-success
+
+  &:link
+  &:active
+  &:visited
+  &:hover
+    color $font-white
+
+  &:hover
+    background-color $co-success-light
+
+.ac-btn-primary
+  color $font-white
+  background-color $co-primary
+
+  &:link
+  &:active
+  &:visited
+  &:hover
+    color $font-white
+
+  &:hover
+    background-color $co-primary-light
+
+.ac-btn-warning
+  color $font-white
+  background-color $co-warning
+
+  &:link
+  &:active
+  &:visited
+  &:hover
+    color $font-white
+
+  &:hover
+    background-color $co-warning-light
+
+.ac-btn-danger
+  color $font-white
+  background-color $co-danger
+
+  &:link
+  &:active
+  &:visited
+  &:hover
+    color $font-white
+
+  &:hover
+    background-color $co-danger-light
 
 .ac-btn-disable
   &,
@@ -67,9 +119,12 @@
   &:visited,
   &:hover
     color $font-white
-    background-color $bg-gray-darken
+    background-color $co-disable
     cursor default
 
+.ac-btn-sm
+  padding 8px 14px
+  font-size 12px
 
 //== Block components for use across .ac-main content block
 //
@@ -190,6 +245,7 @@
   margin-top 1rem
   text-align center
 
+
 //== Badge components for use across site
 //
 //##
@@ -205,3 +261,20 @@
   background-color $co-warning
 .ac-badge-danger
   background-color $co-danger
+
+//== custom bootstrap for use across site
+//
+//## row custom
+.ac-col-center
+  margin-left auto
+  margin-right auto
+  float none
+
+//## form custom
+fieldset
+  margin-bottom 30px
+  margin-bottom 1.5rem
+
+  &:last-child
+    margin-bottom 0
+
