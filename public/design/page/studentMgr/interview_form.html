@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/appcrm.css">
+    <title>First Interview Form</title>
+</head>
+<body class="ac-body">
+
+<header class="ac-header navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".ac-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                <img src="/static/imgs/app_logo_h30.png" alt="app crm brand" />
+            </a>
+        </div>
+        <nav class="collapse navbar-collapse ac-navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav navbar-left">
+                <li class="active"><a href="javascript:void(0)">所有学生</a> </li>
+                <li><a href="javascript:void(0)">销售跟踪</a> </li>
+                <li><a href="javascript:void(0)">语言考试跟踪</a> </li>
+                <li><a href="javascript:void(0)">申请跟踪</a> </li>
+                <li><a href="javascript:void(0)">系统配置</a> </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="javascript:void(0)">
+                        <img src="/static/imgs/avatar_20x20.jpg" class="avatar_20 img-circle" alt="user avatar" />
+                        samhwang1990
+                    </a>
+                </li>
+                <li><a href="javascript:void(0)">消息提醒</a> </li>
+                <li><a href="javascript:void(0)">登出</a> </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="ac-main">
+    <article class="ac-info-jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 ac-col-center"><h1>编辑学生初访登记表</h1></div>
+                <div class="ac-info-p col-xs-8 col-sm-3 ac-col-center text-left">
+                    <p>姓　　名：黄志源</p>
+                    <p>居住城市：广州</p>
+                    <p>性　　别：男</p>
+                    <p>电　　话：13580324390</p>
+                </div>
+            </div>
+        </div>
+    </article>
+    <article class="ac-main-block ac-main-block-even">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 ac-col-center ac-editStudent-wrap">
+                    <form class="ac-form-on form-horizontal" role="form">
+                        <legend>基本信息</legend>
+                        <fieldset>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">性别：</label>
+                                <div class="col-sm-5">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="gender">男
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="gender">女
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="StudentLiveCity" class="col-sm-4 control-label">居住城市：</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="StudentLiveCity" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="AbroadCountry" class="col-sm-4 control-label">倾向留学国家：</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="AbroadCountry" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="AbroadStage" class="col-sm-4 control-label">倾向留学阶段：</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="AbroadStage" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="SchoolNow" class="col-sm-4 control-label">现就读学校：</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="SchoolNow" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Grade" class="col-sm-4 control-label">年级：</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="Grade" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="GraduateDate" class="col-sm-4 control-label">毕业日期：</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="GraduateDate" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="GradeCount" class="col-sm-4 control-label">年级人数：</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="GradeCount" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="GPA" class="col-sm-4 control-label">平均成绩：</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="GPA" placeholder="">
+                                </div>
+                            </div>
+                            <button type="submit" class="ac-btn ac-btn-success col-sm-offset-4">保存基本信息</button>
+                        </fieldset>
+                    </form>
+                    <form class="ac-form-off form-horizontal" role="form">
+                        <legend>语言课程信息</legend>
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="SpecialCourse" class="col-sm-4 control-label">特殊课程：</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="SpecialCourse" placeholder="请输入学习过的特殊课程">
+                                </div>
+                            </div>
+                            <div class="form-group ac-form-group-divider">
+                                <label class="col-sm-4 control-label">语言培训班：</label>
+                                <div class="col-sm-5">
+                                    <div class="col-sm-12 ac-form-group-divider-border ac-padding-0-side">
+                                        <div class="col-sm-12 ac-col-divider ac-padding-0-side">
+                                            <input type="text" class="form-control" placeholder="请输入课程名称">
+                                        </div>
+                                        <div class="col-sm-12 ac-col-divider ac-padding-0-side">
+                                            <input type="text" class="form-control" placeholder="请输入培训机构名称">
+                                        </div>
+                                        <div class="col-sm-12 ac-col-divider ac-padding-0-side">
+                                            <input type="text" class="form-control" placeholder="请输入培训时间">
+                                        </div>
+                                        <div class="col-sm-12 ac-padding-0-side">
+                                            <input type="button" class="ac-btn ac-btn-danger ac-btn-sm" value="删除语言培训班" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 ac-padding-0-side">
+                                        <input type="button" class="ac-btn ac-btn-info ac-btn-sm" value="添加语言培训班" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group ac-form-group-divider">
+                                <label class="col-sm-4 control-label">语言考试成绩：</label>
+                                <div class="col-sm-5">
+                                    <div class="col-sm-12 ac-form-group-divider-border ac-padding-0-side">
+                                        <div class="col-sm-12 ac-col-divider ac-padding-0-side">
+                                            <select id="SaleConsultant" class="form-control">
+                                                <option>请选择考试类型</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-12 ac-col-divider ac-padding-0-side">
+                                            <input type="text" class="form-control" placeholder="请输入考试日期">
+                                        </div>
+                                        <div class="col-sm-12 ac-col-divider ac-padding-0-side">
+                                            <input type="text" class="form-control" placeholder="请输入考试地点">
+                                        </div>
+                                        <div class="col-sm-12 ac-col-divider ac-padding-0-side">
+                                            <div class="col-sm-8 ac-col-divider input-group input-group-sm">
+                                                <span class="input-group-addon">听力</span>
+                                                <input type="text" class="form-control" placeholder="">
+                                            </div>
+                                            <div class="col-sm-8 ac-col-divider input-group input-group-sm">
+                                                <span class="input-group-addon">阅读</span>
+                                                <input type="text" class="form-control" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 ac-padding-0-side">
+                                            <input type="button" class="ac-btn ac-btn-danger ac-btn-sm" value="删除考试成绩" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 ac-padding-0-side">
+                                        <input type="button" class="ac-btn ac-btn-info ac-btn-sm" value="添加考试成绩" />
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="ac-btn ac-btn-success col-sm-offset-4">保存语言课程信息</button>
+                        </fieldset>
+                    </form>
+                    <form class="ac-form-off form-horizontal" role="form">
+                        <legend>客户来源</legend>
+                        <fieldset>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">朋友介绍：</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" placeholder="请提供朋友名字">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">APP 宣传手册：</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" placeholder="请提供手册名字">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">网络广告：</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" placeholder="请提供网站地址">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">户外/媒体广告：</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" placeholder="请提供广告地点">
+                                </div>
+                            </div>
+                            <input type="submit" class="ac-btn ac-btn-success col-sm-offset-4" value="保存来源信息" />
+                        </fieldset>
+                    </form>
+                    <form class="ac-form-off form-horizontal" role="form">
+                        <legend>学生闪光点</legend>
+                        <fieldset>
+                            <div class="col-sm-10 ac-col-center">
+                                <div class="form-group">
+                                    <label class="sr-only" for="advice-textarea">学生闪光点</label>
+                                    <textarea id="advice-textarea" class="form-control" rows="5" placeholder="学生闪光点"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-sm-5 ac-col-center">
+                                <input type="submit" class="ac-btn ac-btn-success col-sm-offset-4" value="保存闪光点信息" />
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </article>
+</div>
+<footer class="ac-footer">
+    <div class="container">
+        <p>Designed and built with all the lovely <a href="http://www.appedu.org" target="_blank">appers</a>.</p>
+        <p>Copyright @ 2014-2015</p>
+        <p><a class="beian_link" href="http://www.miibeian.gov.cn/" target="_blank">粤ICP备14010098号</a></p>
+    </div>
+</footer>
+
+<script type="text/javascript" src="/static/bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -23,7 +23,19 @@ function routes(app){
 	});
 
 	app.get('/new-student',function* (){
-		yield this.render('page/new_student');
+		yield this.render('page/studentMgr/new_student');
+	});
+
+	app.get('/edit-student',function* (){
+		yield this.render('page/studentMgr/edit_info');
+	});
+
+	app.get('/edit-contacts',function* (){
+		yield this.render('page/studentMgr/edit_contacts');
+	});
+
+	app.get('/interview-form',function* (){
+		yield this.render('page/studentMgr/interview_form');
 	});
 }
 

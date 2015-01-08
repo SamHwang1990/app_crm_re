@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/appcrm.css">
+    <title>Edit Student Contacts</title>
+</head>
+<body class="ac-body">
+
+<header class="ac-header navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".ac-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                <img src="/static/imgs/app_logo_h30.png" alt="app crm brand" />
+            </a>
+        </div>
+        <nav class="collapse navbar-collapse ac-navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav navbar-left">
+                <li class="active"><a href="javascript:void(0)">所有学生</a> </li>
+                <li><a href="javascript:void(0)">销售跟踪</a> </li>
+                <li><a href="javascript:void(0)">语言考试跟踪</a> </li>
+                <li><a href="javascript:void(0)">申请跟踪</a> </li>
+                <li><a href="javascript:void(0)">系统配置</a> </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="javascript:void(0)">
+                        <img src="/static/imgs/avatar_20x20.jpg" class="avatar_20" alt="user avatar" />
+                        samhwang1990
+                    </a>
+                </li>
+                <li><a href="javascript:void(0)">消息提醒</a> </li>
+                <li><a href="javascript:void(0)">登出</a> </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="ac-main">
+    <article class="ac-main-block ac-main-block-even">
+        <div class="container">
+            <h2>
+                创建学生
+            </h2>
+            <div class="row">
+                <div class="col-sm-8 ac-col-center ac-editStudent-wrap">
+                    <form class="ac-form-on form-horizontal" role="form">
+                        <legend>联系人信息</legend>
+                        <fieldset>
+                            <div class="col-sm-10 ac-col-center">
+                                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                    <div class="panel panel-info">
+                                        <div class="panel-heading" role="tab" id="headingOne">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    添加新联系人
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                            <div class="panel-body">
+                                                <div class="form-group">
+                                                    <label class="col-sm-4 control-label">名字：</label>
+                                                    <div class="col-sm-5">
+                                                        <input type="text" class="form-control" placeholder="必填，联系人的名字">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-4 control-label">手机：</label>
+                                                    <div class="col-sm-5">
+                                                        <input type="text" class="form-control" placeholder="联系人的电话">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-4 control-label">微信：</label>
+                                                    <div class="col-sm-5">
+                                                        <input type="text" class="form-control" placeholder="联系人的微信">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-4 control-label">QQ：</label>
+                                                    <div class="col-sm-5">
+                                                        <input type="text" class="form-control" placeholder="联系人QQ">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-4 control-label">邮箱：</label>
+                                                    <div class="col-sm-5">
+                                                        <input type="text" class="form-control" placeholder="联系人邮箱">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="button" class="ac-btn ac-btn-info" value="添加联系人" />
+                                <input type="submit" class="ac-btn ac-btn-success" value="保存联系人" />
+                            </div>
+
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </article>
+</div>
+<footer class="ac-footer">
+    <div class="container">
+        <p>Designed and built with all the lovely <a href="http://www.appedu.org" target="_blank">appers</a>.</p>
+        <p>Copyright @ 2014-2015</p>
+        <p><a class="beian_link" href="http://www.miibeian.gov.cn/" target="_blank">粤ICP备14010098号</a></p>
+    </div>
+</footer>
+
+<script type="text/javascript" src="/static/bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

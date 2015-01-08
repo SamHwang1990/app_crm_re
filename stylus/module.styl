@@ -19,8 +19,6 @@ header.ac-header
     height 100%
     display inline-block
     margin-top -4px
-    &.avatar_20
-      border-radius 10px
 
   .navbar-nav
     a
@@ -87,14 +85,21 @@ footer.ac-footer
 .ac-info-jumbotron
   padding-top 30px
   padding-top 1.5rem
-  padding-bottom @padding-top
+  padding-bottom 30px
+  padding-bottom 1.5rem
   text-align center
+
+  @media (max-width : $screen-xs-max)
+    padding-top 20px
+    padding-top 1rem
+    padding-bottom 20px
+    padding-bottom 1rem
 
   .ac-info-subTitle
     margin-bottom 12px
     margin-bottom .6rem
     color $font-blue
-    ac-head-font-size(0)
+    ac-font-size(0)
 
   .ac-info-avatar img
     display block
@@ -104,6 +109,18 @@ footer.ac-footer
     width auto
     border-radius 15px
 
+    @media (max-width : $screen-xs-max)
+      height 140px
+      height 7rem
+
+  .ac-info-p
+    ac-font-size(4)
+    line-height 24px
+    line-height 1.2rem
+    p
+      margin-bottom 0
+
+
   .ac-info-nav
     margin-top 10px
     margin-top 0.5rem
@@ -112,6 +129,7 @@ footer.ac-footer
       font-size 12px
       font-size 0.6rem
       color $font-blue
+
 
 .ac-main-block
   h2
@@ -125,12 +143,10 @@ footer.ac-footer
       margin-right 100px
       margin-right 5rem
 
-    textarea
-      resize none
-
 /* !
-* APP CRM New Student Module
+* APP CRM Block Content Wrap
 */
+.ac-editStudent-wrap
 .ac-newStudent-wrap
   background-color $bg-white
   padding 20px 20px
