@@ -37,6 +37,10 @@ function routes(app){
 	app.get('/interview-form',function* (){
 		yield this.render('page/studentMgr/interview_form');
 	});
+
+	app.get('/sale-status',function* (){
+		yield this.render('page/saleMgr/status');
+	});
 }
 
 module.exports = routes;
