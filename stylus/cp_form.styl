@@ -1,0 +1,41 @@
+//== form custom, add some ac class
+//
+//##
+form
+  margin-bottom 30px
+  margin-bottom 1.5rem
+  legend
+    color $font-blue
+    transition color 300ms ease-in
+  fieldset
+    transition display 300ms ease-in
+  textarea
+    resize none
+
+  &:last-child
+    margin-bottom 0
+
+  &.ac-form-off
+    legend
+      color $font-gray-light
+    fieldset
+      display none
+      transition display 300ms ease-in
+
+  &.ac-form-on
+    legend
+      color $font-blue
+    fieldset
+      display block
+      transition display 300ms ease-in
+
+// maining use for bs's form-group, add border-bottom to divide from other group
+.ac-form-group-divider
+  padding-bottom 16px
+  padding-bottom .8rem
+  margin-bottom 12px
+  margin-bottom .6rem
+
+.ac-form-group-divider-border
+  @extend .ac-form-group-divider
+  border-bottom 1px $gray-lighter solid

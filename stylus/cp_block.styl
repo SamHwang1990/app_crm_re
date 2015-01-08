@@ -1,0 +1,28 @@
+//== Block components for use across .ac-main content block
+//
+//##
+.ac-main-block
+  width 100%
+  height auto
+  padding-top 30px
+  padding-top 1.5rem
+  padding-bottom 30px
+  padding-bottom 1.5rem
+
+  @media (max-width : $screen-xs-max)
+    padding-top 16px
+    padding-top .8rem
+    padding-bottom 20px
+    padding-bottom 1rem
+
+.ac-main-block-inside
+  margin-bottom 30px
+  margin-bottom 1.5rem
+  &:last-child
+    margin-bottom 0
+
+.ac-main-block-odd
+  background-color $bg-gray-darker
+
+.ac-main-block-even
+  background-color $bg-gray

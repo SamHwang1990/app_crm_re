@@ -1,0 +1,86 @@
+/* !
+* APP CRM Header Module
+*/
+
+header.ac-header
+  margin-bottom 0
+  background-color #fff
+  border-bottom-width 2px
+  border-radius 0
+
+  .container
+    @media (min-width $screen-sm-min and max-width $screen-sm-max)
+      width auto
+
+  .navbar-brand
+    text-align center
+
+  img
+    height 100%
+    display inline-block
+    margin-top -4px
+
+  .navbar-nav
+    a
+      position relative
+      padding-left 8px
+      padding-right @padding-left
+      font-size 14px
+      font-size .7rem
+      color $font-blue
+
+      @media (min-width $screen-sm-min)
+        padding-left 10px
+        padding-right @padding-left
+
+      @media (min-width $screen-md-min)
+        padding-left 15px
+        padding-right @padding-left
+
+      /* to achieve a beautiful border-bottom */
+      &:after
+        content ''
+        position absolute
+        bottom 0
+        left 50%
+        width 0
+        height 3px
+        background-color $bg-green
+        transition left 200ms ease, width 300ms ease
+
+      &:hover
+        color $font-blue
+        background-color $bg-white
+
+        &:after
+          left 0
+          width 100%
+
+    .active
+      a
+        background-color #fff
+        color $font-blue
+
+        &:after
+          left 0
+          width 100%
+
+        &:hover
+          color $font-blue
+          background-color $bg-white
+
+
+/* !
+* APP CRM Footer Module
+*/
+footer.ac-footer
+  margin-top 20px
+  margin-top 1rem
+  text-align center
+  line-height 1
+  font-size 14px
+  font-size .7rem
+  color $font-gray-light
+
+  a
+    color $font-green-dark

@@ -1,0 +1,187 @@
+/*!
+* Login Module
+*/
+
+// login.html
+
+.login-main
+  width 100%
+  position relative
+
+.login-main-header
+  width 100%
+  margin-bottom 8px
+  background-color #ffffff
+  border 0
+
+  .navbar-header
+    .navbar-brand
+      padding 0
+
+  @media (max-width : $screen-xs-max)
+    display none
+
+.login-main-footer
+  margin-top 20px
+  p
+    font-size 14px
+    font-size .7rem
+    color $gray-light
+    text-align center
+    line-height .8
+
+    a.beian_link
+      color $gray-light
+      text-decoration none;
+
+
+.login-main-body
+  min-height 500px
+  width 100%
+  background url("/static/imgs/login_bg.jpg") repeat
+
+  .login-crm-logo
+    margin-top 60px
+    height 219px
+    background-image url("/static/imgs/login_crm_logo.jpg")
+    background-repeat no-repeat
+    background-position center center
+    background-size auto @height
+
+    @media (max-width: $screen-xs-max)
+      margin-top 40px
+      height 124px
+      background-size auto @height
+
+  .login-crm-statement
+    h1,
+    p
+      color #ffffff
+      text-align center
+
+    h1
+      font-size 32px
+      font-size 1.6rem
+      font-weight 500
+      line-height 1.5
+      @media (max-width: $screen-xs-max)
+        font-size 24px
+        font-size 1.2rem
+
+    p
+      font-size 16px
+      font-size .8rem
+      @media (max-width: $screen-xs-max)
+        font-size 14px
+        font-size .7rem
+
+  .login-form
+    box-sizing border-box
+    margin 30px auto 40px
+    padding 30px 25px
+    min-height 200px
+    max-width 300px
+    max-width 15rem
+    border-radius: 20px;
+    background-color rgba(255, 255, 255, .5)
+
+    @media (min-width: $screen-sm-min)
+      margin-top 60px
+      margin-top 3rem
+
+    .input-group
+      margin-bottom 20px
+      margin-bottom 1rem
+
+      .input-group-addon,
+      .form-control
+        border 0
+        background-color #ffffff
+
+
+      /* add a divider between glyphicon and input use :after mock */
+      .input-group-addon
+        position relative
+        color #ccc
+        &:after
+          content ""
+          background #ccc
+          position absolute
+          bottom 20%
+          right 0
+          height 60%
+          width 1px
+
+      /*
+      * custom bootstrap.css
+      * set the height of inputs which are inside the login form
+      */
+      .form-control
+        height 50px
+        height 2.5rem
+
+    .login-toolbar
+      position relative
+      margin-top -5px
+      font-size 14px
+      font-size .7rem
+      font-weight normal
+
+      label,
+      a
+        font-weight normal
+        color #555555
+
+    .login-submit-btn
+      margin-top 16px
+      margin-top .8rem
+      text-align center
+
+      button
+        position relative
+        height 70px
+        height 3.5rem
+        width 70px
+        width 3.5rem
+        background-color #aaa
+        border 0px
+        border-radius 35px
+        font-size 24px
+        color #fff
+        cursor auto
+        overflow hidden // important to button transition behavior
+
+        span
+          display inline
+          transition top 500ms ease-out
+
+        // set the basic styles of :after mock
+        &:after
+          font-size 20px
+          position absolute
+          top 67px
+          left 16px
+          transition top 500ms ease-out
+
+        &.login-submit-reset
+          &:after
+            content '重置'
+
+        &.login-submit-submit
+          &:after
+            content '登录'
+
+        &.login-submit-btn-active
+          cursor pointer
+          background-color #1aa495
+
+        &:hover
+          // get out of the button field
+          span
+            top -45px
+
+          &:after
+            top 21px
+
+
+

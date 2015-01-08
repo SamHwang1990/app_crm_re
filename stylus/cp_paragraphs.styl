@@ -1,0 +1,37 @@
+//== Paragraphs component for use across site
+//
+//## h1, h2, h3, h4
+.ac-body
+  h1
+    margin-top 20px
+    margin-top 1rem
+    margin-bottom 20px
+    margin-bottom 1rem
+    color $font-blue
+    ac-font-size(1)
+
+    p
+      color $font-gray-light
+      ac-font-size(2)
+
+    @media(max-width : $screen-xs-max)
+      margin-top 16px
+      margin-top .8rem
+      margin-bottom 16px
+      margin-bottom .8rem
+      ac-font-size(2)
+
+      p
+        ac-font-size(3)
+
+  h2
+    margin-top 0
+    margin-bottom 16px
+    margin-bottom .8rem
+    color $font-blue
+    ac-font-size(2)
+
+    p
+      color $font-gray-light
+      font-size 20px
+      font-size 1rem
