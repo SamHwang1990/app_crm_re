@@ -4,27 +4,26 @@
 
 .ac-tab
   display inline-block
-  padding 10px 22px
+  padding 16px 22px
+  padding .8rem 1.1rem
   margin-top 2px
+  margin-top .1rem
   margin-right 2px
+  margin-right .2rem
   ac-font-size(4)
-
-  &,&:link,&:active,&:visited,&:hover
-    text-decoration none
-
   &:last-child
     margin-right 0
 
+  &,&:link,&:active,&:visited,&:hover
+    text-decoration none
 
 .ac-tab-color-gray
   .ac-tab
     background-color $co-default-light
     &,&:hover,&:link,&:active,&:visited
       color $font-blue
-
     &:hover
       background-color $co-default-dark
-
 
   .active
     background-color $co-default-dark

@@ -1,0 +1,81 @@
+//== Thumbnail Component for use across site
+//
+//##
+
+.ac-thumbnail
+
+  .ac-thumbnail-wrap
+    margin-bottom 30px
+
+  .ac-thumbnail-caption
+    background-color $bg-white
+    padding 30px 16px 20px
+    padding 1.5rem .8rem 1rem
+    cursor pointer
+    transition background-color 300ms
+
+    h2
+      ac-font-size(2)
+      text-align center
+
+    p
+      color $font-gray
+      ac-font-size(5)
+      text-align left
+      line-height 24px
+      line-height 1.2rem
+
+  .ac-thumbnail-control
+    margin-top 1px
+    height 50px
+    background-color $bg-white
+    transition background-color 300ms
+
+    p
+      margin 15px 0 0 0
+      ac-font-size(5)
+      color $font-green
+
+    .ac-thumbnail-control-btn
+      margin 7px 0 0 0
+      box-sizing border-box
+      height 36px
+      height 1.8rem
+      width 36px
+      width 1.8rem
+      padding-top 2px
+      padding-top .1rem
+      background-color $bg-green
+      color $font-white
+      border 0
+      border-radius 50%
+
+  .ac-thumbnail-wrap:hover
+    .ac-thumbnail-caption,.ac-thumbnail-control
+      background-color $bg-green
+      transition background-color 300ms
+
+    .ac-thumbnail-caption
+      h2,p
+        color $font-white
+
+    .ac-thumbnail-control
+      p
+        color $font-white
+
+      .ac-thumbnail-control-btn
+        background-color $bg-white
+        color $font-green
+
+
+
+
+
+
+
+
+
+
+
+
+
