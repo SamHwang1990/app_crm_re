@@ -1,5 +1,31 @@
 //== Panel components for use across site
 //
+
+/*! Panel Components Structure
+.ac-panel-groups
+  .ac-panel
+    .ac-panel-abs .col-md-12
+      .ac-panel-title .col-md-9
+      .ac-panel-meta .col-md-2
+      .ac-panel-arrow
+      .ac-panel-href
+
+    .ac-panel-detail .col-md-12 .ac-padding-0-side
+      .ac-panel-detail-heading .col-md-12 .ac-padding-0-side
+        .ac-panel-title .col-md-9
+        .ac-panel-meta .col-md-2
+        .ac-panel-arrow
+        .ac-panel-href
+
+      .ac-panel-detail-content .col-md-12 .ac-padding-0-side
+*/
+
+/*! Usage Warning
+.ac-panel-abs and .ac-panel-detail just can show one element,
+another have to be hidden
+*/
+
+
 //##
 .ac-panel-groups
   margin-left auto
@@ -11,10 +37,6 @@
 
 .ac-panel
   position relative
-  padding-left 16px
-  padding-left .8rem
-  padding-right 16px
-  padding-right .8rem
   margin 0
   margin-bottom 1px   /*animate border-bottom*/
   width 100%
@@ -28,21 +50,66 @@
     padding-left 10px
     padding-left .5rem
 
-  div
+  .ac-panel-abs
+    position relative
+    padding-left 16px
+    padding-left .8rem
+    padding-right 16px
+    padding-right .8rem
+    .ac-panel-title
+      color $font-blue
+    .ac-panel-meta
+      color $font-gray-light
+    .ac-panel-arrow
+      color $font-blue
+
+    /* for crack */
+    &:after
+      content ' '
+      position absolute
+      bottom -1px
+      left 0
+      height 1px
+      width 100%
+
+    &:hover
+      background-color $bg-green
+      .ac-panel-title,.ac-panel-meta,.ac-panel-arrow
+        color $font-white
+      &:after
+        background-color $bg-green
+      .ac-panel-arrow
+        margin-top -12px
+        transform rotate(90deg)
+
+  .ac-panel-detail
+    position relative
+    .ac-panel-detail-heading
+      background-color $bg-green
+      .ac-panel-title,.ac-panel-meta,.ac-panel-arrow
+        color $font-white
+      .ac-panel-arrow
+        margin-top -12px
+        transform rotate(90deg)
+    .ac-panel-detail-content
+      background-color $font-white
+      ac-font-size(5)
+      padding 20px
+      padding 1rem
+
+  .ac-panel-title,.ac-panel-meta
     padding-top .8rem
     padding-bottom @padding-top
-    /*  the following props is orderly,
-        and a set prop to stop breaking the line and replace the over text to ellipsis */
-    text-overflow ellipsis
-    white-space nowrap
-    overflow hidden
-
     transition color 200ms ease-out
 
   .ac-panel-title
     font-size 16px
     font-size .8rem
-    color $font-blue
+    /*  the following props is orderly,
+        and a set prop to stop breaking the line and replace the over text to ellipsis */
+    text-overflow ellipsis
+    white-space nowrap
+    overflow hidden
 
     @media (max-width:$screen-sm-max)
       padding-top 0.5rem
@@ -51,7 +118,6 @@
   .ac-panel-meta
     font-size 14px
     font-size .7rem
-    color $font-gray-light
     letter-spacing .1rem
 
     @media (max-width:$screen-sm-max)
@@ -68,8 +134,7 @@
     top 50%
     margin-top -10px
     margin-top -.5rem
-    color $font-blue
-
+    transition transform 300ms
     @media (max-width:$screen-sm-max)
       display none
 
@@ -80,12 +145,6 @@
     left 0
     right 0
     bottom 0
-
-  &:hover
-    background-color $bg-green
-
-    div
-      color $font-white
 
 .ac-panel-nav
   margin-top 20px

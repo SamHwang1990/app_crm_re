@@ -71,103 +71,147 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 ac-col-center ac-tab-color-gray text-center">
-                    <a href="#in_Process" class="ac-tab" role="tab" data-toggle="tab">In-Process Sales</a>
+                    <a href="#in_Process" class="ac-tab active" role="tab" data-toggle="tab">In-Process Sales</a>
                     <a href="#completed" class="ac-tab" role="tab" data-toggle="tab">Completed Sales</a>
                     <a href="#failed" class="ac-tab" role="tab" data-toggle="tab">Failed Sales</a>
-                    <a href="#new" class="ac-tab active" role="tab" data-toggle="tab">New Sale</a>
+                    <a href="#new" class="ac-tab" role="tab" data-toggle="tab">New Sale</a>
                 </div>
             </div>
         </div>
     </div>
     <article class="ac-main-block ac-main-block-odd">
-        <div class="container tab-content">
-            <div role="tabpanel" class="tab-pane row ac-margin-0-side" id="in_Process">
-                <div class="col-md-8 ac-col-center">
-                    <h2>
-                        语言课程销售明细
-                        <p>销售顾问：迟早早</p>
-                    </h2>
+        <div class="ac-main-block-inside">
+            <div class="container tab-content">
+                <div role="tabpanel" class="tab-pane active row ac-margin-0-side" id="in_Process">
+                    <div class="col-md-8 ac-col-center">
+                        <h2>
+                            语言课程销售明细
+                            <p>销售顾问：迟早早</p>
+                        </h2>
+                    </div>
+                    <div class="ac-m-detail col-md-8 ac-col-center">
+                        <div class="ac-m-detail-caption col-sm-5 ac-col-center text-left">
+                            <p>
+                                下次访谈时间：2015-02-18<br/>
+                                上次访谈内容：我很很很想去厕所啊~~~
+                            </p>
+                        </div>
+                        <div class="ac-m-detail-remind col-sm-5 ac-col-center text-center">
+                            <h3>超过下次访谈日期 <span class="ac-font-underline ac-font-red ac-font-lg">2</span> 天</h3>
+                        </div>
+                        <div class="ac-m-detail-controls text-center">
+                            <button class="ac-m-detail-control ac-btn ac-btn-info ac-btn-sm">更改访谈日期</button>
+                            <button class="ac-m-detail-control ac-btn ac-btn-info ac-btn-sm">完成访谈</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="ac-m-detail col-md-8 ac-col-center">
-                    <div class="ac-m-detail-caption col-sm-5 ac-col-center text-left">
-                        <p>
-                            下次访谈时间：2015-02-18<br/>
-                            上次访谈内容：我很很很想去厕所啊~~~
-                        </p>
+                <div role="tabpanel" class="tab-pane row ac-margin-0-side" id="completed">
+                    <div class="col-md-8 ac-col-center">
+                        <h2>
+                            语言课程销售明细
+                            <p>销售顾问：迟早早</p>
+                        </h2>
                     </div>
-                    <div class="ac-m-detail-remind col-sm-5 ac-col-center text-center">
-                        <h3>超过下次访谈日期 <span class="ac-font-underline ac-font-red ac-font-lg">2</span> 天</h3>
+                    <div class="ac-m-detail col-md-8 ac-col-center">
+                        <div class="ac-m-detail-caption col-sm-4 ac-col-center text-left">
+                            <p>
+                                访谈次数：<span class="ac-font-green ac-font-lg">4</span><br/>
+                                签约时间：<span class="ac-font-green ac-font-lg">2015-02-18</span>
+                            </p>
+                        </div>
+                        <div class="ac-m-detail-controls text-center">
+                            <button class="ac-m-detail-control ac-btn ac-btn-info ac-btn-sm">安排语言培训班</button>
+                            <button class="ac-m-detail-control ac-btn ac-btn-info ac-btn-sm">查看申请明细</button>
+                        </div>
                     </div>
-                    <div class="ac-m-detail-controls text-center">
-                        <button class="ac-m-detail-control ac-btn ac-btn-info ac-btn-sm">更改访谈日期</button>
-                        <button class="ac-m-detail-control ac-btn ac-btn-info ac-btn-sm">完成访谈</button>
+                </div>
+                <div role="tabpanel" class="tab-pane row ac-margin-0-side" id="failed">
+                    <div class="col-md-8 ac-col-center">
+                        <h2>
+                            语言课程销售明细
+                            <p>销售顾问：迟早早</p>
+                        </h2>
+                    </div>
+                    <div class="ac-m-detail col-md-8 ac-col-center">
+                        <div class="ac-m-detail-caption col-sm-4 ac-col-center text-left">
+                            <p>
+                                访谈次数：<span class="ac-font-green ac-font-lg">4</span><br/>
+                                失败原因：大姨夫不开心嘛~~~
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane row ac-margin-0-side" id="new">
+                    <div class="ac-m-detail col-md-7 ac-col-center">
+                        <form class="ac-form-on form-horizontal" role="form">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">销售内容：</label>
+                                <div class="col-sm-5">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox">语言培训
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox">留学申请
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="sign-intention" class="col-sm-4 control-label">签约意愿：</label>
+                                <div class="col-sm-5">
+                                    <select id="sign-intention" class="form-control">
+                                        <option>签约意愿强</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="ac-btn ac-btn-success ac-btn-sm col-sm-offset-4">保存销售内容</button>
+                        </form>
                     </div>
                 </div>
             </div>
-            <div role="tabpanel" class="tab-pane row ac-margin-0-side" id="completed">
-                <div class="col-md-8 ac-col-center">
-                    <h2>
-                        语言课程销售明细
-                        <p>销售顾问：迟早早</p>
-                    </h2>
-                </div>
-                <div class="ac-m-detail col-md-8 ac-col-center">
-                    <div class="ac-m-detail-caption col-sm-4 ac-col-center text-left">
-                        <p>
-                            访谈次数：<span class="ac-font-green ac-font-lg">4</span><br/>
-                            签约时间：<span class="ac-font-green ac-font-lg">2015-02-18</span>
-                        </p>
-                    </div>
-                    <div class="ac-m-detail-controls text-center">
-                        <button class="ac-m-detail-control ac-btn ac-btn-info ac-btn-sm">安排语言培训班</button>
-                        <button class="ac-m-detail-control ac-btn ac-btn-info ac-btn-sm">查看申请明细</button>
-                    </div>
-                </div>
-            </div>
-            <div role="tabpanel" class="tab-pane row ac-margin-0-side" id="failed">
-                <div class="col-md-8 ac-col-center">
-                    <h2>
-                        语言课程销售明细
-                        <p>销售顾问：迟早早</p>
-                    </h2>
-                </div>
-                <div class="ac-m-detail col-md-8 ac-col-center">
-                    <div class="ac-m-detail-caption col-sm-4 ac-col-center text-left">
-                        <p>
-                            访谈次数：<span class="ac-font-green ac-font-lg">4</span><br/>
-                            失败原因：大姨夫不开心嘛~~~
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div role="tabpanel" class="tab-pane active row ac-margin-0-side" id="new">
-                <div class="ac-m-detail col-md-6 ac-col-center">
-                    <form class="ac-form-on form-horizontal" role="form">
-                        <div class="form-group">
-                            <label class="col-sm-4 control-label">销售内容：</label>
-                            <div class="col-sm-5">
-                                <label class="checkbox-inline">
-                                    <input type="checkbox">语言培训
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox">留学申请
-                                </label>
+        </div>
+        <div class="ac-main-block-inside">
+            <div class="container">
+                <div class="ac-panel-groups">
+                    <div class="ac-panel row">
+                        <div class="col-md-12 ac-panel-abs hidden">
+                            <div class="col-md-9 ac-panel-title">
+                                <span class="badge ac-badge-info">New</span>
+                                今天怎么不开心，我说在我的想象中有一双滑板鞋.今天怎么不开心，我说在我的想象中有一双滑板鞋.今天怎么不开心，我说在我的想象中有一双滑板鞋
+                            </div>
+                            <div class="col-md-2 col-md-offset-1 ac-panel-meta">2015-01-04</div>
+                            <div class="ac-panel-arrow">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </div>
+                            <a class="ac-panel-href" href="javascript:void(0)"></a>
+                        </div>
+                        <div class="col-md-12 ac-panel-detail ac-padding-0-side">
+                            <div class="col-md-12 ac-panel-detail-heading ac-padding-0-side">
+                                <div class="col-md-9 ac-panel-title">
+                                    <span class="badge ac-badge-info">New</span>
+                                    今天怎么不开心，我说在我的想象中有一双滑板鞋.今天怎么不开心，我说在我的想象中有一双滑板鞋.今天怎么不开心，我说在我的想象中有一双滑板鞋
+                                </div>
+                                <div class="col-md-2 col-md-offset-1 ac-panel-meta">2015-01-04</div>
+                                <div class="ac-panel-arrow">
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-12 ac-panel-detail-content ac-padding-0-side">
+                                45445df45d45g4fdhgshfg ghgj
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="sign-intention" class="col-sm-4 control-label">签约意愿：</label>
-                            <div class="col-sm-5">
-                                <select id="sign-intention" class="form-control">
-                                    <option>签约意愿强</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-                        </div>
-                        <button type="submit" class="ac-btn ac-btn-success ac-btn-sm col-sm-offset-4">保存销售内容</button>
-                    </form>
+                    </div>
+                    <div class="ac-panel-nav">
+                        <a href="javascript:void(0)" class="ac-btn ac-btn-disable">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a href="javascript:void(0)" class="ac-btn ac-btn-success">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
