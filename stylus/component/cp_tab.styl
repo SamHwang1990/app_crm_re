@@ -1,0 +1,30 @@
+//== Tab Component for use across site
+//
+//## structure
+
+.ac-tab
+  display inline-block
+  padding 10px 22px
+  margin-top 2px
+  margin-right 2px
+  ac-font-size(4)
+
+  &,&:link,&:active,&:visited,&:hover
+    text-decoration none
+
+  &:last-child
+    margin-right 0
+
+
+.ac-tab-color-gray
+  .ac-tab
+    background-color $co-default-light
+    &,&:hover,&:link,&:active,&:visited
+      color $font-blue
+
+    &:hover
+      background-color $co-default-dark
+
+
+  .active
+    background-color $co-default-dark

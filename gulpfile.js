@@ -19,7 +19,7 @@ var path = require('path');
 var config = require('./config');
 
 gulp.task('stylus',function(){
-	return gulp.src('./stylus/*.styl')
+	return gulp.src('./stylus/**/*.styl')
 		.pipe(stylus({
 			use:nib(),
 			compress:true
@@ -28,7 +28,7 @@ gulp.task('stylus',function(){
 });
 
 gulp.task("design_stylus", function(){
-	return gulp.src('./stylus/*.styl')
+	return gulp.src('./stylus/**/*.styl')
 		.pipe(stylus({
 			use:nib(),
 			compress:true
@@ -37,6 +37,6 @@ gulp.task("design_stylus", function(){
 });
 
 gulp.task('default',['design_stylus', 'stylus'],function(){
-	return gulp.watch(['./stylus/*',config.server.designFolder + 'imgs/*'],['design_stylus', 'stylus']);
+	return gulp.watch(['./stylus/**/*.styl',config.server.designFolder + 'imgs/*'],['design_stylus', 'stylus']);
 });
 
