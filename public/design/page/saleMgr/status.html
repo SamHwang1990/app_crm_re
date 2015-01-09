@@ -72,16 +72,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 ac-col-center ac-tab-color-gray text-center">
-                    <a href="#home" class="ac-tab active" role="tab" data-toggle="tab">In-Process Sales</a>
-                    <a href="#profile" class="ac-tab" role="tab" data-toggle="tab">Completed Sales</a>
-                    <a href="#messages" class="ac-tab" role="tab" data-toggle="tab">Failed Sales</a>
+                    <a href="#in_Process" class="ac-tab active" role="tab" data-toggle="tab">In-Process Sales</a>
+                    <a href="#completed" class="ac-tab" role="tab" data-toggle="tab">Completed Sales</a>
+                    <a href="#failed" class="ac-tab" role="tab" data-toggle="tab">Failed Sales</a>
                 </div>
             </div>
         </div>
     </div>
     <article class="ac-main-block ac-main-block-odd">
         <div class="container tab-content">
-            <div role="tabpanel" class="tab-pane active row ac-margin-0-side" id="home">
+            <div role="tabpanel" class="tab-pane active row ac-margin-0-side" id="in_Process">
                 <div class="col-md-4 ac-thumbnail">
                     <div class="col-sm-12 ac-thumbnail-wrap">
                         <div class="ac-thumbnail-caption col-sm-12">
@@ -161,8 +161,47 @@
                     </div>
                 </div>
             </div>
-            <div role="tabpanel" class="tab-pane" id="profile">2</div>
-            <div role="tabpanel" class="tab-pane" id="messages">3</div>
+            <div role="tabpanel" class="tab-pane" id="completed">
+                <div class="col-md-4 ac-thumbnail">
+                    <div class="col-sm-12 ac-thumbnail-wrap">
+                        <div class="ac-thumbnail-caption col-sm-12">
+                            <h2>语言培训销售</h2>
+                            <p>
+                                销售顾问：红彤彤<br />
+                                访谈次数：4<br />
+                                签约日期：2014-01-05
+                            </p>
+                        </div>
+                        <div class="ac-thumbnail-control col-sm-12 clearfix">
+                            <p class="control-statement pull-left">签约完毕</p>
+                            <button class="ac-thumbnail-control-btn pull-right">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="failed">
+                <div class="col-md-4 ac-thumbnail">
+                    <div class="col-sm-12 ac-thumbnail-wrap">
+                        <div class="ac-thumbnail-caption col-sm-12">
+                            <h2>语言培训销售</h2>
+                            <p>
+                                销售顾问：红彤彤<br />
+                                访谈次数：4<br />
+                                失败原因：大姨妈乱来后亲爹还来更年期
+                            </p>
+                            <a href="javascript:void(0)" class="ac-thumbnail-href"></a>
+                        </div>
+                        <div class="ac-thumbnail-control col-sm-12 clearfix">
+                            <p class="control-statement pull-left">签约失败</p>
+                            <button class="ac-thumbnail-control-btn pull-right">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </article>
 </div>

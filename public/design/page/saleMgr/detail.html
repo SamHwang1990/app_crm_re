@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/appcrm.css">
+    <title>Sale Status</title>
+</head>
+<body class="ac-body">
+<header class="ac-header navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".ac-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                <img src="/static/imgs/app_logo_h30.png" alt="app crm brand" />
+            </a>
+        </div>
+        <nav class="collapse navbar-collapse ac-navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav navbar-left">
+                <li class="active"><a href="javascript:void(0)">所有学生</a> </li>
+                <li><a href="javascript:void(0)">销售跟踪</a> </li>
+                <li><a href="javascript:void(0)">语言考试跟踪</a> </li>
+                <li><a href="javascript:void(0)">申请跟踪</a> </li>
+                <li><a href="javascript:void(0)">系统配置</a> </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="javascript:void(0)">
+                        <img src="/static/imgs/avatar_20x20.jpg" class="avatar_20" alt="user avatar" />
+                        samhwang1990
+                    </a>
+                </li>
+                <li><a href="javascript:void(0)">消息提醒</a> </li>
+                <li><a href="javascript:void(0)">登出</a> </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="ac-main">
+    <article class="ac-info-jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 ac-col-center"><h1>学生销售信息</h1></div>
+                <div class="ac-info-p col-xs-8 col-sm-3 ac-col-center text-left">
+                    <p>姓　　名：黄志源</p>
+                    <p>居住城市：广州</p>
+                    <p>性　　别：男</p>
+                    <p>电　　话：13580324390</p>
+                </div>
+                <div class="ac-info-controls">
+                    <a href="javascript:void(0)" class="ac-btn ac-btn-success">查看个人主页</a>
+                </div>
+            </div>
+        </div>
+    </article>
+    <div class="ac-main-block-attach">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 ac-col-center ac-tab-color-gray text-center">
+                    <a href="#in_Process" class="ac-tab active" role="tab" data-toggle="tab">In-Process Sales</a>
+                    <a href="#completed" class="ac-tab" role="tab" data-toggle="tab">Completed Sales</a>
+                    <a href="#failed" class="ac-tab" role="tab" data-toggle="tab">Failed Sales</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <article class="ac-main-block ac-main-block-odd">
+        <div class="container tab-content">
+            <div role="tabpanel" class="tab-pane active row ac-margin-0-side" id="in_Process">
+                <div class="col-md-12 ac-col-center">
+                    <h2>
+                        语言课程销售明细
+                        <p>销售顾问：迟早早</p>
+                    </h2>
+                </div>
+                <div class="ac-m-detail col-md-8 ac-col-center">
+                    <div class="ac-m-detail-caption col-sm-5 ac-col-center text-left">
+                        <p>
+                            下次访谈时间：2015-02-18<br/>
+                            上次访谈内容：我很很很想去厕所啊~~~
+                        </p>
+                    </div>
+                    <div class="ac-m-detail-remind col-sm-5 ac-col-center text-center">
+                        <h3>超过下次访谈日期 <span class="ac-font-underline ac-font-red ac-font-lg">2</span> 天</h3>
+                    </div>
+                    <div class="ac-m-detail-controls text-center">
+                        <button class="ac-m-detail-control ac-btn ac-btn-info ac-btn-sm">更改访谈日期</button>
+                        <button class="ac-m-detail-control ac-btn ac-btn-info ac-btn-sm">完成访谈</button>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane row ac-margin-0-side" id="completed">
+2
+            </div>
+            <div role="tabpanel" class="tab-pane row ac-margin-0-side" id="failed">
+3
+            </div>
+        </div>
+    </article>
+</div>
+<footer class="ac-footer">
+    <div class="container">
+        <p>Designed and built with all the lovely <a href="http://www.appedu.org" target="_blank">appers</a>.</p>
+        <p>Copyright @ 2014-2015</p>
+        <p><a class="beian_link" href="http://www.miibeian.gov.cn/" target="_blank">粤ICP备14010098号</a></p>
+    </div>
+</footer>
+
+<script type="text/javascript" src="/static/bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

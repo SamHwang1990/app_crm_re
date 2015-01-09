@@ -41,6 +41,10 @@ function routes(app){
 	app.get('/sale-status',function* (){
 		yield this.render('page/saleMgr/status');
 	});
+
+	app.get('/sale-detail',function* (){
+		yield this.render('page/saleMgr/detail');
+	});
 }
 
 module.exports = routes;
