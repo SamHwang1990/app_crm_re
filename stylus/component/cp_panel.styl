@@ -10,14 +10,14 @@
       .ac-panel-arrow
       .ac-panel-href
 
-    .ac-panel-detail .col-md-12 .ac-padding-0-side
-      .ac-panel-detail-heading .col-md-12 .ac-padding-0-side
+    .ac-panel-detail .col-md-12
+      .ac-panel-detail-heading .col-md-12
         .ac-panel-title .col-md-9
         .ac-panel-meta .col-md-2
         .ac-panel-arrow
         .ac-panel-href
 
-      .ac-panel-detail-content .col-md-12 .ac-padding-0-side
+      .ac-panel-detail-content .col-md-12
 */
 
 /*! Usage Warning
@@ -84,13 +84,19 @@ another have to be hidden
 
   .ac-panel-detail
     position relative
+    padding-left 0
+    padding-right @padding-left
+
     .ac-panel-detail-heading
+      padding-left 0
+      padding-right @padding-left
       background-color $bg-green
       .ac-panel-title,.ac-panel-meta,.ac-panel-arrow
         color $font-white
       .ac-panel-arrow
         margin-top -12px
         transform rotate(90deg)
+
     .ac-panel-detail-content
       background-color $font-white
       ac-font-size(5)
