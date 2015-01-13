@@ -41,7 +41,6 @@ another have to be hidden
   margin-bottom 1px   /*animate border-bottom*/
   width 100%
   background-color $bg-white
-  cursor pointer
   /*  this duration time is recommended to be equal to
       the color transition duration time of child div element */
   transition background-color 200ms ease-out
@@ -56,6 +55,7 @@ another have to be hidden
     padding-left .8rem
     padding-right 16px
     padding-right .8rem
+    cursor pointer
     .ac-panel-title
       color $font-blue
     .ac-panel-meta
@@ -91,11 +91,16 @@ another have to be hidden
       padding-left 0
       padding-right @padding-left
       background-color $bg-green
+      cursor pointer
       .ac-panel-title,.ac-panel-meta,.ac-panel-arrow
         color $font-white
       .ac-panel-arrow
         margin-top -12px
         transform rotate(90deg)
+
+      &:hover
+        .ac-panel-arrow
+          transform rotate(0deg)
 
     .ac-panel-detail-content
       background-color $font-white

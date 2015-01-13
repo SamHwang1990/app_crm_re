@@ -13,7 +13,7 @@
     <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/static/bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="/static/css/appcrm.css">
-    <title>Sale Status</title>
+    <title>Exam Status</title>
 </head>
 <body class="ac-body">
 
@@ -55,15 +55,16 @@
     <article class="ac-info-jumbotron">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12 ac-col-center"><h1>学生销售信息</h1></div>
+                <div class="col-sm-12 ac-col-center"><h1>学生语言考试信息</h1></div>
                 <div class="ac-info-p col-xs-8 col-sm-3 ac-col-center text-left">
                     <p>姓　　名：黄志源</p>
-                    <p>居住城市：广州</p>
-                    <p>性　　别：男</p>
-                    <p>电　　话：13580324390</p>
+                    <p>留学类型：本科</p>
+                    <p>TOFEL：最高109</p>
+                    <p>SAT 1：最高2010</p>
+                    <p>SAT 2：最高2200</p>
                 </div>
                 <div class="ac-info-controls">
-                    <a href="javascript:void(0)" class="ac-btn ac-btn-success">创建新销售内容</a>
+                    <a href="javascript:void(0)" class="ac-btn ac-btn-success">添加新考试类型</a>
                 </div>
             </div>
         </div>
@@ -72,32 +73,29 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 ac-col-center ac-tab-color-gray text-center">
-                    <a href="#in_Process" class="ac-tab active" role="tab" data-toggle="tab">In-Process Sales</a>
-                    <a href="#completed" class="ac-tab" role="tab" data-toggle="tab">Completed Sales</a>
-                    <a href="#failed" class="ac-tab" role="tab" data-toggle="tab">Failed Sales</a>
+                    <a href="#TOFEL" class="ac-tab active" role="tab" data-toggle="tab">TOFEL</a>
+                    <a href="#SAT_1" class="ac-tab" role="tab" data-toggle="tab">SAT 1</a>
+                    <a href="#SAT_2" class="ac-tab" role="tab" data-toggle="tab">SAT 2</a>
+                    <a href="#ClassCourse" class="ac-tab" role="tab" data-toggle="tab">语言培训班</a>
                 </div>
             </div>
         </div>
     </div>
     <article class="ac-main-block ac-main-block-odd">
         <div class="container tab-content">
-            <div role="tabpanel" class="tab-pane active row ac-margin-0-side" id="in_Process">
+            <div role="tabpanel" class="tab-pane active row ac-margin-0-side" id="TOFEL">
                 <div class="col-md-4 ac-thumbnail">
                     <div class="col-sm-12 ac-thumbnail-wrap">
                         <div class="ac-thumbnail-caption col-sm-12">
-                            <h2>语言培训销售</h2>
+                            <h2>下次考试信息</h2>
                             <p>
-                                销售顾问：黑漆漆<br />
-                                下次访谈时间：2015-02-18<br />
-                                上次访谈内容：我很很很想去厕所啊~~~我很很很想去厕所啊~~~我很很很想去厕所啊~~~
-                                我很很很想去厕所啊~~~我很很很想去厕所啊~~~我很很很想去厕所啊~~~我很很很想去厕所啊~~~
-                                我很很很想去厕所啊~~~我很很很想去厕所啊~~~我很很很想去厕所啊~~~
-                                我很很很想去厕所啊~~~我很很很想去厕所啊~~~我很很很想去厕所啊~~~
-                                我很很很想去厕所啊~~~我很很很想去厕所啊~~~
+                                历史最高分：107<br />
+                                下次考试时间：2015-02-18<br />
+                                下次考试地点：青山～～～
                             </p>
                         </div>
                         <div class="ac-thumbnail-control col-sm-12 clearfix">
-                            <p class="control-statement pull-left">签约意愿强</p>
+                            <p class="control-statement pull-left">距离下次考试还有2天</p>
                             <button class="ac-thumbnail-control-btn pull-right">
                                 <span class="glyphicon glyphicon-trash"></span>
                             </button>
@@ -107,17 +105,16 @@
                 <div class="col-md-4 ac-thumbnail">
                     <div class="col-sm-12 ac-thumbnail-wrap">
                         <div class="ac-thumbnail-caption col-sm-12">
-                            <h2>语言培训销售</h2>
+                            <h2>历史考试信息</h2>
                             <p>
-                                销售顾问：黑漆漆<br />
-                                下次访谈时间：2015-02-18<br />
-                                上次访谈内容：我很很很想去厕所啊~~~我很很很想去厕所啊~~~我很很很想去厕所啊~~~
-                                我很很很想去厕所啊~~~我很很很想去厕所啊~~~我很很很想去厕所啊~~~
-                                我很很很想去厕所啊~~~我很很很想去厕所啊~~~
+                                考试时间：2015-02-18<br />
+                                考试地点：青山～～～<br/>
+                                总分：100<br />
+                                分块分数：口语(25)、阅读(25)、作文(25)、词汇(25)
                             </p>
                         </div>
                         <div class="ac-thumbnail-control col-sm-12 clearfix">
-                            <p class="control-statement pull-left">签约意愿强</p>
+                            <p class="control-statement pull-left">成绩状态：已出成绩</p>
                             <button class="ac-thumbnail-control-btn pull-right">
                                 <span class="glyphicon glyphicon-trash"></span>
                             </button>
@@ -127,15 +124,14 @@
                 <div class="col-md-4 ac-thumbnail">
                     <div class="col-sm-12 ac-thumbnail-wrap">
                         <div class="ac-thumbnail-caption col-sm-12">
-                            <h2>语言培训销售</h2>
+                            <h2>历史考试信息</h2>
                             <p>
-                                销售顾问：黑漆漆<br />
-                                下次访谈时间：2015-02-18<br />
-                                上次访谈内容：我很很很想去厕所啊~~~
+                                考试时间：2015-01-18<br />
+                                考试地点：青山～～～<br/>
                             </p>
                         </div>
                         <div class="ac-thumbnail-control col-sm-12 clearfix">
-                            <p class="control-statement pull-left">签约意愿强</p>
+                            <p class="control-statement pull-left">成绩状态：Cancel</p>
                             <button class="ac-thumbnail-control-btn pull-right">
                                 <span class="glyphicon glyphicon-trash"></span>
                             </button>
@@ -145,15 +141,14 @@
                 <div class="col-md-4 ac-thumbnail">
                     <div class="col-sm-12 ac-thumbnail-wrap">
                         <div class="ac-thumbnail-caption col-sm-12">
-                            <h2>语言培训销售</h2>
+                            <h2>历史考试信息</h2>
                             <p>
-                                销售顾问：黑漆漆<br />
-                                下次访谈时间：2015-02-18<br />
-                                上次访谈内容：我很很很想去厕所啊~~~
+                                考试时间：2015-03-18<br />
+                                考试地点：青山～～～<br/>
                             </p>
                         </div>
                         <div class="ac-thumbnail-control col-sm-12 clearfix">
-                            <p class="control-statement pull-left">签约意愿强</p>
+                            <p class="control-statement pull-left">成绩状态：Delay Waiting</p>
                             <button class="ac-thumbnail-control-btn pull-right">
                                 <span class="glyphicon glyphicon-trash"></span>
                             </button>
@@ -161,40 +156,72 @@
                     </div>
                 </div>
             </div>
-            <div role="tabpanel" class="tab-pane  row ac-margin-0-side" id="completed">
+            <div role="tabpanel" class="tab-pane row ac-margin-0-side" id="SAT_1">
                 <div class="col-md-4 ac-thumbnail">
                     <div class="col-sm-12 ac-thumbnail-wrap">
                         <div class="ac-thumbnail-caption col-sm-12">
-                            <h2>语言培训销售</h2>
+                            <h2>下次考试信息</h2>
                             <p>
-                                销售顾问：红彤彤<br />
-                                访谈次数：4<br />
-                                签约日期：2014-01-05
+                                历史最高分：107<br />
+                                下次考试时间：2015-02-18<br />
+                                下次考试地点：青山～～～
                             </p>
                         </div>
                         <div class="ac-thumbnail-control col-sm-12 clearfix">
-                            <p class="control-statement pull-left">签约完毕</p>
+                            <p class="control-statement pull-left">距离下次考试还有2天</p>
                             <button class="ac-thumbnail-control-btn pull-right">
                                 <span class="glyphicon glyphicon-trash"></span>
                             </button>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div role="tabpanel" class="tab-pane  row ac-margin-0-side" id="failed">
                 <div class="col-md-4 ac-thumbnail">
                     <div class="col-sm-12 ac-thumbnail-wrap">
                         <div class="ac-thumbnail-caption col-sm-12">
-                            <h2>语言培训销售</h2>
+                            <h2>历史考试信息</h2>
                             <p>
-                                销售顾问：红彤彤<br />
-                                访谈次数：4<br />
-                                失败原因：大姨妈乱来后亲爹还来更年期
+                                考试时间：2015-02-18<br />
+                                考试地点：青山～～～<br/>
+                                总分：100<br />
+                                分块分数：口语(25)、阅读(25)、作文(25)、词汇(25)
                             </p>
-                            <a href="javascript:void(0)" class="ac-thumbnail-href"></a>
                         </div>
                         <div class="ac-thumbnail-control col-sm-12 clearfix">
-                            <p class="control-statement pull-left">签约失败</p>
+                            <p class="control-statement pull-left">成绩状态：已出成绩</p>
+                            <button class="ac-thumbnail-control-btn pull-right">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 ac-thumbnail">
+                    <div class="col-sm-12 ac-thumbnail-wrap">
+                        <div class="ac-thumbnail-caption col-sm-12">
+                            <h2>历史考试信息</h2>
+                            <p>
+                                考试时间：2015-01-18<br />
+                                考试地点：青山～～～<br/>
+                            </p>
+                        </div>
+                        <div class="ac-thumbnail-control col-sm-12 clearfix">
+                            <p class="control-statement pull-left">成绩状态：Cancel</p>
+                            <button class="ac-thumbnail-control-btn pull-right">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 ac-thumbnail">
+                    <div class="col-sm-12 ac-thumbnail-wrap">
+                        <div class="ac-thumbnail-caption col-sm-12">
+                            <h2>历史考试信息</h2>
+                            <p>
+                                考试时间：2015-03-18<br />
+                                考试地点：青山～～～<br/>
+                            </p>
+                        </div>
+                        <div class="ac-thumbnail-control col-sm-12 clearfix">
+                            <p class="control-statement pull-left">成绩状态：Delay Waiting</p>
                             <button class="ac-thumbnail-control-btn pull-right">
                                 <span class="glyphicon glyphicon-trash"></span>
                             </button>
