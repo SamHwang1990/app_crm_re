@@ -53,6 +53,10 @@ function routes(app){
 	app.get('/exam-detail',function* (){
 		yield this.render('page/examMgr/detail');
 	});
+
+	app.get('/user-profile-view',function* (){
+		yield this.render('page/userProfile/view');
+	});
 }
 
 module.exports = routes;

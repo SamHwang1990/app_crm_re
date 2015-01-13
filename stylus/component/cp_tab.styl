@@ -6,8 +6,6 @@
   display inline-block
   padding 16px 22px
   padding .8rem 1.1rem
-  margin-top 2px
-  margin-top .1rem
   margin-right 2px
   margin-right .2rem
   ac-font-size(4)
@@ -27,3 +25,15 @@
 
   .active
     background-color $co-default-dark
+
+.ac-tab-color-gray-light
+  background-color $bg-gray-darker
+  .ac-tab
+    background-color $bg-gray-darker
+    &,&:hover,&:link,&:active,&:visited
+      color $font-blue
+    &:hover
+      background-color $bg-gray
+
+  .active
+    background-color $bg-gray
