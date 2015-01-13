@@ -49,6 +49,10 @@ function routes(app){
 	app.get('/exam-status',function* (){
 		yield this.render('page/examMgr/status');
 	});
+
+	app.get('/exam-detail',function* (){
+		yield this.render('page/examMgr/detail');
+	});
 }
 
 module.exports = routes;

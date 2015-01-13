@@ -13,7 +13,7 @@
     <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/static/bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="/static/css/appcrm.css">
-    <title>Exam Status</title>
+    <title>Exam Detail</title>
 </head>
 <body class="ac-body">
 
@@ -55,73 +55,78 @@
     <article class="ac-info-jumbotron">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12 ac-col-center"><h1>学生语言考试信息</h1></div>
+                <div class="col-sm-12 ac-col-center"><h1>TOFEL 考试信息</h1></div>
                 <div class="ac-info-p col-xs-8 col-sm-3 ac-col-center text-left">
-                    <p>姓　　名：黄志源</p>
+                    <p>　　姓名：黄志源</p>
                     <p>留学类型：本科</p>
-                    <p>TOFEL：最高109</p>
-                    <p>SAT 1：最高2010</p>
-                    <p>SAT 2：最高2200</p>
-                </div>
-                <div class="ac-info-controls">
-                    <a href="javascript:void(0)" class="ac-btn ac-btn-success">添加新考试类型</a>
+                    <p>考试类型：TOFEL</p>
+                    <p>　报名费：￥1500</p>
+                    <p>　　总分：120</p>
+                    <p>　　分块：听力、口语、阅读、词汇</p>
                 </div>
             </div>
         </div>
     </article>
     <article class="ac-main-block ac-main-block-odd">
         <div class="container">
-            <div class="row">
-                <div class="col-md-4 ac-thumbnail">
-                    <div class="col-sm-12 ac-thumbnail-wrap">
-                        <div class="ac-thumbnail-caption col-sm-12">
-                            <h2>TOFEL 考试信息</h2>
-                            <p>
-                                历史最高分：107<br />
-                                下次考试时间：2015-02-18<br />
-                                下次考试地点：青山～～～
-                            </p>
+            <h2>考试计划</h2>
+            <div class="ac-m-detail col-md-8 ac-col-center">
+                <div class="ac-m-detail-remind col-sm-5 ac-col-center text-center">
+                    <h3>距离下次考试还有 <span class="ac-font-underline ac-font-red ac-font-lg">2</span> 天</h3>
+                </div>
+                <div class="ac-m-detail-caption col-sm-5 ac-col-center text-left">
+                    <p>
+                        时间：2015-02-18<br/>
+                        地点：井冈山~~~<br/>
+                        报名执行方：APP<br/>
+                        报名付款方：APP<br/>
+                        成绩状态：未考试
+                    </p>
+                </div>
+                <div class="ac-m-detail-controls text-center">
+                    <button class="ac-m-detail-control ac-btn ac-btn-success ac-btn-sm">编辑</button>
+                    <button class="ac-m-detail-control ac-btn ac-btn-success ac-btn-sm"
+                            data-toggle="tooltip" data-placement="bottom"
+                            title="考完试，并成绩状态确定，可归档到历史考试记录中">
+                        归档
+                    </button>
+                    <button class="ac-m-detail-control ac-btn ac-btn-success ac-btn-sm">删除</button>
+                </div>
+            </div>
+            <div class="ac-panel-groups">
+                <div class="ac-panel row">
+                    <div class="ac-panel-abs col-md-12">
+                        <div class="col-md-9 ac-panel-title">
+                            考试计划：2015-01-04 @ 威虎山
                         </div>
-                        <div class="ac-thumbnail-control col-sm-12 clearfix">
-                            <p class="control-statement pull-left">距离下次考试还有2天</p>
-                            <button class="ac-thumbnail-control-btn pull-right">
-                                <span class="glyphicon glyphicon-trash"></span>
-                            </button>
+                        <div class="col-md-2 col-md-offset-1 ac-panel-meta">未考试</div>
+                        <div class="ac-panel-arrow">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
                         </div>
+                        <a class="ac-panel-href" href="javascript:void(0)"></a>
                     </div>
                 </div>
-                <div class="col-md-4 ac-thumbnail">
-                    <div class="col-sm-12 ac-thumbnail-wrap">
-                        <div class="ac-thumbnail-caption col-sm-12">
-                            <h2>SAT1 考试信息</h2>
-                            <p>
-                                历史最高分：2100<br />
-                                下次考试时间：2015-02-18<br />
-                                下次考试地点：青山～～～
-                            </p>
-                        </div>
-                        <div class="ac-thumbnail-control col-sm-12 clearfix">
-                            <p class="control-statement pull-left">距离下次考试还有2天</p>
-                            <button class="ac-thumbnail-control-btn pull-right">
-                                <span class="glyphicon glyphicon-trash"></span>
-                            </button>
-                        </div>
-                    </div>
+                <div class="ac-panel-nav">
+                    <a href="javascript:void(0)" class="ac-btn ac-btn-disable">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a href="javascript:void(0)" class="ac-btn ac-btn-success">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
                 </div>
             </div>
         </div>
     </article>
     <article class="ac-main-block ac-main-block-even">
         <div class="container">
-            <h2>培训班信息</h2>
+            <h2>历史考试记录</h2>
             <div class="ac-panel-groups">
                 <div class="ac-panel row">
                     <div class="ac-panel-abs col-md-12">
                         <div class="col-md-9 ac-panel-title">
-                            <span class="badge ac-badge-info">New</span>
-                            今天怎么不开心，我说在我的想象中有一双滑板鞋.今天怎么不开心，我说在我的想象中有一双滑板鞋.今天怎么不开心，我说在我的想象中有一双滑板鞋
+                            考试计划：2015-01-04 @ 威虎山
                         </div>
-                        <div class="col-md-2 col-md-offset-1 ac-panel-meta">2015-01-04</div>
+                        <div class="col-md-2 col-md-offset-1 ac-panel-meta">未考试</div>
                         <div class="ac-panel-arrow">
                             <span class="glyphicon glyphicon-chevron-right"></span>
                         </div>
