@@ -25,13 +25,23 @@ var render = require('koa-ejs');
 var staticCache = require('./middleware/static');
 var logger = require('./middleware/logger');
 var routes = require('./route');
-var design_routes = require('./route/design');
 var config = require('./config');
 
 
 var app = koa();
 
+// x-response-time middleware
 app.use(middlewares.responseTime());
+
+// logger
+app.use(function* (next){
+	var logMsg =
+		'Protocol: ' + this.protocol +
+		' Path: ' + this.path +
+		' Method: ' + this.method;
+	logger.info(logMsg);
+	yield next;
+});
 
 // favicon, Static Cache Handle
 staticCache(app);
@@ -52,8 +62,7 @@ render(app, {
 
 // route
 app.use(router(app));
-design_routes(app);
-//routes(app);
+routes(app);
 
 // error handler
 app.on('error',function(err, ctx){
@@ -63,11 +72,9 @@ app.on('error',function(err, ctx){
 });
 
 // server listen
-
 if (!module.parent) {
 	app.listen(config.server.listenPort);
-	logger.info("server listen on port: %d", config.server.listenPort);
-	console.log('[%s] [worker:%d] Server started, web listen at %s:%d',
+	logger.info('[%s] [worker:%d] Server started, web listen at %s:%d',
 		new Date(), process.pid,
 		config.server.bindingHost, config.server.listenPort);
 }
