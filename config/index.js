@@ -53,14 +53,13 @@ var config = {
 	database:{
 		db: 'mongodb://127.0.0.1/app_crm_dev',
 		db_name: 'app_crm_dev'
+	},
+
+	/* i18n setting */
+	i18nSupport:{
+		support:["zh-cn","zh-hk","en-us"],
+		default:["zh-cn"]
 	}
 };
 
 module.exports = config;
-
-config.loadConfig = function(customConfig){
-	if (!customConfig){
-		return;
-	}
-	copy(customConfig).override(config);
-};

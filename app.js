@@ -16,10 +16,10 @@
 
 var http = require('http');
 var path = require('path');
+var koa = require('koa');
 var middlewares = require('koa-common');
 var bodyParser = require('koa-bodyparser');
 var router = require('koa-router');
-var koa = require('koa');
 var render = require('koa-ejs');
 
 var staticCache = require('./middleware/static');
@@ -53,7 +53,7 @@ app.use(bodyParser());
 
 // Init Template Render
 render(app, {
-	root: path.join(__dirname, 'public/design'),
+	root: path.join(__dirname, 'public/src'),
 	layout: false,
 	viewExt: 'html',
 	cache: false,

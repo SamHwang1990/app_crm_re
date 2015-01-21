@@ -36,6 +36,10 @@ gulp.task("design_stylus", function(){
 		.pipe(gulp.dest('./public/design/css'));
 });
 
+gulp.task('view_il8n',function(){
+
+});
+
 gulp.task('default',['design_stylus', 'stylus'],function(){
 	return gulp.watch(['./stylus/**/*',config.server.designFolder + 'imgs/*'],['design_stylus', 'stylus']);
 });
