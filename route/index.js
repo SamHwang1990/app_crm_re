@@ -23,7 +23,7 @@ var getLocateFromPath = function(path){
 		return '';
 	}
 
-	pathI18n = pathMatch[1];
+	pathI18n = pathMatch[1].toLowerCase();
 	if(i18nSupport.support.indexOf(pathI18n) === -1){
 		return '';
 	}
@@ -32,27 +32,44 @@ var getLocateFromPath = function(path){
 };
 
 var getLocateFromHeader = function(acceptLanguages){
+	var locate,
+		acceptLangLength,
+		i=0,
+		currentLang;
 	if(!acceptLanguages){
 		return '';
 	}
 
-	// TODO: forEach the i18nSupport to find if there hava a match language
-	_.forEach(i18nSupport.support,function(lang){
+	acceptLangLength = acceptLanguages.length;
+	// get the first accept language type which is supported by system
+	for(i; i<acceptLangLength;i++){
+		currentLang = acceptLanguages[i].toLowerCase();
+		if(i18nSupport.support.indexOf(currentLang) === -1){
+			continue;
+		}
+		locate = currentLang;
+		break;
+	}
+	return locate;
+};
 
-	});
+var getLocate = function(request){
+	var locate;
+	locate = getLocateFromPath(request.path);
+	if(!locate){
+		locate = getLocateFromHeader(request.acceptsLanguages());
+	}
+	if(!locate){
+		locate = i18nSupport.default;
+	}
+	return locate;
 };
 
 function routes(app){
 	var locate;
 	app.use(function* (next){
-		var responseBody = '';
 		locate = getLocate(this.request);
-		responseBody += locate;
-		responseBody += " ";
-		responseBody += this.request.acceptsLanguages();
-		responseBody += " ";
-		responseBody += this.request.path;
-		this.response.body = responseBody;
+		this.response.body = locate;
 		yield next;
 	});
 }
