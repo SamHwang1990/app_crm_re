@@ -37,7 +37,6 @@ gulp.task("design_stylus", function(){
 });
 
 gulp.task('view_il8n',function(){
-
 });
 
 gulp.task('default',['design_stylus', 'stylus'],function(){
