@@ -9,6 +9,8 @@
  */
 
 var _ = require('lodash');
+var Router = require('koa-router');
+var mount = require('koa-common').mount;
 
 var logger = require('../middleware/logger');
 var config = require('../config');
@@ -67,8 +69,21 @@ var getLocate = function(request){
 
 function routes(app){
 	var locate;
+	var apiRouter = new Router();
+
+	app.use(Router(app));
+
+	apiRouter.get('/test', function* (){
+		this.response.body = this.path;
+		return;
+	});
+
+
+	app.use(mount('/api', apiRouter.middleware()));
+
 	app.use(function* (next){
 		locate = getLocate(this.request);
+		console.log("i'm in all");
 		this.response.body = locate;
 		yield next;
 	});

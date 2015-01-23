@@ -19,7 +19,6 @@ var path = require('path');
 var koa = require('koa');
 var middlewares = require('koa-common');
 var bodyParser = require('koa-bodyparser');
-var router = require('koa-router');
 var render = require('koa-ejs');
 
 var staticCache = require('./middleware/static');
@@ -53,7 +52,6 @@ render(app, {
 	debug: true
 });
 
-app.use(router(app));
 routes(app);
 
 app.on('error',function(err, ctx){
