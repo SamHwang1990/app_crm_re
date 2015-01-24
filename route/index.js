@@ -13,7 +13,7 @@ var Router = require('koa-router');
 var mount = require('koa-common').mount;
 
 var logger = require('../middleware/logger');
-var getLocate = require('../utils/getLocate');
+var getLocateModule = require('../utils/getLocate')();
 
 var apiRoute = require('./apiRoute');
 
@@ -24,9 +24,9 @@ function routes(app){
 	app.use(Router(app));
 	app.use(mount('/api', apiRoute.middleware()));
 	app.use(function* (next){
-		locate = getLocate(this.request);
-		console.log("i'm in all");
+		locate = getLocateModule.getLocate(this.request.path, this.acceptsLanguages());
 		this.response.body = locate;
+		this.response.status = 200;
 		yield next;
 	});
 }
