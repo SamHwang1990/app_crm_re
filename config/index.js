@@ -58,7 +58,7 @@ var config = {
 	/* i18n setting */
 	i18nSupport:{
 		support:["zh-cn","zh-hk","en-us"],
-		default:["zh-cn"]
+		default:"zh-cn"
 	}
 };
 
