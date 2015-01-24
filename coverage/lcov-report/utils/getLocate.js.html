@@ -199,7 +199,7 @@
     <h1>Code coverage report for <span class="entity">utils/getLocate.js</span></h1>
     <h2>
         
-        Statements: <span class="metric">100% <small>(34 / 34)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">100% <small>(32 / 32)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
         Branches: <span class="metric">100% <small>(12 / 12)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -208,7 +208,7 @@
         Functions: <span class="metric">100% <small>(4 / 4)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
-        Lines: <span class="metric">100% <small>(34 / 34)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">100% <small>(32 / 32)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
@@ -280,11 +280,7 @@
 62
 63
 64
-65
-66
-67
-68
-69</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+65</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -297,6 +293,7 @@
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">9</span>
 <span class="cline-any cline-yes">9</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -313,7 +310,6 @@
 <span class="cline-any cline-yes">5</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-yes">10</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -334,10 +330,6 @@
 <span class="cline-any cline-yes">4</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4</span>
@@ -364,53 +356,49 @@ var i18nSupport = config.i18nSupport;
 &nbsp;
 var getLocate = function(){
     var locate;
-    var _getLocateFromPath = function(path){
-        var pathReg = /\/([a-zA-Z0-9\-_\.]+)\/?.*/i;
-        var pathMatch, pathI18n;
-&nbsp;
-        pathMatch = pathReg.exec(path);
-        if(!pathMatch){
-            return '';
-        }
-&nbsp;
-        pathI18n = pathMatch[1].toLowerCase();
-        if(i18nSupport.support.indexOf(pathI18n) === -1){
-            return '';
-        }
-&nbsp;
-        return pathI18n;
-    };
-&nbsp;
-    var _getLocateFromHeader = function(acceptLanguages){
-        var langMatch = '',
-            acceptLangLength,
-            i = 0,
-            currentLang;
-&nbsp;
-        if(!acceptLanguages){
-            return '';
-        }
-&nbsp;
-        acceptLangLength = acceptLanguages.length;
-        // get the first accept-language type which is supported by system
-        for(i; i&lt;acceptLangLength;i++){
-            currentLang = acceptLanguages[i].toLowerCase();
-            if(i18nSupport.support.indexOf(currentLang) === -1){
-                continue;
-            }
-            langMatch = currentLang;
-            break;
-        }
-        return langMatch;
-    };
-&nbsp;
     return {
-        getLocateFromPath: _getLocateFromPath,
-        getLocateFromHeader: _getLocateFromHeader,
+        getLocateFromPath: function(path){
+            var pathReg = /\/([a-zA-Z0-9\-_\.]+)\/?.*/i;
+            var pathMatch, pathI18n;
+&nbsp;
+            pathMatch = pathReg.exec(path);
+            if(!pathMatch){
+                return '';
+            }
+&nbsp;
+            pathI18n = pathMatch[1].toLowerCase();
+            if(i18nSupport.support.indexOf(pathI18n) === -1){
+                return '';
+            }
+&nbsp;
+            return pathI18n;
+        },
+        getLocateFromHeader: function(acceptLanguages){
+            var langMatch = '',
+                acceptLangLength,
+                i = 0,
+                currentLang;
+&nbsp;
+            if(!acceptLanguages){
+                return '';
+            }
+&nbsp;
+            acceptLangLength = acceptLanguages.length;
+            // get the first accept-language type which is supported by system
+            for(i; i&lt;acceptLangLength;i++){
+                currentLang = acceptLanguages[i].toLowerCase();
+                if(i18nSupport.support.indexOf(currentLang) === -1){
+                    continue;
+                }
+                langMatch = currentLang;
+                break;
+            }
+            return langMatch;
+        },
         getLocate: function(path, acceptLanguages){
-            locate = _getLocateFromPath(path);
+            locate = this.getLocateFromPath(path);
             if(!locate){
-                locate = _getLocateFromHeader(acceptLanguages);
+                locate = this.getLocateFromHeader(acceptLanguages);
             }
             if(!locate){
                 locate = i18nSupport.default;
@@ -425,7 +413,7 @@ module.exports = getLocate;</pre></td></tr>
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Jan 24 2015 09:34:00 GMT+0800 (CST)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Jan 24 2015 09:36:42 GMT+0800 (CST)</div>
 </div>
 
 <script src="../prettify.js"></script>
