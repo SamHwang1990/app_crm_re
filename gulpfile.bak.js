@@ -37,8 +37,8 @@ var buildConfig = {
 	}
 };
 
-gulp.task('compile-stylus',function(){
-	return gulp.src('./stylus/**/*.styl')
+gulp.task('stylus',function(){
+	gulp.src('./stylus/**/*.styl')
 		.pipe(plugin.stylus({
 			use:nib(),
 			compress:true
@@ -51,25 +51,23 @@ gulp.task('view_il8n',function(){
 });
 
 gulp.task('clean',function(){
-	gulp.src('public/dest/**/*', {read:false})
+	gulp.src('public/dest/**/*.*', {read:false})
 		.pipe(plugin.clean({force: true}));
 });
 
-gulp.task('html2js-common', function(){
-	return gulp.src(buildConfig.src.tpl.common)
+gulp.task('html2js', function(){
+	gulp.src(buildConfig.src.tpl.common)
 		.pipe(plugin.ngHtml2js({
 			moduleName: 'templates.common',
-			prefix: ''
+			prefix:'public/src/common/'
 		}))
 		.pipe(plugin.concat('common.js'))
 		.pipe(gulp.dest(buildConfig.src.tplDist));
-});
 
-gulp.task('html2js-app', function(){
-	return gulp.src(buildConfig.src.tpl.app)
+	gulp.src(buildConfig.src.tpl.app)
 		.pipe(plugin.ngHtml2js({
 			moduleName: 'templates.app',
-			prefix: ''
+			prefix:'public/src/app/'
 		}))
 		.pipe(plugin.concat('app.js'))
 		.pipe(gulp.dest(buildConfig.src.tplDist));
@@ -77,7 +75,9 @@ gulp.task('html2js-app', function(){
 
 gulp.task('concat', function(){
 	//concat application js
-
+	gulp.src([buildConfig.src.js, buildConfig.src.jsTpl])
+		.pipe(plugin.concat('appcrm.js'))
+		.pipe(gulp.dest(buildConfig.dist.dir));
 
 
 	//concat index.
@@ -92,12 +92,6 @@ gulp.task('concat', function(){
 		.pipe(plugin.concat('angular.js'))
 		.pipe(gulp.dest(buildConfig.dist.vendor));
 
-});
-
-gulp.task('concat-app', function(){
-	return gulp.src([buildConfig.src.js, buildConfig.src.jsTpl])
-		.pipe(plugin.concat('appcrm.js'))
-		.pipe(gulp.dest(buildConfig.dist.dir));
 });
 
 gulp.task('copy_assets', function(){
