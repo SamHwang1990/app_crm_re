@@ -26,8 +26,8 @@ var buildConfig = {
 	},
 	src: {
 		dir: 'public/src',
-		js: ['src/**/*.js'],
-		jsTpl: ['public/dest/templates/**/*.js'],
+		js: 'public/src/**/*.js',
+		jsTpl: 'public/dest/templates/**/*.js',
 		html: ['public/src/index.html'],
 		tpl: {
 			app: ['public/src/app/**/*.tpl.html'],
@@ -43,7 +43,8 @@ gulp.task('stylus',function(){
 			use:nib(),
 			compress:true
 		}))
-		.pipe(gulp.dest('./public/src/assets/css'));
+		.pipe(gulp.dest('./public/src/assets/css'))
+		.pipe(gulp.dest('./public/design/css'));
 });
 
 gulp.task("design_stylus", function(){
@@ -59,8 +60,8 @@ gulp.task('view_il8n',function(){
 });
 
 gulp.task('clean',function(){
-	return gulp.src(buildConfig.dist.dir, {read: false})
-		.pipe(plugin.clean());
+	gulp.src('public/dest/**/*.*', {read:false})
+		.pipe(plugin.clean({force: true}));
 });
 
 gulp.task('html2js', function(){
@@ -79,17 +80,19 @@ gulp.task('html2js', function(){
 		}))
 		.pipe(plugin.concat('app.js'))
 		.pipe(gulp.dest(buildConfig.src.tplDist));
-
-	return;
 });
 
 gulp.task('concat', function(){
+	//concat application js
+	gulp.src([buildConfig.src.js, buildConfig.src.jsTpl])
+		.pipe(plugin.concat('appcrm.js'))
+		.pipe(gulp.dest(buildConfig.dist.dir));
+
+
 	//concat index.
 	gulp.src(buildConfig.src.dir + '/index.html')
 		.pipe(plugin.concat('index.html'))
 		.pipe(gulp.dest(buildConfig.dist.dir));
-
-	//concat assets
 
 	/* concat vendors */
 
@@ -98,26 +101,39 @@ gulp.task('concat', function(){
 		.pipe(plugin.concat('angular.js'))
 		.pipe(gulp.dest(buildConfig.dist.vendor));
 
-	return ;
 });
 
 gulp.task('copy_assets', function(){
+	// copy css
+	gulp.src('public/src/assets/css/appcrm.css')
+		.pipe(gulp.dest(buildConfig.dist.dir));
+
+	// copy imgs
+	gulp.src('public/src/assets/imgs/*')
+		.pipe(gulp.dest(buildConfig.dist.dir + '/imgs'));
+
+	// copy favicon.ico
+	gulp.src('public/src/assets/favicon.ico')
+		.pipe(gulp.dest(buildConfig.dist.dir));
 
 });
 
 gulp.task('build_stylus', function(){
+	gulp.src('public/src/assets/css/appcrm.css')
+		.pipe(gulp.dest(buildConfig.dist.assets + '/css'));
 
+	return ;
 });
 
 gulp.task('release_stylus', function(){
 
 });
 
-gulp.task('client_build', function(){
-
+gulp.task('client_build',['clean', 'copy_assets', 'html2js', 'concat'], function(){
+	return;
 });
 
 gulp.task('default',['design_stylus', 'stylus'],function(){
-	return gulp.watch(['./stylus/**/*',config.server.designFolder + 'imgs/*'],['design_stylus', 'stylus']);
+	return gulp.watch(['./stylus/**/*',config.server.designFolder + 'imgs/*'],['design_stylus', 'stylus', 'build_stylus']);
 });
 
