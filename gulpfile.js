@@ -15,6 +15,7 @@ var plugin = require('gulp-load-plugins')();
 
 var path = require('path');
 var nib = require('nib');
+var rimraf = require('rimraf');
 
 var config = require('./config');
 
@@ -38,7 +39,7 @@ var buildConfig = {
 };
 
 gulp.task('compile-stylus',function(){
-	return gulp.src('./stylus/**/*.styl')
+	gulp.src('./stylus/**/*.styl')
 		.pipe(plugin.stylus({
 			use:nib(),
 			compress:true
@@ -51,8 +52,7 @@ gulp.task('view_il8n',function(){
 });
 
 gulp.task('clean',function(){
-	gulp.src('public/dest/**/*', {read:false})
-		.pipe(plugin.clean({force: true}));
+	rimraf.sync(path.join(__dirname, "public/dest"));
 });
 
 gulp.task('html2js-common', function(){
@@ -75,69 +75,55 @@ gulp.task('html2js-app', function(){
 		.pipe(gulp.dest(buildConfig.src.tplDist));
 });
 
-gulp.task('concat', function(){
-	//concat application js
-
-
-
-	//concat index.
-	gulp.src(buildConfig.src.dir + '/index.html')
-		.pipe(plugin.concat('index.html'))
-		.pipe(gulp.dest(buildConfig.dist.dir));
-
-	/* concat vendors */
-
-	// concat angular.js
-	gulp.src('public/bower_components/angular/angular.js')
-		.pipe(plugin.concat('angular.js'))
-		.pipe(gulp.dest(buildConfig.dist.vendor));
-
-});
-
 gulp.task('concat-app', function(){
 	return gulp.src([buildConfig.src.js, buildConfig.src.jsTpl])
 		.pipe(plugin.concat('appcrm.js'))
 		.pipe(gulp.dest(buildConfig.dist.dir));
 });
 
-gulp.task('copy_assets', function(){
-	// copy css
-	gulp.src('public/src/assets/css/appcrm.css')
+gulp.task('concat-index', function(){
+	return gulp.src(buildConfig.src.dir + '/index.html')
+		.pipe(plugin.concat('index.html'))
 		.pipe(gulp.dest(buildConfig.dist.dir));
+});
 
-	// copy imgs
-	gulp.src('public/src/assets/imgs/*')
+gulp.task('concat-vendors', function(){
+	return gulp.src('public/bower_components/angular/angular.js')
+		.pipe(gulp.dest(buildConfig.dist.vendor));
+});
+
+gulp.task('concat-css', function(){
+	return gulp.src('public/src/assets/css/appcrm.css')
+		.pipe(gulp.dest(buildConfig.dist.dir));
+});
+
+gulp.task('concat-imgs', function(){
+	return gulp.src('public/src/assets/imgs/*')
 		.pipe(gulp.dest(buildConfig.dist.dir + '/imgs'));
+});
 
-	// copy favicon.ico
-	gulp.src('public/src/assets/favicon.ico')
+gulp.task('concat-favicon', function(){
+	return gulp.src('public/src/assets/favicon.ico')
 		.pipe(gulp.dest(buildConfig.dist.dir));
-
 });
 
-gulp.task('build_stylus', function(){
-	gulp.src('public/src/assets/css/appcrm.css')
-		.pipe(gulp.dest(buildConfig.dist.assets + '/css'));
+gulp.task('client-build',[
+	'compile-stylus',
+	'html2js-common',
+	'html2js-app',
+	'concat-app',
+	'concat-index',
+	'concat-vendors',
+	'copy-css',
+	'copy-imgs',
+	'copy-favicon']);
 
-	return ;
-});
-
-gulp.task('release_stylus', function(){
-
-});
-
-gulp.task('client_build',['stylus', 'copy_assets', 'html2js', 'concat']);
-
-gulp.task('stylus_watch',['design_stylus', 'stylus'],function(){
-	return gulp.watch(['./stylus/**/*',config.server.designFolder + 'imgs/*'],['stylus', 'build_stylus']);
-});
-
-gulp.task('client_watch',['clean','client_build'],function(){
+gulp.task('client-watch',['clean', 'client-build'],function(){
 	return gulp.watch(['./stylus/**/*',
 		buildConfig.src.js,
 		buildConfig.src.html,
 		buildConfig.src.jsTpl,
 		buildConfig.src.tpl.app,
-		buildConfig.src.tpl.common],['client_build']);
+		buildConfig.src.tpl.common],['client-build']);
 });
 
