@@ -4,3 +4,4 @@ modules_demos/
 node_modules/
 Doc_project/
 public/design/bower_components/
+public/bower_components/

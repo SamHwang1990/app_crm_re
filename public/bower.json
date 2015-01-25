@@ -1,0 +1,16 @@
+{
+  "name": "app_crm_re",
+  "version": "0.0.1",
+  "homepage": "https://github.com/SamHwang1990/app_crm_re",
+  "authors": [
+    "SamHwang1990 <samhwang1990@gmail.com>"
+  ],
+  "description": "front-end vendor of app_crm_re",
+  "keywords": [
+    "app_crm_re"
+  ],
+  "license": "MIT",
+  "dependencies":{
+    "angular": "1.3.10"
+  }
+}
