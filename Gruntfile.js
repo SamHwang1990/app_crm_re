@@ -9,7 +9,7 @@ module.exports = function(grunt){
         ' * Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %>\n */\n',
         src: {
             js: ['public/src/**/*.js'],
-            jsTpl: ['public/<%= distdir %>/templates/**/*.js'],
+            jsTpl: ['<%= distdir %>/templates/**/*.js'],
             html: ['public/src/index.html'],
             tpl: {
                 app: ['public/src/app/**/*.tpl.html'],
@@ -21,7 +21,10 @@ module.exports = function(grunt){
         clean: ['<%= distdir %>/*'],
         copy: {
             assets: {
-                files: [{ dest: '<%= distdir %>', src : '**', expand: true, cwd: 'src/assets/' }]
+                files: [
+                    { dest: '<%= distdir %>/imgs', src : '**', expand: true, cwd: 'public/src/assets/imgs' },
+                    { dest: '<%= distdir %>', src: 'favicon.ico', expand: true, cwd: 'public/src/assets'}
+                ]
             }
         },
         //karma: {
