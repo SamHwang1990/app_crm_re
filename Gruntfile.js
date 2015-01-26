@@ -10,8 +10,6 @@ module.exports = function(grunt){
         src: {
             js: ['public/src/**/*.js'],
             jsTpl: ['public/<%= distdir %>/templates/**/*.js'],
-            specs: ['public/test/**/*.spec.js'],
-            scenarios: ['public/test/**/*.scenario.js'],
             html: ['public/src/index.html'],
             tpl: {
                 app: ['public/src/app/**/*.tpl.html'],
@@ -100,12 +98,14 @@ module.exports = function(grunt){
             }
         },
         watch:{
-            all: {
-                files:['<%= src.js %>', '<%= src.specs %>', '<%= src.lessWatch %>', '<%= src.tpl.app %>', '<%= src.tpl.common %>', '<%= src.html %>'],
-                tasks:['default','timestamp']
-            },
             build: {
-                files:['<%= src.js %>', '<%= src.specs %>', '<%= src.lessWatch %>', '<%= src.tpl.app %>', '<%= src.tpl.common %>', '<%= src.html %>'],
+                files:[
+                    '<%= src.js %>',
+                    '<%= src.stylusWatch %>',
+                    '<%= src.tpl.app %>',
+                    '<%= src.tpl.common %>',
+                    '<%= src.html %>'
+                ],
                 tasks:['build','timestamp']
             }
         }
@@ -126,6 +126,6 @@ module.exports = function(grunt){
     });
 
     //grunt.registerTask('name', [dep])
-    grunt.registerTask('default', ['build']);
+    grunt.registerTask('default', ['build', 'watch']);
     grunt.registerTask('build', ['clean','html2js','concat','stylus:build','copy:assets']);
 };
