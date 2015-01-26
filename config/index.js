@@ -31,8 +31,9 @@ var config = {
 		bindingHost: '127.0.0.1',
 		listenPort: 3000,
 		securePort: 8433,
-		distFolder: path.resolve(__dirname, '../public/src'),
+		distFolder: path.resolve(__dirname, '../public/dist'),
 		designFolder: path.resolve(__dirname, '../public/design'),
+		srcFolder: path.resolve(__dirname, '../public/src'),
 		staticUrl : '/static',
 		sessionSecret: 'app_crm_session_secret'
 	},

@@ -22,8 +22,9 @@ module.exports = function(grunt){
         copy: {
             assets: {
                 files: [
-                    { dest: '<%= distdir %>/imgs', src : '**', expand: true, cwd: 'public/src/assets/imgs' },
-                    { dest: '<%= distdir %>', src: 'favicon.ico', expand: true, cwd: 'public/src/assets'}
+                    { dest: '<%= distdir %>/assets/imgs', src : '**', expand: true, cwd: 'public/src/assets/imgs' },
+                    { dest: '<%= distdir %>', src: 'favicon.ico', expand: true, cwd: 'public/src/assets'},
+                    { dest: '<%= distdir %>/assets/bower/bootstrap', src: '**', expand: true, cwd: 'public/bower_components/bootstrap/dist'}
                 ]
             }
         },
@@ -66,7 +67,11 @@ module.exports = function(grunt){
             },
             angular: {
                 src:['public/bower_components/angular/angular.js'],
-                dest: '<%= distdir %>/angular.js'
+                dest: '<%= distdir %>/assets/bower/angular.js'
+            },
+            jquery:{
+                src:['public/bower_components/jquery/dist/jquery.js'],
+                dest: '<%= distdir %>/assets/bower/jquery.js'
             }
         },
         uglify: {
