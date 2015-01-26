@@ -1,5 +1,5 @@
 {
-  "name": "APP_CRM",
+  "name": "app_crm",
   "description": "The new CRM System for APP College Preparatin & Consultancy Inc. based on nodejs, koajs, and angularJS.",
   "version": "0.0.1",
   "homepage": "",
@@ -37,9 +37,17 @@
     "lodash": "2.4.1",
     "mkdirp": "0.5.0",
     "mongoose": "3.8.21",
-    "rimraf": "^2.2.8"
+    "rimraf": "2.2.8"
   },
   "devDependencies": {
+    "grunt": "0.4.5",
+    "grunt-contrib-clean": "0.6.0",
+    "grunt-contrib-concat": "0.5.0",
+    "grunt-contrib-copy": "0.7.0",
+    "grunt-contrib-stylus": "0.20.0",
+    "grunt-contrib-uglify": "0.7.0",
+    "grunt-contrib-watch": "0.6.1",
+    "grunt-html2js": "0.3.0",
     "gulp": "3.8.10",
     "gulp-clean": "0.3.1",
     "gulp-concat": "2.4.3",

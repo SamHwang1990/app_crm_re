@@ -46,6 +46,9 @@ gulp.task('compile-stylus',function(){
 		}))
 		.pipe(gulp.dest('./public/src/assets/css'))
 		.pipe(gulp.dest('./public/design/css'));
+
+	return gulp.src('public/src/assets/css/appcrm.css')
+		.pipe(gulp.dest(buildConfig.dist.dir));
 });
 
 gulp.task('view_il8n',function(){
@@ -81,44 +84,39 @@ gulp.task('concat-app', function(){
 		.pipe(gulp.dest(buildConfig.dist.dir));
 });
 
-gulp.task('concat-index', function(){
+gulp.task('copy-index', function(){
 	return gulp.src(buildConfig.src.dir + '/index.html')
-		.pipe(plugin.concat('index.html'))
 		.pipe(gulp.dest(buildConfig.dist.dir));
 });
 
-gulp.task('concat-vendors', function(){
-	return gulp.src('public/bower_components/angular/angular.js')
+gulp.task('copy-vendors', function(){
+	gulp.src('public/bower_components/angular/angular.js')
 		.pipe(gulp.dest(buildConfig.dist.vendor));
+
+	return;
 });
 
-gulp.task('concat-css', function(){
-	return gulp.src('public/src/assets/css/appcrm.css')
-		.pipe(gulp.dest(buildConfig.dist.dir));
-});
-
-gulp.task('concat-imgs', function(){
-	return gulp.src('public/src/assets/imgs/*')
+gulp.task('copy-imgs', function(){
+	gulp.src('public/src/assets/imgs/*')
 		.pipe(gulp.dest(buildConfig.dist.dir + '/imgs'));
-});
 
-gulp.task('concat-favicon', function(){
-	return gulp.src('public/src/assets/favicon.ico')
+	gulp.src('public/src/assets/favicon.ico')
 		.pipe(gulp.dest(buildConfig.dist.dir));
+
+	return ;
 });
 
 gulp.task('client-build',[
+	'clean',
 	'compile-stylus',
 	'html2js-common',
 	'html2js-app',
 	'concat-app',
-	'concat-index',
-	'concat-vendors',
-	'copy-css',
-	'copy-imgs',
-	'copy-favicon']);
+	'copy-index',
+	'copy-vendors',
+	'copy-imgs']);
 
-gulp.task('client-watch',['clean', 'client-build'],function(){
+gulp.task('client-watch',['client-build'],function(){
 	return gulp.watch(['./stylus/**/*',
 		buildConfig.src.js,
 		buildConfig.src.html,
