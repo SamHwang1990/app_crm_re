@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="zh-CN" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title><%= locate %>k</title>
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/assets/bower/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/app_crm.css">
+    <script type="text/javascript" src="/static/assets/bower/angular.js"></script>
+    <script type="text/javascript" src="/static/assets/bower/jquery.js"></script>
+    <script type="text/javascript" src="/static/app_crm.js"></script>
+</head>
+<body class="ac-body">
+
+<header class="ac-header navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".ac-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                <img src="/static/assets/imgs/app_logo_h30.png" alt="app crm brand" />
+            </a>
+        </div>
+        <nav class="collapse navbar-collapse ac-navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav navbar-left">
+                <li class="active"><a href="javascript:void(0)">所有学生</a> </li>
+                <li><a href="javascript:void(0)">销售跟踪</a> </li>
+                <li><a href="javascript:void(0)">语言考试跟踪</a> </li>
+                <li><a href="javascript:void(0)">申请跟踪</a> </li>
+                <li><a href="javascript:void(0)">系统配置</a> </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="javascript:void(0)">
+                        <img src="/static/assets/imgs/avatar_20x20.jpg" class="avatar_20 img-circle" alt="user avatar" />
+                        samhwang1990
+                    </a>
+                </li>
+                <li><a href="javascript:void(0)">消息提醒</a> </li>
+                <li><a href="javascript:void(0)">登出</a> </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="ac-main">
+    <article class="ac-info-jumbotron">
+        <div class="container">
+            <div class="ac-info-subTitle">Welcome Back!</div>
+            <div class="ac-info-avatar"><img src="/static/assets/imgs/avatar_230x230.jpg" /> </div>
+            <div><h1>早上好，黄志源！</h1></div>
+            <div class="ac-info-controls">
+                <a href="javascript:void(0)" class="ac-btn ac-btn-success">查看个人主页</a>
+            </div>
+            <p class="ac-info-nav">
+                <a href="javascript:void(0)">系统通知</a>
+                <a  href="javascript:void(0)">我的吐嘈</a>
+            </p>
+        </div>
+    </article>
+    <article class="ac-main-block ac-main-block-odd">
+        <div class="container">
+            <div class="ac-main-block-inside">
+                <h2>
+                    系统通知
+                    <!--<p>wolegeca</p>-->
+                </h2>
+                <div class="ac-panel-groups">
+                    <div class="ac-panel row">
+                        <div class="col-md-12 ac-panel-abs">
+                            <div class="col-md-9 ac-panel-title">
+                                今天怎么不开心，我说在我的想象中有一双滑板鞋.今天怎么不开心，我说在我的想象中有一双滑板鞋.今天怎么不开心，我说在我的想象中有一双滑板鞋
+                            </div>
+                            <div class="col-md-2 col-md-offset-1 ac-panel-meta">2015-01-04</div>
+                            <div class="ac-panel-arrow">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </div>
+                            <a class="ac-panel-href" href="javascript:void(0)"></a>
+                        </div>
+                    </div>
+                    <div class="ac-panel-nav">
+                        <a href="javascript:void(0)" class="ac-btn ac-btn-disable">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a href="javascript:void(0)" class="ac-btn ac-btn-success">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <article class="ac-main-block ac-main-block-even">
+        <div class="container">
+            <div class="ac-main-block-inside">
+                <h2>我的吐槽</h2>
+                <form role="form" class="ac-advice-form">
+                    <div class="form-group">
+                        <label class="sr-only" for="advice-textarea">Email address</label>
+                        <textarea id="advice-textarea" class="form-control" rows="5" placeholder="我的吐槽"></textarea>
+                    </div>
+                    <input type="button" class="ac-btn ac-btn-success" value="提交吐嘈" />
+                </form>
+            </div>
+            <div class="ac-main-block-inside">
+                <h2>吐嘈历史</h2>
+                <div class="ac-panel-groups">
+                    <div class="ac-panel row">
+                        <div class="ac-panel-abs col-md-12">
+                            <div class="col-md-9 ac-panel-title">
+                                <span class="badge ac-badge-info">New</span>
+                                今天怎么不开心，我说在我的想象中有一双滑板鞋.今天怎么不开心，我说在我的想象中有一双滑板鞋.今天怎么不开心，我说在我的想象中有一双滑板鞋
+                            </div>
+                            <div class="col-md-2 col-md-offset-1 ac-panel-meta">2015-01-04</div>
+                            <div class="ac-panel-arrow">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </div>
+                            <a class="ac-panel-href" href="javascript:void(0)"></a>
+                        </div>
+                    </div>
+                    <div class="ac-panel-nav">
+                        <a href="javascript:void(0)" class="ac-btn ac-btn-disable">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a href="javascript:void(0)" class="ac-btn ac-btn-success">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+</div>
+<footer class="ac-footer">
+    <div class="container">
+        <p>Designed and built with all the lovely <a href="http://www.appedu.org" target="_blank">appers</a>.</p>
+        <p>Copyright @ 2014-2015</p>
+        <p><a class="beian_link" href="http://www.miibeian.gov.cn/" target="_blank">粤ICP备14010098号</a></p>
+    </div>
+</footer>
+</body>
+</html>

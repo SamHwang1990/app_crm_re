@@ -45,7 +45,7 @@ app.use(bodyParser());
 
 
 render(app, {
-	root: path.join(__dirname, 'public/src'),
+	root: path.resolve('public/dist'),
 	layout: false,
 	viewExt: 'html',
 	cache: false,

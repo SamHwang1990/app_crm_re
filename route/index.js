@@ -23,11 +23,12 @@ function routes(app){
 
 	app.use(Router(app));
 	app.use(mount('/api', apiRoute.middleware()));
-	app.use(function* (next){
+	app.use(function* (){
 		locate = getLocateModule.getLocate(this.request.path, this.acceptsLanguages());
-		this.response.body = locate;
-		this.response.status = 200;
-		yield next;
+		console.log(locate);
+		yield this.render('index', {
+			locate: locate
+		});
 	});
 }
 

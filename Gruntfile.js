@@ -22,6 +22,7 @@ module.exports = function(grunt){
         copy: {
             assets: {
                 files: [
+                    { dest: '<%= distdir %>', src: 'index.html', expand: true, cwd: 'public/src'},
                     { dest: '<%= distdir %>/assets/imgs', src : '**', expand: true, cwd: 'public/src/assets/imgs' },
                     { dest: '<%= distdir %>', src: 'favicon.ico', expand: true, cwd: 'public/src/assets'},
                     { dest: '<%= distdir %>/assets/bower/bootstrap', src: '**', expand: true, cwd: 'public/bower_components/bootstrap/dist'}
@@ -57,13 +58,6 @@ module.exports = function(grunt){
                 },
                 src:['<%= src.js %>', '<%= src.jsTpl %>'],
                 dest:'<%= distdir %>/<%= pkg.name %>.js'
-            },
-            index: {
-                src: ['src/index.html'],
-                dest: '<%= distdir %>/index.html',
-                options: {
-                    process: true
-                }
             },
             angular: {
                 src:['public/bower_components/angular/angular.js'],
