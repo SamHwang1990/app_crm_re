@@ -44,7 +44,7 @@ module.exports = function(grunt){
             },
             common: {
                 options: {
-                    base: 'src/common'
+                    base: 'public/src/common'
                 },
                 src: ['<%= src.tpl.common %>'],
                 dest: '<%= distdir %>/templates/common.js',

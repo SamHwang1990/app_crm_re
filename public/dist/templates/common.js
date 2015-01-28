@@ -1,7 +1,7 @@
-angular.module('templates.common', ['../../public/src/common/aha.tpl.html']);
+angular.module('templates.common', ['aha.tpl.html']);
 
-angular.module("../../public/src/common/aha.tpl.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../../public/src/common/aha.tpl.html",
+angular.module("aha.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("aha.tpl.html",
     "<form name=\"form\" novalidate class=\"login-form\">\n" +
     "    <div class=\"modal-header\">\n" +
     "        <h4>Sign in</h4>\n" +

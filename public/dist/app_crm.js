@@ -1,28 +1,22 @@
-/*! app_crm - v0.0.1 - 2015-01-27
+/*! app_crm - v0.0.1 - 2015-01-28
  * Copyright (c) 2015 samhwang1990 <samhwang1990@gmail.com> (http://blog.ssyog.com);
  * Licensed 
  */
 /**
- * Created by sam on 15-1-25.
+ * Created by sam on 15-1-28.
  */
 
-var temp = 'i hdfdfave told youfgdfdfdf';
-angular.module('templates.app', ['tfboys.tpl.html', 'young.tpl.html']);
+angular.module('app', [
+    'templates.app',
+    'templates.common'
+]);
+angular.module('templates.app', []);
 
-angular.module("tfboys.tpl.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("tfboys.tpl.html",
-    "tfboys are too young to naive, aha");
-}]);
 
-angular.module("young.tpl.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("young.tpl.html",
-    "<p>i'm what i am!</p>");
-}]);
+angular.module('templates.common', ['aha.tpl.html']);
 
-angular.module('templates.common', ['../../public/src/common/aha.tpl.html']);
-
-angular.module("../../public/src/common/aha.tpl.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("../../public/src/common/aha.tpl.html",
+angular.module("aha.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("aha.tpl.html",
     "<form name=\"form\" novalidate class=\"login-form\">\n" +
     "    <div class=\"modal-header\">\n" +
     "        <h4>Sign in</h4>\n" +

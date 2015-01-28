@@ -39,8 +39,10 @@ app.use(function* (next){
 	yield next;
 });
 
+// serve static files
 staticCache(app);
 
+// http parser
 app.use(bodyParser());
 
 
