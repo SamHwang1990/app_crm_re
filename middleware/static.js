@@ -21,7 +21,7 @@ var config = require('../config');
 
 module.exports = function(app){
 	// Serve up the favicon
-	app.use(middlewares.favicon(config.server.distFolder + '/favicon.ico'));
+	app.use(middlewares.favicon(config.server.distFolder + 'favicon.ico'));
 
 	// First looks for a static file: index.html, css, images, etc.
 	app.use(middlewares.mount(config.server.staticUrl, middlewares.compress()));

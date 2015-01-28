@@ -16,15 +16,20 @@
 
 var http = require('http');
 var path = require('path');
+
 var koa = require('koa');
 var middlewares = require('koa-common');
 var bodyParser = require('koa-bodyparser');
 var render = require('koa-ejs');
+var session = require('koa-generic-session');
+var redisStore = require('koa-redis');
 
+var packageJson = require('./package.json');
 var staticCache = require('./middleware/static');
 var logger = require('./middleware/logger');
 var routes = require('./route');
 var config = require('./config');
+var passport = require('./middleware/auth');
 
 var app = koa();
 
@@ -44,6 +49,16 @@ staticCache(app);
 
 // http parser
 app.use(bodyParser());
+
+// initialize session
+app.keys = [packageJson.name];
+app.use(session({
+	store: redisStore()
+}));
+
+// initialize passport with session
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 render(app, {
