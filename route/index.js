@@ -37,15 +37,10 @@ function routes(app){
 	app.use(function* (){
 		locate = getLocateModule.getLocate(this.request.path, this.acceptsLanguages());
 		this.session.locate = locate;
-		console.log(this);
 
-		if (this.isAuthenticated()) {
-			yield this.render('index', {
-				locate: locate
-			});
-		} else {
-			this.redirect('/auth/login')
-		}
+		yield this.render('index', {
+			locate: locate
+		});
 	});
 }
 

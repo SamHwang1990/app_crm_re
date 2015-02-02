@@ -51,8 +51,12 @@ staticCache(app);
 app.use(bodyParser());
 
 // initialize session
-app.keys = [packageJson.name];
+app.keys = ['app-crm'];
 app.use(session({
+	cookies:{
+		signed: true,
+		maxage: null
+	},
 	store: redisStore()
 }));
 

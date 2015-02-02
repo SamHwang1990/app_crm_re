@@ -8,7 +8,7 @@ var Router = require('koa-router');
 var authRoute = new Router();
 
 authRoute.get('/login', function* (){
-    this.response.body = "login";
+    this.response.body = this.session.locate;
     return;
 });
 

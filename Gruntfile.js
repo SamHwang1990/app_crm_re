@@ -60,7 +60,7 @@ module.exports = function(grunt){
                 dest:'<%= distdir %>/<%= pkg.name %>.js'
             },
             angular: {
-                src:['public/bower_components/angular/angular.js'],
+                src:['public/bower_components/angular/angular.js', 'public/bower_components/angular-route/angular-route.js'],
                 dest: '<%= distdir %>/assets/bower/angular.js'
             },
             jquery:{
