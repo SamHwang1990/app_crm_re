@@ -7,9 +7,11 @@ var Router = require('koa-router');
 
 var authRoute = new Router();
 
-authRoute.get('/login', function* (){
-    this.response.body = this.session.locate;
-    return;
+authRoute.get('/current-user', function* (){
+    this.status = 200;
+    this.body = {
+        currentUser: 'sam'
+    };
 });
 
 module.exports = authRoute;
