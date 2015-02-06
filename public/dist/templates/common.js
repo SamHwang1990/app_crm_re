@@ -1,4 +1,4 @@
-angular.module('templates.common', ['aha.tpl.html']);
+angular.module('templates.common', ['aha.tpl.html', 'security/login/login.tpl.html']);
 
 angular.module("aha.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("aha.tpl.html",
@@ -26,4 +26,9 @@ angular.module("aha.tpl.html", []).run(["$templateCache", function($templateCach
     "    </div>\n" +
     "</form>\n" +
     "");
+}]);
+
+angular.module("security/login/login.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("security/login/login.tpl.html",
+    "Login, Login");
 }]);

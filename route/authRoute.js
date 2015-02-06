@@ -10,7 +10,6 @@ var authRoute = new Router();
 authRoute.get('/current-user', function* (){
     this.status = 200;
     this.body = {
-        currentUser: 'sam'
     };
 });
 

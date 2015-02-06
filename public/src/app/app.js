@@ -16,8 +16,8 @@ angular.module('app').config(['$routeProvider', '$locationProvider', function ($
     $routeProvider.otherwise({redirectTo:'/'});
 }]);
 
-angular.module('app').run(['security', function(security) {
-    security.requestCurrentUser();
+angular.module('app').run(['securityAuthorization', function(security) {
+    security.requireAuthenticatedUser();
 }]);
 
 

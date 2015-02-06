@@ -28,6 +28,7 @@ angular.module('security.service', ['security.retryQueue'])
             },
 
             showLogin: function(){
+                //retryQueue.cancelAll();
                 redirectToLogin();
             },
 

@@ -4,5 +4,7 @@
 
 angular.module('security', [
     'security.service',
-    'security.retryQueue'
+    'security.retryQueue',
+    'security.authorization',
+    'security.login'
 ]);
