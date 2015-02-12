@@ -6,33 +6,44 @@
 
 var passport = require('koa-passport');
 var LocalStrategy = require('passport-local').Strategy;
+var UserInfoDal = require('../dal').UserInfoDAL;
 
-passport.use(new LocalStrategy(function(username, password, done){
-        var tempUser = {
-            username: 'Sam',
-            password: 'aha',
-            email: 'samhwang1990@gmail.com'
-        };
+passport.use(new LocalStrategy(function(userEmail, password, done){
 
-        if(!username){
-            return done(null, false, {message: "username is blank!"});
+        if(!userEmail){
+            return done(null, false, {message: "user email is blank!"});
         }
-        if(username !== tempUser.username){
-            return done(null, false, {message: "unknown user name!"});
-        }
-        if(password !== tempUser.password){
-            return done(null, false, {message: 'password do not match!'});
-        }
-        return done(null, tempUser);
+
+        UserInfoDal.findByEmail(userEmail, function(err, user){
+            if(err){
+                return done(err, null);
+            }
+
+            if(!user){
+                return done(null, false, {message: "unknown user email!"});
+            }
+
+            if(password !== user.Passwd){
+                return done(null, false, {message: 'password do not match!'});
+            }
+
+            return done(null, user);
+        });
     }
 ));
 
 passport.serializeUser(function(user, done){
-   done(null, user);
+   done(null, user._id);
 });
 
-passport.deserializeUser(function(user, done){
-   done(null, user);
+passport.deserializeUser(function(userId, done){
+    UserInfoDal.findById(userId, function(err, user){
+        if(err){
+            return done(err, null);
+        }
+        delete  user.Passwd;
+        done(null, user);
+    });
 });
 
 module.exports = passport;
