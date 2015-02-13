@@ -19,14 +19,7 @@ authRoute.get('/current-user', function* (){
 authRoute.post('/login', function* (){
     var that = this;
     passport.authenticate('local', function(err, user, info){
-        if (err) { return yield* next(err) }
-        if (!user) {
 
-        }
-        req.logIn(user, function(err) {
-            if (err) { return next(err); }
-            return res.redirect('/users/' + user.username);
-        });
     })
 });
 
