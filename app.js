@@ -17,12 +17,10 @@
 var http = require('http');
 var path = require('path');
 
-var koa = require('koa');
-var middlewares = require('koa-common');
-var bodyParser = require('koa-bodyparser');
-var render = require('koa-ejs');
-var session = require('koa-generic-session');
-var redisStore = require('koa-redis');
+var express = require('express');
+var bodyParser = require('body-parser');
+var session = require('express-session');
+var redisStore = require('connect-redis')(session);
 
 var packageJson = require('./package.json');
 var staticCache = require('./middleware/static');
@@ -31,56 +29,70 @@ var routes = require('./route');
 var config = require('./config');
 var passport = require('./middleware/auth');
 
-var app = koa();
+var app = express();
 
-app.use(middlewares.responseTime());
+var staticDir = config.server.distFolder;
 
-app.use(function* (next){
+// set x-response-time to response header
+app.use(require('response-time')());
+
+// request log
+app.use(function(next){
 	var logMsg =
 		'Protocol: ' + this.protocol +
 		' Path: ' + this.path +
 		' Method: ' + this.method;
 	logger.info(logMsg);
-	yield next;
+	next();
 });
 
 // serve static files
-staticCache(app);
+app.use(config.server.staticUrl,express.static(staticDir));
 
-// http parser
-app.use(bodyParser());
-
-// initialize session
-app.keys = ['app-crm'];
-app.use(session({
-	cookies:{
-		signed: true,
-		maxage: null
-	},
-	store: redisStore()
+// body parser
+app.use(require('method-override')());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+	extended:true
 }));
 
-// initialize passport with session
+// cookie and session handle
+app.use(require('cookie-parser')(config.session_secret));
+app.use(session({
+	secret:config.session_secret,
+	key:'sid',
+	store:new redisStore({
+		host: config.database.redis.host,
+		port: config.database.redis.port
+	}),
+	resave: true,
+	saveUninitialized: false	//TODO: it is not so sure to use false when i am associating with PassportJS
+}));
+
+// passport handler
 app.use(passport.initialize());
 app.use(passport.session());
 
+// ejs render
+app.set('views', path.join(__dirname, 'public/dist'));
+app.set('view engine', 'html');
+app.set('view cache', !config.debug);
+app.engine('html', require('ejs-mate'));
 
-render(app, {
-	root: path.resolve('public/dist'),
-	layout: false,
-	viewExt: 'html',
-	cache: false,
-	debug: true
-});
+// compress all request
+app.use(require('compression')());
 
+// route handle
 routes(app);
 
+// error handle
 app.on('error',function(err, ctx){
 	err.url = err.url || ctx.request.url;
 	logger.error(err);
 	logger.info(err.stack);
 });
 
+// server listen
 if (!module.parent) {
 	app.listen(config.server.listenPort);
 	logger.info('[%s] [worker:%d] Server started, web listen at %s:%d',

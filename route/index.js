@@ -9,12 +9,9 @@
  */
 
 var _ = require('lodash');
-var Router = require('koa-router');
-var mount = require('koa-common').mount;
 
 var logger = require('../middleware/logger');
 var getLocateModule = require('../utils/getLocate')();
-
 var apiRoute = require('./apiRoute');
 var authRoute = require('./authRoute');
 
@@ -44,4 +41,16 @@ function routes(app){
 	});
 }
 
-module.exports = routes;
+module.exports = function(app){
+
+	var locate;
+
+	app.use('/api', require('./apiRoute'));
+	app.use('/auth', require('./authRoute'));
+	app.use(function(req, res, next){
+		locate = getLocateModule.getLocate(req.path, req.acceptsLanguages());
+		req.session.locate = locate;
+
+		//TODO: render index
+	});
+};

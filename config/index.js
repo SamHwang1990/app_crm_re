@@ -52,9 +52,18 @@ var config = {
 	* database config
 	* */
 	database:{
-		db: 'mongodb://127.0.0.1/app_crm_dev',
-		db_name: 'app_crm_dev'
+		mongo:{
+			db: 'mongodb://127.0.0.1/app_crm_dev',
+			db_name: 'app_crm_dev'
+		},
+		redis:{
+			host: '127.0.0.1',
+			port: '6379'
+
+		}
 	},
+
+	session_secret: 'app_crm',
 
 	/* i18n setting */
 	i18nSupport:{

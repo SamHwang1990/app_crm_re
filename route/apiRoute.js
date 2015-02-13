@@ -3,16 +3,10 @@
  * API Router for app
  */
 
-var Router = require('koa-router');
-
-var apiRoute = new Router();
+var express = require('express')
 
 // TODO: find out how to solve the situation when the request path can't match the router pattern bellow
 
-apiRoute.get('/test', function* (){
-    this.response.body = this.path;
-    return;
-});
+var apiRouter = express.Router();
 
-
-module.exports = apiRoute;
+module.exports = apiRouter;

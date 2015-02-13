@@ -4,7 +4,7 @@
  * Set Passport Strategy
  */
 
-var passport = require('koa-passport');
+var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var UserInfoDal = require('../dal').UserInfoDAL;
 
