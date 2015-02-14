@@ -15,32 +15,6 @@ var getLocateModule = require('../utils/getLocate')();
 var apiRoute = require('./apiRoute');
 var authRoute = require('./authRoute');
 
-function *authed(next){
-	if (this.req.isAuthenticated()){
-		yield next;
-	} else {
-		//Set redirect path in session
-		this.session.returnTo = this.session.returnTo || this.req.url;
-		this.redirect('/auth/login');
-	}
-}
-
-function routes(app){
-	var locate;
-
-	app.use(Router(app));
-	app.use(mount('/api', apiRoute.middleware()));
-	app.use(mount('/auth', authRoute.middleware()));
-	app.use(function* (){
-		locate = getLocateModule.getLocate(this.request.path, this.acceptsLanguages());
-		this.session.locate = locate;
-
-		yield this.render('index', {
-			locate: locate
-		});
-	});
-}
-
 module.exports = function(app){
 
 	var locate;
@@ -49,8 +23,11 @@ module.exports = function(app){
 	app.use('/auth', require('./authRoute'));
 	app.use(function(req, res, next){
 		locate = getLocateModule.getLocate(req.path, req.acceptsLanguages());
-		req.session.locate = locate;
+		app.locals.locate = locate;
 
 		//TODO: render index
+		return res.render('index',{
+			locate: locate
+		})
 	});
 };

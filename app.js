@@ -23,7 +23,6 @@ var session = require('express-session');
 var redisStore = require('connect-redis')(session);
 
 var packageJson = require('./package.json');
-var staticCache = require('./middleware/static');
 var logger = require('./middleware/logger');
 var routes = require('./route');
 var config = require('./config');
@@ -31,23 +30,21 @@ var passport = require('./middleware/auth');
 
 var app = express();
 
-var staticDir = config.server.distFolder;
-
 // set x-response-time to response header
 app.use(require('response-time')());
 
 // request log
-app.use(function(next){
+app.use(function(req, res, next){
 	var logMsg =
-		'Protocol: ' + this.protocol +
-		' Path: ' + this.path +
-		' Method: ' + this.method;
+		'Protocol: ' + req.protocol +
+		' Path: ' + req.path +
+		' Method: ' + req.method;
 	logger.info(logMsg);
 	next();
 });
 
 // serve static files
-app.use(config.server.staticUrl,express.static(staticDir));
+app.use(config.server.staticUrl,express.static(config.server.distFolder));
 
 // body parser
 app.use(require('method-override')());

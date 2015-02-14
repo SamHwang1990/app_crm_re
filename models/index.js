@@ -14,7 +14,7 @@ var mongoose = require('mongoose');
 var logger = require('../middleware/logger');
 var config = require('../config');
 
-mongoose.connect(config.database.db, function(err){
+mongoose.connect(config.database.mongo.db, function(err){
 	if(err){
 		logger.error('connect to %s error: ', config.db, err.message);
 		process.exit(1);
