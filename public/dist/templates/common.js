@@ -70,7 +70,7 @@ angular.module("security/login/login.tpl.html", []).run(["$templateCache", funct
     "                        <div class=\"input-group\">\n" +
     "                            <span class=\"input-group-addon\"><span class=\"glyphicon glyphicon-user\"></span></span>\n" +
     "                            <label class=\"sr-only\" for=\"login-user-account\">Username or Email</label>\n" +
-    "                            <input type=\"text\" id=\"login-user-account\" class=\"form-control\" placeholder=\"Username or Email\">\n" +
+    "                            <input type=\"text\" id=\"login-user-account\" class=\"form-control\" placeholder=\"Email\">\n" +
     "                        </div>\n" +
     "                        <div class=\"input-group\">\n" +
     "                            <span class=\"input-group-addon\"><span class=\"glyphicon glyphicon-lock\"></span></span>\n" +
