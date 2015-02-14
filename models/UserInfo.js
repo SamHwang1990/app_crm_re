@@ -18,7 +18,8 @@ var UserInfoSchema = new Schema({
 	NameCn:{type: String, index: true},
 	NameEn:{type: String, index: true},
 	Passwd:{type: String},
-	Gender:{type: Number},
+	IsAdmin:{type: Boolean},
+	Gender:{type: Number}, //0: Male, 1: Female
 	Email:{type: String, index: true},
 	Mobile:{type: String},
 	Wechat:{type: String},

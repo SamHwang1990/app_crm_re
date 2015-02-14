@@ -14,3 +14,7 @@ exports.findById = function(userId, done){
 exports.findByEmail = function(userEmail, done){
     UserInfoModel.findOne({Email: userEmail}, done);
 };
+
+exports.findByNameCn = function(userNameCn, done){
+    UserInfoModel.findOne({NameCn: userNameCn}, done);
+};
