@@ -10,7 +10,7 @@
 
 var _ = require('lodash');
 
-var logger = require('../middleware/logger');
+var logger = require('../utils/logger');
 var getLocateModule = require('../utils/getLocate')();
 var apiRoute = require('./apiRoute');
 var authRoute = require('./authRoute');

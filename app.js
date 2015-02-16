@@ -23,7 +23,7 @@ var session = require('express-session');
 var redisStore = require('connect-redis')(session);
 
 var packageJson = require('./package.json');
-var logger = require('./middleware/logger');
+var logger = require('./utils/logger');
 var routes = require('./route');
 var config = require('./config');
 var passport = require('./middleware/auth');

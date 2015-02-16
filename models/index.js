@@ -11,7 +11,7 @@
 "use strict";
 
 var mongoose = require('mongoose');
-var logger = require('../middleware/logger');
+var logger = require('../utils/logger');
 var config = require('../config');
 
 mongoose.connect(config.database.mongo.db, function(err){
