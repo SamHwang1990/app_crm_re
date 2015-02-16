@@ -3,9 +3,6 @@
  * test for '../../utils/getLocate.js'
  */
 
-//var should = require('should');
-var sinon = require('sinon');
-
 var getLocateModule = require('../../utils/getLocate')();
 
 describe('GetLocate Module Test', function(){

@@ -30,7 +30,7 @@ exports.findByNameCn = function(userNameCn, done){
 exports.create = function(nameCn, nameEn, password, isAdmin, gender, email, mobile, wechat, remark, done){
     var user = new UserInfoModel();
 
-    password = crypt.sha1(password);
+    password = crypt.bhash(password);
 
     user.NameCn = nameCn;
     user.NameEn = nameEn;

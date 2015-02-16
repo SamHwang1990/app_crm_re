@@ -3,6 +3,7 @@
  */
 
 var crypto = require('crypto');
+var bcrypt = require('bcrypt');
 var fs = require('fs');
 var path = require('path');
 
@@ -38,4 +39,12 @@ exports.encrypt = function(str, secret) {
   var enc = cipher.update(str, 'utf8', 'hex');
   enc += cipher.final('hex');
   return enc;
+};
+
+exports.bhash = function(str){
+  return bcrypt.hashSync(str, 10);
+};
+
+exports.bcompare = function(str, hash, callback){
+  bcrypt.compare(str, hash, callback);
 };
