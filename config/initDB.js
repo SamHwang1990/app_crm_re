@@ -68,6 +68,7 @@ var initDB = {
         if(err){
           return ep.emit('error', err);
         }else{
+          done();
           return logger.info('the default admin user initializing done!');
         }
       })

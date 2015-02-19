@@ -3,3 +3,4 @@
 --ui bdd
 --recursive
 --harmony-generators
+--timeout 15000

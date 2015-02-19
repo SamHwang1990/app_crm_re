@@ -10,41 +10,75 @@ var UserInfoDal = require('../../dal/UserInfoDAL');
 
 describe('initDB Module Test', function(){
   describe('#addAdminUser()', function(){
-    var checkSpy, createSpy, deleteSyp;
+    var checkSpy, createSpy, deleteSyp, addAdminSpy;
 
-    checkSpy = sinon.spy(initDB, 'checkDocument');
+    /*checkSpy = sinon.spy(initDB, 'checkDocument');
     createSpy = sinon.spy(initDB, 'createDocument');
-    deleteSyp = sinon.spy(initDB, 'deleteDocument');
-
+    deleteSpy = sinon.spy(initDB, 'deleteDocument');*/
 
     it('CheckDocument should be called no matter what', function(done){
-      initDB.addAdminUser(done);
-      checkSpy.called.should.be.true;
+      checkSpy = sinon.spy(initDB, 'checkDocument');
+
+      initDB.addAdminUser(function(){
+        checkSpy.called.should.be.true;
+        initDB.checkDocument.restore();
+        done();
+      });
+
     });
 
     describe('if default admin is not existed', function(){
-      beforeEach(function(done){
-        checkSpy = sinon.spy(initDB, 'checkDocument', function(){
-          done(null, null);
+
+      before(function(){
+        checkSpy = sinon.stub(initDB, 'checkDocument', function(callback){
+          callback(null, null);
         });
+        deleteSyp = sinon.spy(initDB, 'deleteDocument');
+        createSpy = sinon.spy(initDB, 'createDocument');
       });
 
-      it('DeleteDocument should not be called', function(done){
-        initDB.addAdminUser(done);
-        deleteSyp.called.should.be.true;
+      after(function(){
+        initDB.checkDocument.restore();
+        initDB.createDocument.restore();
+        initDB.deleteDocument.restore();
       });
-      it('CreateDocument should be called', function(done){
-        initDB.addAdminUser(done);
-        createSpy.called.should.be.true;
+
+      it('DeleteDocument should not be called, but createDocument should be called', function(done){
+        initDB.addAdminUser(function(){
+          deleteSyp.called.should.be.false;
+          createSpy.called.should.be.true;
+          done();
+        })
       });
     });
 
     describe('if default admin is existed', function(){
-      it('DeleteDocument should be called', function(done){
 
+      before(function(){
+        checkSpy = sinon.stub(initDB, 'checkDocument', function(callback){
+          callback(null, initDB.defaultAdmin);
+        });
+        deleteSyp = sinon.spy(initDB, 'deleteDocument', function(callback){
+          callback(null);
+        });
+        createSpy = sinon.spy(initDB, 'createDocument', function(callback){
+          callback(null);
+        });
       });
-      it('CreateDocument should be called after DeleteDocument was called', function(done){
 
+      after(function(){
+        initDB.checkDocument.restore();
+        initDB.createDocument.restore();
+        initDB.deleteDocument.restore();
+      });
+
+      it('DeleteDocument should be called, and then, CreateDocument should be called', function(done){
+        initDB.addAdminUser(function(){
+          deleteSyp.called.should.be.true;
+          createSpy.called.should.be.true;
+          deleteSyp.calledBefore(createSpy).should.be.true;
+          done();
+        })
       });
     });
   });
