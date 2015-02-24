@@ -23,6 +23,8 @@ module.exports = function(app){
 	app.use('/auth', require('./authRoute'));
 	app.use(function(req, res, next){
 		locate = getLocateModule.getLocate(req.path, req.acceptsLanguages());
+
+    // TODO: Try to store locate info to session
 		app.locals.locate = locate;
 
 		//TODO: render index

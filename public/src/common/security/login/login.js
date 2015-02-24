@@ -12,8 +12,9 @@ angular.module('security.login', [], ['$routeProvider', function($routeProvider)
     })
 }])
 
-.controller('LoginPageController', ["$scope", function($scope){
-        $scope.bodyClass = 'body-login';
-    }]);
+.controller('LoginPageController', ["$scope", "$rootScope", function($scope, $rootScope){
+    $scope.bodyClass = 'body-login';
+  }]
+);
 
 
