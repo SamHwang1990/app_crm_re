@@ -8,8 +8,7 @@ angular.module('app', [
   'ngRoute',
   'templates.app',
   'templates.common',
-  'security',
-  'services.getLocal'
+  'security'
 ]);
 
 angular.module('app').config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
@@ -18,8 +17,8 @@ angular.module('app').config(['$routeProvider', '$locationProvider', function ($
 }]);
 
 angular.module('app').run(['securityAuthorization', '$rootElement', '$rootScope', function(security, $rootElement, $rootScope) {
-  var baseElement = $rootElement.find('base');
-  $rootScope.locale = baseElement.attr('href').slice(1, -1);
+  var local = $rootElement.attr('data-local');
+  $rootScope.local = local;
   security.requireAuthenticatedUser();
 }]);
 
