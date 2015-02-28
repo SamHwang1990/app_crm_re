@@ -14,22 +14,26 @@ var logger = require('../utils/logger');
 var getLocateModule = require('../utils/getLocate')();
 var apiRoute = require('./apiRoute');
 var authRoute = require('./authRoute');
+var config = require('../config');
 
 module.exports = function(app){
-
-	var locate;
-
 	app.use('/api', require('./apiRoute'));
 	app.use('/auth', require('./authRoute'));
 	app.use(function(req, res, next){
+    var locate, title, htmlLang;
+
 		locate = getLocateModule.getLocate(req.path, req.acceptsLanguages());
 
     // TODO: Try to store locate info to session
 		app.locals.locate = locate;
+    title = config.title[locate];
+    htmlLang = config.htmlLang[locate];
 
 		//TODO: render index
 		return res.render('index',{
-			locate: locate
+			locate: locate,
+      title: title,
+      htmlLang: htmlLang
 		})
 	});
 };

@@ -57,8 +57,6 @@ angular.module('security.service', ['security.retryQueue'])
                     service.currentUser = response.data.currentUser;
                     return service.currentUser;
                 });
-
-
             },
 
             isAuthenticated: function(){

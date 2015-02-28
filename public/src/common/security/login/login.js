@@ -2,17 +2,17 @@
  * Created by sam on 15-2-6.
  */
 
-angular.module('security.login', [], ['$routeProvider', function($routeProvider){
+angular.module('security.login', [], ['$routeProvider', '$rootScope', function($routeProvider, $rootScope){
 
     // TODO: judge whether the user is login or logout
-
-    $routeProvider.when('/login', {
-        templateUrl: 'security/login/login.tpl.html',
-        controller: 'LoginPageController'
-    })
+  var templateUrl = 'security/login/login.' + $rootScope.local + '.tpl.html';
+  $routeProvider.when('/login', {
+    templateUrl: templateUrl,
+    controller: 'LoginPageController'
+  })
 }])
 
-.controller('LoginPageController', ["$scope", "$rootScope", function($scope, $rootScope){
+.controller('LoginPageController', ["$scope", function($scope){
     $scope.bodyClass = 'body-login';
   }]
 );

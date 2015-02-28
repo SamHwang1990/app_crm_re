@@ -69,7 +69,19 @@ var config = {
 	i18nSupport:{
 		support:["zh-cn","zh-hk","en-us"],
 		default:"zh-cn"
-	}
+	},
+
+  /* meta info */
+  title:{
+    "zh-cn":'申博教育客戶管理系统',
+    "zh-hk":'申博教育客戶管理系統',
+    'en-us':'APP Client Manage System'
+  },
+  htmlLang:{
+    "zh-cn":'zh-CN',
+    "zh-hk":'zh-HK',
+    "en-us":'en-US'
+  }
 };
 
 module.exports = config;
