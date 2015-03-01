@@ -34,21 +34,21 @@
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <form class="login-form">
+                    <form class="login-form" name="LoginForm">
                         <div class="input-group">
                             <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
                             <label class="sr-only" for="login-user-account">用户邮箱</label>
-                            <input type="text" id="login-user-account" class="form-control" placeholder="用户邮箱">
+                            <input type="text" id="login-user-account" name="UserEmail" ng-model="user.userEmail" class="form-control" placeholder="用户邮箱">
                         </div>
                         <div class="input-group">
                             <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
                             <label class="sr-only" for="login-user-password">用户密码</label>
-                            <input type="password" id="login-user-password" class="form-control" placeholder="用户密码">
+                            <input type="password" id="login-user-password" name="UserPass" ng-model="user.userPass" class="form-control" placeholder="用户密码">
                         </div>
                         <div class="login-toolbar clearfix">
                             <div class="pull-left">
                                 <label>
-                                    <input type="checkbox" value="" id="login-store-status"> 七天免登录
+                                    <input type="checkbox" name="RememberMe" ng-model="user.rememberMe" id="login-store-status"> 七天免登录
                                 </label>
                             </div>
                             <p class="pull-right">
@@ -57,7 +57,7 @@
                         </div>
                         <div class="login-submit row">
                             <div class="col-xs-6 login-submit-btn">
-                                <button class="login-submit-reset login-submit-btn-active">
+                                <button class="login-submit-reset login-submit-btn-active" ng-click="save()">
                                     <span class="glyphicon glyphicon-refresh"></span>
                                 </button>
                             </div>

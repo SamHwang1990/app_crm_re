@@ -152,21 +152,21 @@ angular.module("security/login/login.zh-cn.tpl.html", []).run(["$templateCache",
     "                    </div>\n" +
     "                </div>\n" +
     "                <div class=\"col-sm-6\">\n" +
-    "                    <form class=\"login-form\">\n" +
+    "                    <form class=\"login-form\" name=\"LoginForm\">\n" +
     "                        <div class=\"input-group\">\n" +
     "                            <span class=\"input-group-addon\"><span class=\"glyphicon glyphicon-user\"></span></span>\n" +
     "                            <label class=\"sr-only\" for=\"login-user-account\">用户邮箱</label>\n" +
-    "                            <input type=\"text\" id=\"login-user-account\" class=\"form-control\" placeholder=\"用户邮箱\">\n" +
+    "                            <input type=\"text\" id=\"login-user-account\" name=\"UserEmail\" ng-model=\"user.userEmail\" class=\"form-control\" placeholder=\"用户邮箱\">\n" +
     "                        </div>\n" +
     "                        <div class=\"input-group\">\n" +
     "                            <span class=\"input-group-addon\"><span class=\"glyphicon glyphicon-lock\"></span></span>\n" +
     "                            <label class=\"sr-only\" for=\"login-user-password\">用户密码</label>\n" +
-    "                            <input type=\"password\" id=\"login-user-password\" class=\"form-control\" placeholder=\"用户密码\">\n" +
+    "                            <input type=\"password\" id=\"login-user-password\" name=\"UserPass\" ng-model=\"user.userPass\" class=\"form-control\" placeholder=\"用户密码\">\n" +
     "                        </div>\n" +
     "                        <div class=\"login-toolbar clearfix\">\n" +
     "                            <div class=\"pull-left\">\n" +
     "                                <label>\n" +
-    "                                    <input type=\"checkbox\" value=\"\" id=\"login-store-status\"> 七天免登录\n" +
+    "                                    <input type=\"checkbox\" name=\"RememberMe\" ng-model=\"user.rememberMe\" id=\"login-store-status\"> 七天免登录\n" +
     "                                </label>\n" +
     "                            </div>\n" +
     "                            <p class=\"pull-right\">\n" +
@@ -175,7 +175,7 @@ angular.module("security/login/login.zh-cn.tpl.html", []).run(["$templateCache",
     "                        </div>\n" +
     "                        <div class=\"login-submit row\">\n" +
     "                            <div class=\"col-xs-6 login-submit-btn\">\n" +
-    "                                <button class=\"login-submit-reset login-submit-btn-active\">\n" +
+    "                                <button class=\"login-submit-reset login-submit-btn-active\" ng-click=\"save()\">\n" +
     "                                    <span class=\"glyphicon glyphicon-refresh\"></span>\n" +
     "                                </button>\n" +
     "                            </div>\n" +

@@ -15,6 +15,14 @@ angular.module('security.login', [])
 
 .controller('LoginPageController', ["$scope", function($scope){
     $scope.bodyClass = 'body-login';
+    $scope.user = {
+      userEmail: "samhwang1990@gmail.com",
+      userPass: "aha",
+      rememberMe: true
+    };
+    $scope.save = function(){
+      $scope.user.userEmail = "save@gmail.com";
+    };
   }]
 );
 
