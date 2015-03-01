@@ -14,15 +14,23 @@ angular.module('security.login', [])
 )
 
 .controller('LoginPageController', ["$scope", function($scope){
+    var originUser = {};
     $scope.bodyClass = 'body-login';
-    $scope.user = {
-      userEmail: "samhwang1990@gmail.com",
-      userPass: "aha",
-      rememberMe: true
+    $scope.user = angular.copy(originUser);
+    $scope.canRevert = function(){
+      return !angular.equals($scope.user, originUser);
+    };
+    $scope.revert = function(){
+      $scope.user = angular.copy(originUser);
+      $scope.LoginForm.$setPristine();
+    };
+    $scope.canSave = function(){
+      return false;
     };
     $scope.save = function(){
-      $scope.user.userEmail = "save@gmail.com";
+      $scope.user.userPass = $scope.user.userEmail;
     };
+
   }]
 );
 

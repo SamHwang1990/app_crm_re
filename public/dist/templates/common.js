@@ -152,16 +152,16 @@ angular.module("security/login/login.zh-cn.tpl.html", []).run(["$templateCache",
     "                    </div>\n" +
     "                </div>\n" +
     "                <div class=\"col-sm-6\">\n" +
-    "                    <form class=\"login-form\" name=\"LoginForm\">\n" +
+    "                    <form class=\"login-form\" novalidate name=\"LoginForm\">\n" +
     "                        <div class=\"input-group\">\n" +
     "                            <span class=\"input-group-addon\"><span class=\"glyphicon glyphicon-user\"></span></span>\n" +
     "                            <label class=\"sr-only\" for=\"login-user-account\">用户邮箱</label>\n" +
-    "                            <input type=\"text\" id=\"login-user-account\" name=\"UserEmail\" ng-model=\"user.userEmail\" class=\"form-control\" placeholder=\"用户邮箱\">\n" +
+    "                            <input type=\"email\" id=\"login-user-account\" name=\"UserEmail\" ng-model=\"user.userEmail\" class=\"form-control\" placeholder=\"用户邮箱\" required>\n" +
     "                        </div>\n" +
     "                        <div class=\"input-group\">\n" +
     "                            <span class=\"input-group-addon\"><span class=\"glyphicon glyphicon-lock\"></span></span>\n" +
     "                            <label class=\"sr-only\" for=\"login-user-password\">用户密码</label>\n" +
-    "                            <input type=\"password\" id=\"login-user-password\" name=\"UserPass\" ng-model=\"user.userPass\" class=\"form-control\" placeholder=\"用户密码\">\n" +
+    "                            <input type=\"password\" id=\"login-user-password\" name=\"UserPass\" ng-model=\"user.userPass\" class=\"form-control\" placeholder=\"用户密码\" required>\n" +
     "                        </div>\n" +
     "                        <div class=\"login-toolbar clearfix\">\n" +
     "                            <div class=\"pull-left\">\n" +
@@ -175,12 +175,12 @@ angular.module("security/login/login.zh-cn.tpl.html", []).run(["$templateCache",
     "                        </div>\n" +
     "                        <div class=\"login-submit row\">\n" +
     "                            <div class=\"col-xs-6 login-submit-btn\">\n" +
-    "                                <button class=\"login-submit-reset login-submit-btn-active\" ng-click=\"save()\">\n" +
+    "                                <button class=\"login-submit-reset\" ng-class=\"{'login-submit-btn-active': canRevert()}\" ng-disabled=\"!canRevert()\" ng-click=\"revert()\">\n" +
     "                                    <span class=\"glyphicon glyphicon-refresh\"></span>\n" +
     "                                </button>\n" +
     "                            </div>\n" +
     "                            <div class=\"col-xs-6 login-submit-btn\">\n" +
-    "                                <button class=\"login-submit-submit\">\n" +
+    "                                <button class=\"login-submit-submit\" ng-class=\"{'login-submit-btn-active': canSave()}\" ng-disabled=\"!canSave()\" ng-click=\"save()\">\n" +
     "                                    <span class=\"glyphicon glyphicon-log-in\"></span>\n" +
     "                                </button>\n" +
     "                            </div>\n" +
