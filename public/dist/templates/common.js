@@ -1,4 +1,4 @@
-angular.module('templates.common', ['aha.tpl.html', 'security/login/login.tpl.html', 'security/login/login.zh-hk.tpl.html']);
+angular.module('templates.common', ['aha.tpl.html', 'security/login/login.en-us.tpl.html', 'security/login/login.zh-cn.tpl.html', 'security/login/login.zh-hk.tpl.html']);
 
 angular.module("aha.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("aha.tpl.html",
@@ -28,8 +28,94 @@ angular.module("aha.tpl.html", []).run(["$templateCache", function($templateCach
     "");
 }]);
 
-angular.module("security/login/login.tpl.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("security/login/login.tpl.html",
+angular.module("security/login/login.en-us.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("security/login/login.en-us.tpl.html",
+    "<div class=\"login-main\">\n" +
+    "    <header class=\"login-main-header navbar navbar-default\">\n" +
+    "        <div class=\"container\">\n" +
+    "            <div class=\"navbar-header\">\n" +
+    "                <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#login-navbar-collapse\">\n" +
+    "                    <span class=\"sr-only\">Toggle navigation</span>\n" +
+    "                    <span class=\"icon-bar\"></span>\n" +
+    "                    <span class=\"icon-bar\"></span>\n" +
+    "                    <span class=\"icon-bar\"></span>\n" +
+    "                </button>\n" +
+    "                <a class=\"navbar-brand\" href=\"#\">\n" +
+    "                    <img src=\"/static/assets/imgs/login_brand.jpg\" alt=\"app crm brand\" />\n" +
+    "                </a>\n" +
+    "            </div>\n" +
+    "\n" +
+    "            <nav class=\"collapse navbar-collapse\" role=\"navigation\" id=\"login-navbar-collapse\">\n" +
+    "                <ul class=\"nav navbar-nav navbar-right\">\n" +
+    "                    <li><a href=\"/\">Home</a></li>\n" +
+    "                    <li><a href=\"/\">Case</a></li>\n" +
+    "                    <li><a href=\"/\">Help</a></li>\n" +
+    "                    <li><a href=\"/\">Advice</a></li>\n" +
+    "                </ul>\n" +
+    "            </nav>\n" +
+    "        </div>\n" +
+    "    </header>\n" +
+    "    <div class=\"login-main-body\">\n" +
+    "        <div class=\"container\">\n" +
+    "            <div class=\"row\">\n" +
+    "                <div class=\"col-sm-6\">\n" +
+    "                    <div class=\"col-sm-12 login-crm-logo\" alt=\"app-crm-logo\"></div>\n" +
+    "                    <div class=\"col-sm-12 login-crm-statement\">\n" +
+    "                        <h1>APP CRM System</h1>\n" +
+    "                        <p>Assessment + Planning = Best Offer</p>\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
+    "                <div class=\"col-sm-6\">\n" +
+    "                    <form class=\"login-form\">\n" +
+    "                        <div class=\"input-group\">\n" +
+    "                            <span class=\"input-group-addon\"><span class=\"glyphicon glyphicon-user\"></span></span>\n" +
+    "                            <label class=\"sr-only\" for=\"login-user-account\">User Email</label>\n" +
+    "                            <input type=\"text\" id=\"login-user-account\" class=\"form-control\" placeholder=\"User Email\">\n" +
+    "                        </div>\n" +
+    "                        <div class=\"input-group\">\n" +
+    "                            <span class=\"input-group-addon\"><span class=\"glyphicon glyphicon-lock\"></span></span>\n" +
+    "                            <label class=\"sr-only\" for=\"login-user-password\">User Password</label>\n" +
+    "                            <input type=\"password\" id=\"login-user-password\" class=\"form-control\" placeholder=\"User Password\">\n" +
+    "                        </div>\n" +
+    "                        <div class=\"login-toolbar clearfix\">\n" +
+    "                            <div class=\"pull-left\">\n" +
+    "                                <label>\n" +
+    "                                    <input type=\"checkbox\" value=\"\" id=\"login-store-status\"> Stay Logged\n" +
+    "                                </label>\n" +
+    "                            </div>\n" +
+    "                            <p class=\"pull-right\">\n" +
+    "                                <a href=\"javascript:void(0);\">Forget Password？</a>\n" +
+    "                            </p>\n" +
+    "                        </div>\n" +
+    "                        <div class=\"login-submit row\">\n" +
+    "                            <div class=\"col-xs-6 login-submit-btn\">\n" +
+    "                                <button class=\"login-submit-reset login-submit-btn-active\">\n" +
+    "                                    <span class=\"glyphicon glyphicon-refresh\"></span>\n" +
+    "                                </button>\n" +
+    "                            </div>\n" +
+    "                            <div class=\"col-xs-6 login-submit-btn\">\n" +
+    "                                <button class=\"login-submit-submit\">\n" +
+    "                                    <span class=\"glyphicon glyphicon-log-in\"></span>\n" +
+    "                                </button>\n" +
+    "                            </div>\n" +
+    "                        </div>\n" +
+    "                    </form>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "    <footer class=\"login-main-footer\">\n" +
+    "        <div class=\"container\">\n" +
+    "            <p>Designed and built with all the lovely <a href=\"http://www.appedu.org\" target=\"_blank\">appers</a>.</p>\n" +
+    "            <p>Copyright @ 2014-2015</p>\n" +
+    "            <p><a class=\"beian_link\" href=\"http://www.miibeian.gov.cn/\" target=\"_blank\">粤ICP备14010098号</a></p>\n" +
+    "        </div>\n" +
+    "    </footer>\n" +
+    "</div>");
+}]);
+
+angular.module("security/login/login.zh-cn.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("security/login/login.zh-cn.tpl.html",
     "<div class=\"login-main\">\n" +
     "    <header class=\"login-main-header navbar navbar-default\">\n" +
     "        <div class=\"container\">\n" +
@@ -69,13 +155,13 @@ angular.module("security/login/login.tpl.html", []).run(["$templateCache", funct
     "                    <form class=\"login-form\">\n" +
     "                        <div class=\"input-group\">\n" +
     "                            <span class=\"input-group-addon\"><span class=\"glyphicon glyphicon-user\"></span></span>\n" +
-    "                            <label class=\"sr-only\" for=\"login-user-account\">Username or Email</label>\n" +
-    "                            <input type=\"text\" id=\"login-user-account\" class=\"form-control\" placeholder=\"Email\">\n" +
+    "                            <label class=\"sr-only\" for=\"login-user-account\">用户邮箱</label>\n" +
+    "                            <input type=\"text\" id=\"login-user-account\" class=\"form-control\" placeholder=\"用户邮箱\">\n" +
     "                        </div>\n" +
     "                        <div class=\"input-group\">\n" +
     "                            <span class=\"input-group-addon\"><span class=\"glyphicon glyphicon-lock\"></span></span>\n" +
-    "                            <label class=\"sr-only\" for=\"login-user-password\">User Password</label>\n" +
-    "                            <input type=\"password\" id=\"login-user-password\" class=\"form-control\" placeholder=\"Password\">\n" +
+    "                            <label class=\"sr-only\" for=\"login-user-password\">用户密码</label>\n" +
+    "                            <input type=\"password\" id=\"login-user-password\" class=\"form-control\" placeholder=\"用户密码\">\n" +
     "                        </div>\n" +
     "                        <div class=\"login-toolbar clearfix\">\n" +
     "                            <div class=\"pull-left\">\n" +

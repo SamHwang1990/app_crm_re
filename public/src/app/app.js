@@ -6,6 +6,7 @@
 
 angular.module('app', [
   'ngRoute',
+  'service.locale',
   'templates.app',
   'templates.common',
   'security'

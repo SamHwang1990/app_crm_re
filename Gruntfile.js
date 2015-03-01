@@ -22,10 +22,13 @@ module.exports = function(grunt){
         copy: {
             assets: {
                 files: [
-                    { dest: '<%= distdir %>', src: 'index.html', expand: true, cwd: 'public/src'},
-                    { dest: '<%= distdir %>/assets/imgs', src : '**', expand: true, cwd: 'public/src/assets/imgs' },
-                    { dest: '<%= distdir %>', src: 'favicon.ico', expand: true, cwd: 'public/src/assets'},
-                    { dest: '<%= distdir %>/assets/bower/bootstrap', src: '**', expand: true, cwd: 'public/bower_components/bootstrap/dist'}
+                  { dest: '<%= distdir %>', src: 'index.html', expand: true, cwd: 'public/src'},
+                  { dest: '<%= distdir %>/assets/imgs', src : '**', expand: true, cwd: 'public/src/assets/imgs' },
+                  { dest: '<%= distdir %>', src: 'favicon.ico', expand: true, cwd: 'public/src/assets'},
+                  { dest: '<%= distdir %>/assets/bower/bootstrap', src: '**', expand: true, cwd: 'public/bower_components/bootstrap/dist'},
+                  { dest: '<%= distdir %>/assets/bower/angular_i18n', src: 'angular-locale_zh-cn.js', expand:true, cwd: 'public/bower_components/angular-i18n'},
+                  { dest: '<%= distdir %>/assets/bower/angular_i18n', src: 'angular-locale_zh-hk.js', expand:true, cwd: 'public/bower_components/angular-i18n'},
+                  { dest: '<%= distdir %>/assets/bower/angular_i18n', src: 'angular-locale_en-us.js', expand:true, cwd: 'public/bower_components/angular-i18n'}
                 ]
             }
         },
