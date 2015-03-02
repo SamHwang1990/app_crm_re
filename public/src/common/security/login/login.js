@@ -13,8 +13,12 @@ angular.module('security.login', [])
   }]
 )
 
-.controller('LoginPageController', ["$scope", function($scope){
-    var originUser = {};
+.controller('LoginPageController', ["$scope", "$log", function($scope, $log){
+    var originUser = {
+      userEmail: '',
+      userPass: '',
+      rememberMe: false
+    };
     $scope.bodyClass = 'body-login';
     $scope.user = angular.copy(originUser);
     $scope.canRevert = function(){
@@ -25,10 +29,11 @@ angular.module('security.login', [])
       $scope.LoginForm.$setPristine();
     };
     $scope.canSave = function(){
-      return false;
+      return $scope.LoginForm.$dirty && $scope.LoginForm.$valid;
     };
     $scope.save = function(){
-      $scope.user.userPass = $scope.user.userEmail;
+      //$scope.user.userPass = $scope.user.userEmail;
+      return $log.log('save invoke');
     };
 
   }]
