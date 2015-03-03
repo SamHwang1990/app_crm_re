@@ -13,7 +13,7 @@ angular.module('security.login', [])
   }]
 )
 
-.controller('LoginPageController', ["$scope", "$log", function($scope, $log){
+.controller('LoginPageController', ["$scope", "$http", "$location", "$log", function($scope, $http, $location, $log){
     var originUser = {
       userEmail: '',
       userPass: '',
@@ -33,7 +33,15 @@ angular.module('security.login', [])
     };
     $scope.save = function(){
       //$scope.user.userPass = $scope.user.userEmail;
-      return $log.log('save invoke');
+      //return $log.log('save invoke');
+      $http.post('/auth/login', $scope.user)
+        .success(function(data){
+          $log.error(data.message);
+          $location.path('/dashboard');
+        })
+        .error(function(data){
+          $log.error(data.message);
+        });
     };
 
   }]

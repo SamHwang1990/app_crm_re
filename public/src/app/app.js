@@ -9,7 +9,8 @@ angular.module('app', [
   'service.locale',
   'templates.app',
   'templates.common',
-  'security'
+  'security',
+  'dashboard'
 ]);
 
 angular.module('app').config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {

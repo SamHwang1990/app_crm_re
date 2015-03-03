@@ -5,6 +5,13 @@
 
 var express = require('express');
 
+var auth = require('../middleware/authCheck');
+var sign = require('../bll/sign');
+
 var authRoute = express.Router();
+
+authRoute.route(['/current-user']).get(sign.getCurrentUser);
+
+authRoute.post('/login', auth.isUnauthenticated, sign.login);
 
 module.exports = authRoute;

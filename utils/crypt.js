@@ -46,5 +46,5 @@ exports.bhash = function(str){
 };
 
 exports.bcompare = function(str, hash, callback){
-  bcrypt.compare(str, hash, callback);
+  return bcrypt.compareSync(str, hash);
 };

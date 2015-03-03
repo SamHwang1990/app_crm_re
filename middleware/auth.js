@@ -7,28 +7,31 @@
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var UserInfoDal = require('../dal').UserInfoDAL;
+var crypt = require('../utils/crypt');
 
-passport.use(new LocalStrategy(function(userEmail, password, done){
+passport.use(new LocalStrategy({
+    usernameField: 'userEmail',
+    passwordField: 'userPass'
+  },function(username, password, done){
+      if(!username){
+          return done(null, false, {message: "UserEmailBlank"});
+      }
 
-        if(!userEmail){
-            return done(null, false, {message: "user email is blank!"});
-        }
+      UserInfoDal.findByEmail(username, function(err, user){
+          if(err){
+              return done(err, null);
+          }
 
-        UserInfoDal.findByEmail(userEmail, function(err, user){
-            if(err){
-                return done(err, null);
-            }
+          if(!user){
+              return done(null, false, {message: "UserEmailUnknown"});
+          }
 
-            if(!user){
-                return done(null, false, {message: "unknown user email!"});
-            }
+          if(!crypt.bcompare(password, user.Passwd)){
+              return done(null, false, {message: 'UserPasswordWrong'});
+          }
 
-            if(password !== user.Passwd){
-                return done(null, false, {message: 'password do not match!'});
-            }
-
-            return done(null, user);
-        });
+          return done(null, user, {message: 'UserAuthenticateSuccess'});
+      });
     }
 ));
 
