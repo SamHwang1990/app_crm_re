@@ -11,7 +11,6 @@ exports.getCurrentUser = function(req, res, next){
 };
 
 exports.login = function(req, res, next){
-  console.log('login ing ing')
   passport.authenticate('local', function(err, user, info) {
     if(err){
       return next(err);
@@ -21,8 +20,13 @@ exports.login = function(req, res, next){
       res.end();
       return;
     }
-    res.status(200).json(info);
-    res.end();
-    return;
+    req.login(user, {}, function(err){
+      if(err){
+        return next(err);
+      }
+      res.status(200).json(info);
+      res.end();
+      return;
+    });
   })(req, res, next);
 };

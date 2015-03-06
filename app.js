@@ -57,13 +57,16 @@ app.use(bodyParser.urlencoded({
 app.use(require('cookie-parser')(config.session_secret));
 app.use(session({
 	secret:config.session_secret,
-	key:'sid',
+	name:'sid',
 	store:new redisStore({
 		host: config.database.redis.host,
 		port: config.database.redis.port
 	}),
 	resave: true,
-	saveUninitialized: false	//TODO: it is not so sure to use false when i am associating with PassportJS
+	saveUninitialized: true,	//TODO: it is not so sure to use false when i am associating with PassportJS
+  cookie: {
+    maxAge: config.debug ? null : 24*60*60*1000
+  }
 }));
 
 // passport handler
