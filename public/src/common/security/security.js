@@ -18,7 +18,7 @@ angular.module('security.service', ['security.retryQueue'])
         });
 
         var redirectToLogin = function(){
-            $location.path('/login');
+            return $location.url('/login');
         };
 
         // the public api of the service

@@ -14,13 +14,14 @@ angular.module('app', [
 ]);
 
 angular.module('app').config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
-  $locationProvider.html5Mode(true);
+  $locationProvider.html5Mode({
+    enabled: true,
+    requireBase: true
+  });
   $routeProvider.otherwise({redirectTo:'/'});
 }]);
 
-angular.module('app').run(['securityAuthorization', '$rootElement', '$rootScope', function(security, $rootElement, $rootScope) {
-  var local = $rootElement.attr('data-local');
-  $rootScope.local = local;
+angular.module('app').run(['securityAuthorization', function(security) {
   security.requireAuthenticatedUser();
 }]);
 
