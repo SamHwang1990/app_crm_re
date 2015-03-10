@@ -18,7 +18,7 @@ angular.module('app').config(['$routeProvider', '$locationProvider', function ($
     enabled: true,
     requireBase: true
   });
-  $routeProvider.otherwise({redirectTo:'/'});
+  $routeProvider.otherwise({redirectTo:'/dashboard'});
 }]);
 
 angular.module('app').run(['securityAuthorization', function(security) {

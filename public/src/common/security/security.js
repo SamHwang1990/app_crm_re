@@ -54,7 +54,7 @@ angular.module('security.service', ['security.retryQueue'])
                     return $q.when(service.currentUser);
                 }
                 return $http.get('/auth/current-user').then(function(response) {
-                    service.currentUser = response.data.currentUser;
+                    service.currentUser = response.data;
                     return service.currentUser;
                 });
             },
