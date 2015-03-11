@@ -17,7 +17,7 @@ angular.module("dashboard/dashboard.zh-cn.tpl.html", []).run(["$templateCache", 
     "                <span class=\"icon-bar\"></span>\n" +
     "            </button>\n" +
     "            <a class=\"navbar-brand\" href=\"/\">\n" +
-    "                <img src=\"/static/imgs/app_logo_h30.png\" alt=\"app crm brand\" />\n" +
+    "                <img src=\"/static/assets/imgs/app_logo_h30.png\" alt=\"app crm brand\" />\n" +
     "            </a>\n" +
     "        </div>\n" +
     "        <nav class=\"collapse navbar-collapse ac-navbar-collapse\" role=\"navigation\">\n" +
@@ -31,7 +31,7 @@ angular.module("dashboard/dashboard.zh-cn.tpl.html", []).run(["$templateCache", 
     "            <ul class=\"nav navbar-nav navbar-right\">\n" +
     "                <li>\n" +
     "                    <a href=\"javascript:void(0)\">\n" +
-    "                        <img src=\"/static/imgs/avatar_20x20.jpg\" class=\"avatar_20 img-circle\" alt=\"user avatar\" />\n" +
+    "                        <img src=\"/static/assets/imgs/avatar_20x20.jpg\" class=\"avatar_20 img-circle\" alt=\"user avatar\" />\n" +
     "                        samhwang1990\n" +
     "                    </a>\n" +
     "                </li>\n" +
@@ -45,7 +45,7 @@ angular.module("dashboard/dashboard.zh-cn.tpl.html", []).run(["$templateCache", 
     "    <article class=\"ac-info-jumbotron\">\n" +
     "        <div class=\"container\">\n" +
     "            <div class=\"ac-info-subTitle\">Welcome Back!</div>\n" +
-    "            <div class=\"ac-info-avatar\"><img src=\"/static/imgs/avatar_230x230.jpg\" /> </div>\n" +
+    "            <div class=\"ac-info-avatar\"><img src=\"/static/assets/imgs/avatar_230x230.jpg\" /> </div>\n" +
     "            <div><h1>早上好，黄志源！</h1></div>\n" +
     "            <div class=\"ac-info-controls\">\n" +
     "                <a href=\"javascript:void(0)\" class=\"ac-btn ac-btn-success\">查看个人主页</a>\n" +

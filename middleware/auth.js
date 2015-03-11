@@ -40,11 +40,10 @@ passport.serializeUser(function(user, done){
 });
 
 passport.deserializeUser(function(userId, done){
-    UserInfoDal.findById(userId, function(err, user){
+    UserInfoDal.findByIdSave(userId, function(err, user){
         if(err){
             return done(err, null);
         }
-        delete  user.Passwd;
         done(null, user);
     });
 });

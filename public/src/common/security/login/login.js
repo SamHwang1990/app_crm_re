@@ -32,15 +32,13 @@ angular.module('security.login', [])
       return $scope.LoginForm.$dirty && $scope.LoginForm.$valid;
     };
     $scope.save = function(){
-      //$scope.user.userPass = $scope.user.userEmail;
-      //return $log.log('save invoke');
       $http.post('/auth/login', $scope.user)
         .success(function(data){
-          $log.error(data.message);
+          $log.info(data.message);
           $location.path('/dashboard');
         })
         .error(function(data){
-          $log.error(data.message);
+          $log.info(data.message);
         });
     };
 

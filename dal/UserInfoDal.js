@@ -14,13 +14,22 @@ var UserInfoModel = models.UserInfo;
 exports.findById = function(userId, done){
     UserInfoModel.findOne({_id: userId}, done);
 };
+exports.findByIdSave = function(userId, done){
+  UserInfoModel.findOne({_id: userId}, {Passwd: 0}, done)
+};
 
 exports.findByEmail = function(userEmail, done){
     UserInfoModel.findOne({Email: userEmail}, done);
 };
+exports.findByEmailSave = function(userEmail, done){
+  UserInfoModel.findOne({Email: userEmail}, {Passwd: 0}, done);
+};
 
 exports.findByNameCn = function(userNameCn, done){
     UserInfoModel.findOne({NameCn: userNameCn}, done);
+};
+exports.findByNameCnSave = function(userNameCn, done){
+  UserInfoModel.findOne({NameCn: userNameCn}, {Passwd: 0}, done);
 };
 
 // endregion
