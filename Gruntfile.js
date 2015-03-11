@@ -10,9 +10,9 @@ module.exports = function(grunt){
     src: {
       js: ['public/src/**/*.js'],
       jsTpl: {
-        zhCn: ['<%= distdir %>/templates/**/*.zh-cn.js'],
-        zhHk: ['<%= distdir %>/templates/**/*.zh-hk.js'],
-        enUs: ['<%= distdir %>/templates/**/*.en-us.js']
+        zhCn: ['<%= distdir %>/templates/zh-cn/*.js'],
+        zhHk: ['<%= distdir %>/templates/zh-hk/*.js'],
+        enUs: ['<%= distdir %>/templates/en-us/*.js']
       },
       html: ['public/src/index.html'],
       tpl: {
@@ -53,7 +53,10 @@ module.exports = function(grunt){
     html2js: {
       zhCn_app: {
         options: {
-          base: 'public/src/app'
+          base: 'public/src/app',
+          rename: function (moduleName) {
+            return moduleName.replace('zh-cn.', '');
+          }
         },
         src: ['<%= src.tpl.zhCn.app %>'],
         dest: '<%= distdir %>/templates/zh-cn/app.js',
@@ -61,7 +64,10 @@ module.exports = function(grunt){
       },
       zhCn_common: {
         options: {
-          base: 'public/src/common'
+          base: 'public/src/common',
+          rename: function (moduleName) {
+            return moduleName.replace('zh-cn.', '');
+          }
         },
         src: ['<%= src.tpl.zhCn.common %>'],
         dest: '<%= distdir %>/templates/zh-cn/common.js',
@@ -69,7 +75,10 @@ module.exports = function(grunt){
       },
       zhHk_app: {
         options: {
-          base: 'public/src/app'
+          base: 'public/src/app',
+          rename: function (moduleName) {
+            return moduleName.replace('zh-hk.', '');
+          }
         },
         src: ['<%= src.tpl.zhHk.app %>'],
         dest: '<%= distdir %>/templates/zh-hk/app.js',
@@ -77,7 +86,10 @@ module.exports = function(grunt){
       },
       zhHk_common: {
         options: {
-          base: 'public/src/common'
+          base: 'public/src/common',
+          rename: function (moduleName) {
+            return moduleName.replace('zh-hk.', '');
+          }
         },
         src: ['<%= src.tpl.zhHk.common %>'],
         dest: '<%= distdir %>/templates/zh-hk/common.js',
@@ -85,7 +97,10 @@ module.exports = function(grunt){
       },
       enUs_app: {
         options: {
-          base: 'public/src/app'
+          base: 'public/src/app',
+          rename: function (moduleName) {
+            return moduleName.replace('en-us.', '');
+          }
         },
         src: ['<%= src.tpl.enUs.app %>'],
         dest: '<%= distdir %>/templates/en-us/app.js',
@@ -93,7 +108,10 @@ module.exports = function(grunt){
       },
       enUs_common: {
         options: {
-          base: 'public/src/common'
+          base: 'public/src/common',
+          rename: function (moduleName) {
+            return moduleName.replace('en-us.', '');
+          }
         },
         src: ['<%= src.tpl.enUs.common %>'],
         dest: '<%= distdir %>/templates/en-us/common.js',
@@ -116,6 +134,18 @@ module.exports = function(grunt){
       jquery:{
         src:['public/bower_components/jquery/dist/jquery.js'],
         dest: '<%= distdir %>/assets/bower/jquery.js'
+      },
+      zhCnTpl:{
+        src:['<%= src.jsTpl.zhCn %>'],
+        dest: '<%= distdir %>/templates/zh-cn/tpl.js'
+      },
+      zhHkTpl:{
+        src:['<%= src.jsTpl.zhHk %>'],
+        dest: '<%= distdir %>/templates/zh-hk/tpl.js'
+      },
+      enUsTpl:{
+        src:['<%= src.jsTpl.enUs %>'],
+        dest: '<%= distdir %>/templates/en-us/tpl.js'
       }
     },
     uglify: {

@@ -4,8 +4,8 @@
 
 angular.module('dashboard', [])
 
-.config(['$stateProvider', 'LOCALEID', function($stateProvider, localeID){
-    var templateUrl = 'dashboard/dashboard.' + localeID + '.tpl.html';
+.config(['$stateProvider', function($stateProvider){
+    var templateUrl = 'dashboard/dashboard.tpl.html';
     $stateProvider.state('dashboard', {
       url: '/dashboard',
       templateUrl: templateUrl,

@@ -4,8 +4,8 @@
 
 angular.module('security.login', [])
 
-.config(['$stateProvider', 'LOCALEID', function($stateProvider, localeID){
-    var templateUrl = 'security/login/login.' + localeID + '.tpl.html';
+.config(['$stateProvider', function($stateProvider){
+    var templateUrl = 'security/login/login.tpl.html';
     $stateProvider.state('login', {
       url: "/login",
       templateUrl: templateUrl,
