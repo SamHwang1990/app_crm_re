@@ -4,16 +4,17 @@
 
 angular.module('dashboard', [])
 
-.config(['$routeProvider', 'LOCALEID', function($routeProvider, localeID){
+.config(['$stateProvider', 'LOCALEID', function($stateProvider, localeID){
     var templateUrl = 'dashboard/dashboard.' + localeID + '.tpl.html';
-
-    $routeProvider.when('/dashboard', {
-      templateUrl: templateUrl
-    })
+    $stateProvider.state('dashboard', {
+      url: '/dashboard',
+      templateUrl: templateUrl,
+      controller: 'DashboardCtrl'
+    });
   }]
 )
 
 .controller('DashboardCtrl', ['$scope', function($scope){
     $scope.bodyClass = 'ac-body';
   }]
-)
+);

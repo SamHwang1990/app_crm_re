@@ -5,7 +5,7 @@
  */
 
 angular.module('app', [
-  'ngRoute',
+  'ui.router',
   'service.locale',
   'templates.app',
   'templates.common',
@@ -13,13 +13,16 @@ angular.module('app', [
   'dashboard'
 ]);
 
-angular.module('app').config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
-  $locationProvider.html5Mode({
-    enabled: true,
-    requireBase: true
-  });
-  $routeProvider.otherwise({redirectTo:'/dashboard'});
-}]);
+angular.module('app').config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
+  function ($stateProvider, $urlRouterProvider, $locationProvider) {
+    $locationProvider.html5Mode({
+      enabled: true,
+      requireBase: true
+    });
+    $urlRouterProvider.otherwise('/dashboard');
+    //$routeProvider.otherwise({redirectTo:'/dashboard'});
+  }
+]);
 
 angular.module('app').run(['securityAuthorization', function(security) {
   security.requireAuthenticatedUser();

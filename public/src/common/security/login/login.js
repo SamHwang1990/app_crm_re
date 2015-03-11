@@ -4,9 +4,10 @@
 
 angular.module('security.login', [])
 
-.config(['$routeProvider', 'LOCALEID', function($routeProvider, localeID){
+.config(['$stateProvider', 'LOCALEID', function($stateProvider, localeID){
     var templateUrl = 'security/login/login.' + localeID + '.tpl.html';
-    $routeProvider.when('/login', {
+    $stateProvider.state('login', {
+      url: "/login",
       templateUrl: templateUrl,
       controller: 'LoginPageController'
     });
