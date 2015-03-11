@@ -88,7 +88,7 @@ angular.module("security/login/login.en-us.tpl.html", []).run(["$templateCache",
 
 angular.module("security/login/login.zh-cn.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("security/login/login.zh-cn.tpl.html",
-    "<div class=\"login-main\">\n" +
+    "<div class=\"login-main\" ng-ctrl=\"LoginPageController\">\n" +
     "    <header class=\"login-main-header navbar navbar-default\">\n" +
     "        <div class=\"container\">\n" +
     "            <div class=\"navbar-header\">\n" +

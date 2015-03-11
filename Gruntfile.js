@@ -18,7 +18,7 @@ module.exports = function(grunt){
             stylus: ['stylus/appcrm.styl'],
             stylusWatch: ['stylus/**/*.styl']
         },
-        clean: ['<%= distdir %>/*'],
+        clean: ['<%= distdir %>'],
         copy: {
             assets: {
                 files: [
@@ -63,7 +63,8 @@ module.exports = function(grunt){
                 dest:'<%= distdir %>/<%= pkg.name %>.js'
             },
             angular: {
-                src:['public/bower_components/angular/angular.js', 'public/bower_components/angular-route/angular-route.js'],
+                src:['public/bower_components/angular/angular.js',
+                      'public/bower_components/angular-ui-router/release/angular-ui-router.js'],
                 dest: '<%= distdir %>/assets/bower/angular.js'
             },
             jquery:{
