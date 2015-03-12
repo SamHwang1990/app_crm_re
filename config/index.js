@@ -64,6 +64,7 @@ var config = {
 	},
 
 	session_secret: 'app_crm',
+  session_name: 'sid',
 
 	/* i18n setting */
 	i18nSupport:{

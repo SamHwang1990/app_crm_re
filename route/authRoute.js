@@ -14,4 +14,6 @@ authRoute.route(['/current-user']).get(sign.getCurrentUser);
 
 authRoute.post('/login', auth.isUnauthenticated, sign.login);
 
+authRoute.post('/logout', auth.isAuthenticated, sign.logout);
+
 module.exports = authRoute;

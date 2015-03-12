@@ -2,7 +2,7 @@
  * Created by sam on 15-3-1.
  */
 
-angular.module('dashboard', [])
+angular.module('dashboard', ['security.service'])
 
 .config(['$stateProvider', function($stateProvider){
     var templateUrl = 'dashboard/dashboard.tpl.html';
@@ -14,7 +14,8 @@ angular.module('dashboard', [])
   }]
 )
 
-.controller('DashboardCtrl', ['$scope', function($scope){
+.controller('DashboardCtrl', ['$scope', 'security', function($scope, security){
     $scope.bodyClass = 'ac-body';
+    $scope.logout = security.logout;
   }]
 );
