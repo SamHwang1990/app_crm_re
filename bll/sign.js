@@ -25,6 +25,13 @@ exports.login = function(req, res, next){
       if(err){
         return next(err);
       }
+
+      if(req.body.rememberMe){
+        req.session.cookie.maxAge = config.cookieMaxAge
+      }else{
+        req.session.cookie.expires = false;
+      }
+
       res.status(200).json(info);
       res.end();
       return;

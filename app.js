@@ -65,7 +65,7 @@ app.use(session({
 	resave: true,
 	saveUninitialized: false,	//TODO: it is not so sure to use false when i am associating with PassportJS
   cookie: {
-    maxAge: config.debug ? null : 24*60*60*1000
+    maxAge: config.debug ? null : config.cookieMaxAge
   }
 }));
 

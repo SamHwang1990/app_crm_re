@@ -17,15 +17,13 @@ var fs = require('fs');
 
 var pkg = require('../package.json');
 
-var debug = true;
-
 var config = {
 	version: pkg.version,
 
 	// debug mode
 	// if in debug mode, some middleware wont load
 	// logger module will print to stdout
-	debug: debug,
+	debug: true,
 
 	server:{
 		bindingHost: '127.0.0.1',
@@ -82,7 +80,10 @@ var config = {
     "zh-cn":'zh-CN',
     "zh-hk":'zh-HK',
     "en-us":'en-US'
-  }
+  },
+
+  // default is 7 day
+  cookieMaxAge: 7*24*60*60*1000
 };
 
 module.exports = config;
