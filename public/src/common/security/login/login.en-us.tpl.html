@@ -34,21 +34,21 @@
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <form class="login-form">
+                    <form class="login-form" novalidate name="LoginForm">
                         <div class="input-group">
                             <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
                             <label class="sr-only" for="login-user-account">User Email</label>
-                            <input type="text" id="login-user-account" class="form-control" placeholder="User Email">
+                            <input type="email" id="login-user-account" name="UserEmail" ng-model="user.userEmail" class="form-control" placeholder="User Email" required>
                         </div>
                         <div class="input-group">
                             <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
                             <label class="sr-only" for="login-user-password">User Password</label>
-                            <input type="password" id="login-user-password" class="form-control" placeholder="User Password">
+                            <input type="password" id="login-user-password" name="UserPass" ng-model="user.userPass" class="form-control" placeholder="User Password" required>
                         </div>
                         <div class="login-toolbar clearfix">
                             <div class="pull-left">
                                 <label>
-                                    <input type="checkbox" value="" id="login-store-status"> Stay Logged
+                                    <input type="checkbox" name="RememberMe" ng-model="user.rememberMe" id="login-store-status"> Stay Logged
                                 </label>
                             </div>
                             <p class="pull-right">
@@ -57,12 +57,12 @@
                         </div>
                         <div class="login-submit row">
                             <div class="col-xs-6 login-submit-btn">
-                                <button class="login-submit-reset login-submit-btn-active">
+                                <button class="login-submit-reset" ng-class="{'login-submit-btn-active': canRevert()}" ng-disabled="!canRevert()" ng-click="revert()">
                                     <span class="glyphicon glyphicon-refresh"></span>
                                 </button>
                             </div>
                             <div class="col-xs-6 login-submit-btn">
-                                <button class="login-submit-submit">
+                                <button class="login-submit-submit" ng-class="{'login-submit-btn-active': canSave()}" ng-disabled="!canSave()" ng-click="save()">
                                     <span class="glyphicon glyphicon-log-in"></span>
                                 </button>
                             </div>

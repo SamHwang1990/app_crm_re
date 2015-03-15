@@ -7,7 +7,7 @@ angular.module('dashboard', ['security.service'])
 .config(['$stateProvider', function($stateProvider){
     var templateUrl = 'dashboard/dashboard.tpl.html';
     $stateProvider.state('dashboard', {
-      url: '/dashboard',
+      url: '/',
       templateUrl: templateUrl,
       controller: 'DashboardCtrl'
     });

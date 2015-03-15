@@ -7,6 +7,7 @@
 angular.module('app', [
   'ui.router',
   'ui.bootstrap',
+  'ui-notification',
   'service.locale',
   'templates.app',
   'templates.common',
@@ -20,7 +21,7 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider', '$location
       enabled: true,
       requireBase: true
     });
-    $urlRouterProvider.otherwise('/dashboard');
+    $urlRouterProvider.otherwise('/');
     //$routeProvider.otherwise({redirectTo:'/dashboard'});
   }
 ]);

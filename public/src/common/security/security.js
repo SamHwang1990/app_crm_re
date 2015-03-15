@@ -21,7 +21,7 @@ angular.module('security.service', ['security.retryQueue'])
             return $location.url('/login');
         };
 
-        // the public api of the service
+        // the public api of the services
         var service = {
             getLoginReason: function(){
                 return retryQueue.retryReason();

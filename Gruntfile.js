@@ -37,19 +37,17 @@ module.exports = function(grunt){
       assets: {
         files: [
           { dest: '<%= distdir %>', src: 'index.html', expand: true, cwd: 'public/src'},
+          { dest: '<%= distdir %>/assets/css', src: 'angular-ui-notification.min.css', expand: true, cwd: 'public/bower_components/angular-ui-notification/dist'},
           { dest: '<%= distdir %>/assets/imgs', src : '**', expand: true, cwd: 'public/src/assets/imgs' },
           { dest: '<%= distdir %>', src: 'favicon.ico', expand: true, cwd: 'public/src/assets'},
-          { dest: '<%= distdir %>/assets/bower/bootstrap', src: '**', expand: true, cwd: 'public/bower_components/bootstrap/dist'},
+          { dest: '<%= distdir %>/assets/css', src: 'bootstrap.min.css', expand: true, cwd: 'public/bower_components/bootstrap/dist/css'},
+          { dest: '<%= distdir %>/assets/fonts', src: '**', expand: true, cwd: 'public/bower_components/bootstrap/dist/fonts'},
           { dest: '<%= distdir %>/assets/bower/angular_i18n', src: 'angular-locale_zh-cn.js', expand:true, cwd: 'public/bower_components/angular-i18n'},
           { dest: '<%= distdir %>/assets/bower/angular_i18n', src: 'angular-locale_zh-hk.js', expand:true, cwd: 'public/bower_components/angular-i18n'},
           { dest: '<%= distdir %>/assets/bower/angular_i18n', src: 'angular-locale_en-us.js', expand:true, cwd: 'public/bower_components/angular-i18n'}
         ]
       }
     },
-    //karma: {
-    //    unit: { options: karmaConfig('test/config/unit.js') },
-    //    watch: { options: karmaConfig('test/config/unit.js', { singleRun:false, autoWatch: true}) }
-    //},
     html2js: {
       zhCn_app: {
         options: {
@@ -129,7 +127,8 @@ module.exports = function(grunt){
       angular: {
         src:['public/bower_components/angular/angular.js',
               'public/bower_components/angular-ui-router/release/angular-ui-router.js',
-              'public/bower_components/angular-bootstrap/ui-bootstrap-tpls.js'
+              'public/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+              'public/bower_components/angular-ui-notification/dist/angular-ui-notification.min.js'
         ],
         dest: '<%= distdir %>/assets/bower/angular.js'
       },

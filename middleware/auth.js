@@ -14,23 +14,23 @@ passport.use(new LocalStrategy({
     passwordField: 'userPass'
   },function(username, password, done){
       if(!username){
-          return done(null, false, {message: "UserEmailBlank"});
+          return done(null, false, {message: "login.error.invalidUserEmail"});
       }
 
       UserInfoDal.findByEmail(username, function(err, user){
           if(err){
-              return done(err, null);
+              return done(err, null, {message: "login.error.serverError"});
           }
 
           if(!user){
-              return done(null, false, {message: "UserEmailUnknown"});
+              return done(null, false, {message: "login.error.invalidUserEmail"});
           }
 
           if(!crypt.bcompare(password, user.Passwd)){
-              return done(null, false, {message: 'UserPasswordWrong'});
+              return done(null, false, {message: 'Login.error.invalidPassword'});
           }
 
-          return done(null, user, {message: 'UserAuthenticateSuccess'});
+          return done(null, user, {message: 'login.success'});
       });
     }
 ));

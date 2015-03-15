@@ -8,7 +8,7 @@ angular.module('security.retryQueue', [])
     .factory('securityRetryQueue', ['$q', '$log', function($q, $log) {
         var retryQueue = [];
         var service = {
-            // The security service puts its own handler in here!
+            // The security services puts its own handler in here!
             onItemAddedCallbacks: [],
 
             hasMore: function() {

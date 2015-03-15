@@ -9,7 +9,7 @@ angular.module('security.authorization',['security.service', 'security.retryQueu
       requireAuthenticatedUser: function(){
         var promise = security.requestCurrentUser().then(function(userInfo){
           if(!security.isAuthenticated()){
-              //return queue.pushRetryFn('unauthenticated-client', service.requireAuthenticatedUser);
+              //return queue.pushRetryFn('unauthenticated-client', services.requireAuthenticatedUser);
             return security.showLogin();
           };
         });

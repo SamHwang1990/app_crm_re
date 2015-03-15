@@ -44,7 +44,7 @@ exports.logout = function(req, res, next){
   req.session.destroy();
   res.clearCookie(config.session_name, { path: '/' });
   res.status(200).json({
-    message:'UserLogOutSuccess'
+    message:'logout.success'
   });
   res.end();
   return;
