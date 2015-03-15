@@ -6,6 +6,7 @@
 
 angular.module('app', [
   'ui.router',
+  'ui.bootstrap',
   'service.locale',
   'templates.app',
   'templates.common',
@@ -14,7 +15,7 @@ angular.module('app', [
 ]);
 
 angular.module('app').config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
-  function ($stateProvider, $urlRouterProvider, $locationProvider) {
+  function ($stateProvider, $urlRouterProvider, $locationProvider, LocaleId) {
     $locationProvider.html5Mode({
       enabled: true,
       requireBase: true
@@ -24,7 +25,8 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider', '$location
   }
 ]);
 
-angular.module('app').run(['securityAuthorization', function(security) {
+angular.module('app').run(['securityAuthorization', '$rootScope', 'LOCALEID', function(security, $rootScope, LOCALEID) {
+  $rootScope.homeHref = '/' + LOCALEID;
   security.requireAuthenticatedUser();
 }]);
 

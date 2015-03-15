@@ -128,7 +128,9 @@ module.exports = function(grunt){
       },
       angular: {
         src:['public/bower_components/angular/angular.js',
-              'public/bower_components/angular-ui-router/release/angular-ui-router.js'],
+              'public/bower_components/angular-ui-router/release/angular-ui-router.js',
+              'public/bower_components/angular-bootstrap/ui-bootstrap-tpls.js'
+        ],
         dest: '<%= distdir %>/assets/bower/angular.js'
       },
       jquery:{
@@ -146,19 +148,6 @@ module.exports = function(grunt){
       enUsTpl:{
         src:['<%= src.jsTpl.enUs %>'],
         dest: '<%= distdir %>/templates/en-us/tpl.js'
-      }
-    },
-    uglify: {
-      dist:{
-        options: {
-            banner: "<%= banner %>"
-        },
-        src:['<%= src.js %>' ,'<%= src.jsTpl %>'],
-        dest:'<%= distdir %>/<%= pkg.name %>.js'
-      },
-      angular: {
-        src:['<%= concat.angular.src %>'],
-        dest: '<%= distdir %>/angular.js'
       }
     },
     stylus: {
@@ -198,7 +187,6 @@ module.exports = function(grunt){
 
   //grunt.loadNpmTasks('name')
   grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');

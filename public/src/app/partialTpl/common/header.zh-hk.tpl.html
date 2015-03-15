@@ -1,17 +1,17 @@
 <header class="ac-header navbar navbar-default">
     <div class="container">
         <div class="navbar-header">
-            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".ac-navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".ac-navbar-collapse" ng-click="isNavCollapse = !isNavCollapse">
+                <span class="sr-only">切換導航條</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand" ng-href="{{homeHref}}">
                 <img src="/static/assets/imgs/app_logo_h30.png" alt="app crm brand" />
             </a>
         </div>
-        <nav class="collapse navbar-collapse ac-navbar-collapse" role="navigation">
+        <nav class="collapse navbar-collapse ac-navbar-collapse" role="navigation" collapse="isNavCollapse">
             <ul class="nav navbar-nav navbar-left">
                 <li class="active"><a href="javascript:void(0)">所有學生</a> </li>
                 <li><a href="javascript:void(0)">銷售跟蹤</a> </li>

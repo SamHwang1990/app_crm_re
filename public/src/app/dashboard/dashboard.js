@@ -17,5 +17,8 @@ angular.module('dashboard', ['security.service'])
 .controller('DashboardCtrl', ['$scope', 'security', function($scope, security){
     $scope.bodyClass = 'ac-body';
     $scope.logout = security.logout;
+
+    $scope.isNavCollapse = true;
+
   }]
 );
