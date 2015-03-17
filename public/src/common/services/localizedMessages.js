@@ -1,6 +1,7 @@
 angular.module('services.localizedMessages', [])
   .constant('I18N.MESSAGES', {
     "zh-cn":{
+      'errors.state.changeError': "系统状态更改出错了！",
       'login.reason.notAuthorized':"亲，权限不够用哦。需要以其他身份登录吗？",
       'login.reason.notAuthenticated':"亲，请先登录系统再继续操作。",
       'logout.reason.unAuthenticatedNeed':"请，请先退出系统再继续操作。",
@@ -11,6 +12,7 @@ angular.module('services.localizedMessages', [])
       'logout.success': "成功退出系统！"
     },
     "zh-hk":{
+      'errors.state.changeError': "系統狀態更改出錯了！",
       'login.reason.notAuthorized':"親，權限不夠用哦。需要以其他身份登錄嗎？",
       'login.reason.notAuthenticated':"親，請先登錄系統再繼續操作。",
       'logout.reason.unAuthenticatedNeed':"親，請先退出系統再繼續操作。",
@@ -21,6 +23,7 @@ angular.module('services.localizedMessages', [])
       'logout.success': "成功退出系統！"
     },
     "en-us":{
+      'errors.state.changeError': "Website stage change error!",
       'login.reason.notAuthorized':"You do not have the necessary access permissions.  Do you want to login as someone else?",
       'login.reason.notAuthenticated':"You must be logged in to access this part of the application.",
       'logout.reason.unAuthenticatedNeed':"You must be logged out to continue.",

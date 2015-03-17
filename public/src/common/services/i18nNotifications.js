@@ -1,11 +1,30 @@
 angular.module('services.i18nNotifications', ['services.notifications', 'services.localizedMessages']);
-angular.module('services.i18nNotifications').factory('i18nNotifications', ['localizedMessages', 'notifications', function (localizedMessages, notifications) {
+angular.module('services.i18nNotifications').factory('i18nNotifications', ['localizedMessages', 'notifications', 'Notification', function (localizedMessages, notifications, Notification) {
 
   var prepareNotification = function(msgKey, type, interpolateParams, otherProperties) {
      return angular.extend({
        message: localizedMessages.get(msgKey, interpolateParams),
        type: type
      }, otherProperties);
+  };
+
+  var invokeNotification = function(type, message, delay){
+    type = type || "info";
+    delay = delay || 2000;
+
+    switch (type){
+      case "success":
+        Notification.success({message: message, delay: delay});
+        break;
+      default:
+        Notification.info({message: message, delay: delay});
+    }
+  };
+
+  var invokeNotificationArray = function(notificationArray){
+    angular.forEach(notificationArray, function(notification){
+      return invokeNotification(notification.type, notification.message, notification.delay || 2000);
+    });
   };
 
   var I18nNotifications = {
@@ -23,6 +42,9 @@ angular.module('services.i18nNotifications').factory('i18nNotifications', ['loca
     getRouteCurrent:function () {
       return notifications.getRouteCurrent();
     },
+    invokeRouteCurrent: function(){
+      return invokeNotificationArray(I18nNotifications.getRouteCurrent());
+    },
     // endregion
 
     // region for angular-ui-router
@@ -34,6 +56,9 @@ angular.module('services.i18nNotifications').factory('i18nNotifications', ['loca
     },
     getStateCurrent: function () {
       return notifications.getStateCurrent();
+    },
+    invokeStateCurrent: function(){
+      return invokeNotificationArray(I18nNotifications.getStateCurrent());
     },
     // endregion
 

@@ -1,4 +1,4 @@
-angular.module('services.notifications', []).factory('notifications', ['$rootScope', function ($rootScope) {
+angular.module('services.notifications', ['ui-notification']).factory('notifications', ['$rootScope', function ($rootScope) {
 
   var notifications = {
     'STICKY' : [],
@@ -46,7 +46,11 @@ angular.module('services.notifications', []).factory('notifications', ['$rootSco
   // endregion
 
   // region notification for angular-ui-router
-  $rootScope.$on('$stateChangeSuccess', function(){
+  $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
+    //event.preventDefault();
+    if(!fromState.name){
+      return;
+    }
     notifications.STATE_CURRENT.length = 0;
 
     notifications.STATE_CURRENT = angular.copy(notifications.STATE_NEXT);

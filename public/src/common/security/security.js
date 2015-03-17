@@ -2,12 +2,13 @@
  * Created by sam on 15-2-2.
  */
 
-angular.module('security.service', ['security.retryQueue'])
+angular.module('security.service', ['security.retryQueue', 'services.i18nNotifications'])
 
-.factory('security', ['$http', '$q', '$location', 'securityRetryQueue', function($http, $q, $location, retryQueue){
-        var redirect = function(url){
-            url = url || '/';
-            $location.path(url);
+.factory('security', ['$http', '$q', '$state', 'securityRetryQueue', 'i18nNotifications',
+    function($http, $q, $state, retryQueue, i18nNotifications){
+        var redirect = function(state){
+          state = state || 'crm';
+          $state.go(state);
         };
 
         retryQueue.onItemAddedCallbacks.push(function(retryItem){
@@ -18,7 +19,7 @@ angular.module('security.service', ['security.retryQueue'])
         });
 
         var redirectToLogin = function(){
-            return $location.url('/login');
+            return $state.go('login');
         };
 
         // the public api of the services
@@ -41,9 +42,10 @@ angular.module('security.service', ['security.retryQueue'])
             },
 
             logout: function(redirectTo){
-                $http.post('/auth/logout').then(function(){
-                    service.currentUser = null;
-                    redirect(redirectTo);
+                $http.post('/auth/logout').then(function(response){
+                  i18nNotifications.pushForNextState(response.data.message, 'success');
+                  service.currentUser = null;
+                  redirect(redirectTo);
                 })
             },
 
